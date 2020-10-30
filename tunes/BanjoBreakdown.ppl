@@ -1,0 +1,88 @@
+// Banjo Breakdown
+/time 6/8
+
+    8sga sda sea 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    8sga sda sea 4thrwdd 8f
+    4dblAA 8f 4thrwdd 8f
+
+    8sga sda sea 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    8sgb sdb seb 4dblcc 8e
+    8sgb sdb seb 4dblcc 8e
+
+    8sga sda sea 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    8sga sda sea 4thrwdd 8f
+    4dblAA 8f 4thrwdd 8f
+
+    8sge f g A g f
+    4dblee 8d 4dblcc 8b
+    8sga sdc e A e c
+    8:3sGa 4wbirla 8e
+
+    /marker Part 2
+
+    4dblAA 8e 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    4dblAA 8f 4thrwdd 8f
+    4dblAA 8f 4thrwdd 8f
+
+    4dblAA 8e 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    8sgb sdb seb 4dblcc 8e
+    8sgb sdb seb 4dblcc 8e
+
+    4dblAA 8e 4dblcc 8e
+    4dblAA 8e 4dblcc 8e
+    4dblAA 8f 4thrwdd 8f
+    4dblAA 8f 4thrwdd 8f
+
+    8sge f g A g f
+    4dblee 8d 4dblcc 8b
+    8sga sdc e A e c
+    8:3sGa dblAA
+
+    /marker Part 3
+
+    8sga sda sea 4dblcc 8e
+    8sga sda sea 4dblcc 8e
+    8sgb sdb seb 4thrwdd 8f
+    8sgb sdb seb 4thrwdd 8f
+
+    8sga sda sea 4dblcc 8e
+    8sga sda sea 4dblcc 8e
+    4dblbb 8e 8sgc sdc sec
+    8sgb sdb seb 4dblcc 8e
+
+    8sga sda sea 4dblcc 8e
+    8sga sda sea 4dblcc 8e
+    8sgb sdb seb 4thrwdd 8f
+    8sgb sdb seb 4thrwdd 8f
+
+    8sge f g A g f
+    4dblee 8d 4dblcc 8b
+    8sga sdc e A e c
+    8:3sGa 8sga sdc e
+
+    /marker Part 4
+
+    4dblAA 8e 8sgc e sae
+    4dblAA 8e 8sgc e sae
+    4dblAA 8f 8sgd f sef
+    4dblAA 8f 8sgd f sef
+
+    4dblAA 8e 8sgc e sae
+    4dblAA 8e 8sgc e sae
+    8sgb e sae 8sgc e sae
+    8sgb e sae 8sgc e sae
+
+    A8 e sae 8sgc e sae
+    A8 e sae 8sgc e sae
+    A8 f sef 8sgd f sef
+    A8 f sef 8sgd f sef
+
+    8sge f g A g f
+    8sge f e 8sgd c 8b
+    8sga sdc e A e c
+    8:3sGa dblAA
