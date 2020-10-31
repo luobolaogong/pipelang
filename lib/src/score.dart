@@ -79,7 +79,16 @@ class Score {
     log.fine('In applyShorthands');
     var previousNote = Note();
     // I don't like the way this is done to account for a first note situation.  Perhaps use a counter and special case for first note
+    previousNote.dynamic = commandLine.dynamic; // unnec???
     for (var elementIndex = 0; elementIndex < elements.length; elementIndex++) {
+      if (elements[elementIndex] is Dynamic) { // new
+        if (elements[elementIndex] == Dynamic.dd) {
+          elements[elementIndex] = commandLine.dynamic;
+        }
+        log.finer('In Score.applyShorthands(), and because element is ${elements[elementIndex].runtimeType} and not a dynamicRamp, I am marking previousNote s dynamic to be same, and skipping');
+        previousNote.dynamic = elements[elementIndex];
+        continue;
+      }
       if (elements[elementIndex] is Note) {
         var note = elements[elementIndex] as Note; // new
         // So this next stuff assumes element is a Note, and it could be a rest
@@ -94,6 +103,7 @@ class Score {
         if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.dot) { // I think this means "." dot.  Why not just call it "dot"?
           note.duration = previousNote.duration;
           note.embellishmentAndNoteName = previousNote.embellishmentAndNoteName;
+          note.dynamic = previousNote.dynamic;
           log.finest('In Score.applyShorthands(), and since note was just a dot, just set note to have previousNote props, so note is now ${note}.');
         }
         else {
@@ -101,9 +111,11 @@ class Score {
           note.duration.firstNumber ??= previousNote.duration.firstNumber; // new
           note.duration.secondNumber ??= previousNote.duration.secondNumber;
           note.embellishmentAndNoteName ??= previousNote.embellishmentAndNoteName;
+          note.dynamic ??= previousNote.dynamic;
           log.finest('In Score.applyShorthands(), and note was not just a dot, but wanted to make sure did the shorthand fill in, so now note is ${note}.');
         }
         //previousNote = note; // No.  Do a copy, not a reference.       watch for previousNoteDurationOrType
+        previousNote.dynamic = note.dynamic;
         previousNote.velocity = note.velocity; // unnec?
         //previousNote.articulation = note.articulation;
         previousNote.duration = note.duration;
@@ -116,6 +128,175 @@ class Score {
     return;
   }
 
+  // This is a big one.  Maybe break it up?
+  // Looks like several phases to this.
+  void applyDynamics() {
+    log.fine('In Score.applyDynamics()');
+    // For each note in the list set the velocity field based on the dynamic field, which is strange, because why not do it initially?
+    for (var element in elements) {
+      if (!(element is Note)) {
+        continue;
+      }
+      var note = element as Note; // this looks like a cast, which is what I want
+      if (note.dynamic == null) {
+        continue;
+      }
+      element.velocity = dynamicToVelocity(element.dynamic);
+    }
+
+    log.finest('gunna start looking for dynamic ramp markers and set their values');
+    // Scan the elements list for dynamicRamp markers, and set their properties
+    print('');
+    log.finest('Score.applyDynamics(), Starting search for dynamicRamps and setting their values.  THIS MAY BE WRONG NOW THAT I''M APPLYING DYNAMICS DURING SHORTHAND PHASE');
+    DynamicRamp currentDynamicRamp;
+    Dynamic mostRecentDynamic;
+    num accumulatedDurationAsFraction = 0;
+    var inDynamicRamp = false;
+    for (var element in elements) {
+
+      if (element is Note) {
+        mostRecentDynamic = element.dynamic; // I know, hack,
+        if (inDynamicRamp) {
+          accumulatedDurationAsFraction += element.duration.secondNumber / element.duration.firstNumber;
+          log.finest('Score.applyDynamics(), Doing dynamicRamps... This note is inside a dynamicRamp.  accumulated duration: $accumulatedDurationAsFraction');
+        }
+        else {
+          log.finest('Score.applyDynamics(), Doing dynamicRamps... This note is NOT inside a dynamicRamp, so is ignored in this phase of setting dynamicRamp values.');
+        }
+        continue;
+      }
+
+      if (element is DynamicRamp) {
+        currentDynamicRamp = element;
+        currentDynamicRamp.startDynamic = mostRecentDynamic;
+        currentDynamicRamp.startVelocity = dynamicToVelocity(mostRecentDynamic);
+        inDynamicRamp = true;
+        log.finest('Score.applyDynamics(), Doing dynamicRamps while looping only for dynamicRamps... found dynamicRamp marker and starting a dynamicRamp.');
+        continue;
+      }
+
+      if (element is Dynamic) {
+        if (inDynamicRamp) {
+          currentDynamicRamp.endDynamic = element;
+          currentDynamicRamp.endVelocity = dynamicToVelocity(element);
+          var accumulatedTicks = (Midi.ticksPerBeat * accumulatedDurationAsFraction).round();
+          currentDynamicRamp.totalTicksStartToEnd = accumulatedTicks;
+          currentDynamicRamp.slope = (currentDynamicRamp.endVelocity - currentDynamicRamp.startVelocity) / accumulatedTicks;    // rise / run
+          log.finest('Score.applyDynamics(), Doing dynamicsDynamicRamps... hit a Dynamic ($element) and currently in dynamicRamp, so ending dynamicRamp.  dynamicRamp slope: ${currentDynamicRamp.slope}, accumulatedTicks: $accumulatedTicks, accumulatedDurationAsFraction: $accumulatedDurationAsFraction');
+          accumulatedDurationAsFraction = 0;
+
+          currentDynamicRamp = null; // good idea?
+          inDynamicRamp = false;
+        }
+        else {
+          log.finest('Score.applyDynamics(), Doing dynamicRamps... hit a Dynamic but not in currently in dynamicRamp.');
+        }
+        mostRecentDynamic = element; // yeah, we can have a dynamic mark followed immediately by a dynamicRamp, and so the previous note will not have the new dynamic
+        continue;
+      }
+      log.finest('Score.applyDynamics(), Doing dynamicRamps... found other kine element: ${element.runtimeType} and ignoring.');
+    }
+    log.finer('Score.applyDynamics(), Done finding and setting dynamicRamp values for entire score.\n');
+
+
+    log.finer('Score.applyDynamics(), starting to adjust dynamicRamped notes...');
+    // Adjust dynamicRamp note velocities based solely on their dynamicRamp and position in dynamicRamp, not articulations or type.
+    // Each note already has a velocity.
+    inDynamicRamp = false;
+    var isFirstNoteInDynamicRamp = true;
+    Note previousNote;
+    num cumulativeDurationSinceDynamicRampStartNote = 0;
+    var elementCtr = 0; // test to see if can help pinpoint dynamic ramp mistake in score
+    for (var element in elements) {
+      elementCtr++;
+      if (element is DynamicRamp) {
+        log.finest('\telement $elementCtr is a DynamicRamp, so setting inDynamicRamp to true, and setting currentDynamicRamp to point to it.');
+        inDynamicRamp = true;
+        currentDynamicRamp = element;
+        isFirstNoteInDynamicRamp = true;
+        cumulativeDurationSinceDynamicRampStartNote = 0; // new
+        continue;
+      }
+      if (element is Dynamic) {
+        log.finest('\telement $elementCtr is a Dynamic, so resetting dynamicRamp related stuff.');
+        inDynamicRamp = false;
+        currentDynamicRamp = null;
+        isFirstNoteInDynamicRamp = true;
+        cumulativeDurationSinceDynamicRampStartNote = 0; // new
+        continue;
+      }
+      if (element is Note) {
+        log.finest('\telement is a Note...');
+        var note = element as Note;
+        // If a note is not in a dynamicRamp, skip it
+        if (!inDynamicRamp) {
+          log.finest('\t\tNote element $elementCtr is not in dynamicRamp, so skipping it.  But it has velocity ${note.velocity}');
+          continue;
+        }
+        // We have a note in a dynamicRamp, and will now adjust its velocity solely by it's DynamicRamp slope and starting time in the dynamicRamp.
+        if (isFirstNoteInDynamicRamp) {
+          log.finest('\t\tGot first note (#$elementCtr ) in dynamicRamp.  Will not adjust velocity, which is ${note.velocity}');
+          previousNote = note;
+          isFirstNoteInDynamicRamp = false;
+        }
+        else {
+          // Get note's current time position in the dynamicRamp.
+          log.finest('\t\tGot subsequent note (#$elementCtr) in a dynamicRamp, so will calculate time position relative to first note by doing accumulation.');
+          cumulativeDurationSinceDynamicRampStartNote += (previousNote.duration.secondNumber / previousNote.duration.firstNumber);
+          log.finest('\t\t\tcumulativeDurationSinceRampStartNote: $cumulativeDurationSinceDynamicRampStartNote');
+          var cumulativeTicksSinceDynamicRampStartNote = beatFractionToTicks(cumulativeDurationSinceDynamicRampStartNote);
+          log.finest('\t\t\tcumulativeTicksSinceDynamicRampStartNote: $cumulativeTicksSinceDynamicRampStartNote and dynamicsDynamicRamp slope is ${currentDynamicRamp.slope}');
+          if (currentDynamicRamp.slope == null) { // hack
+            print('Still in dynamic ramp, right?  Well, got a null at note element $elementCtr, Note duration: ${note.duration}');
+            log.severe('Error in dynamic ramp.  Not sure what to do.  Did we have a ramp start, and no ramp end?');
+          }
+          else {
+            log.finest('\t\t\tUsing slope and position in dynamicRamp, wanna add this much to the velocity: ${currentDynamicRamp.slope *
+                cumulativeTicksSinceDynamicRampStartNote}');
+            note.velocity += (currentDynamicRamp.slope * cumulativeTicksSinceDynamicRampStartNote).round();
+            log.finest('\t\t\tSo now this element has velocity ${note.velocity}');
+            isFirstNoteInDynamicRamp = false;
+            previousNote = note; // new
+          }
+        }
+      }
+    }
+
+    log.finer('Adjusting note velocities by articulation...');
+
+    // Adjust note velocity based on articulation and type, and then clamp.
+    // No, adjust note velocity based on dynamic and articulation together, and then clamp if nec.
+    for (var element in elements) {
+      if (!(element is Note)) {
+        continue;
+      }
+      var note = element as Note;
+      // if (element.noteType == NoteType.rest) {
+      if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.r) {
+        continue;
+      }
+
+      // This section is questionable.  Should flams be accented normally?
+      // I don't think so.  This section maybe could be used to adjust for
+      // bad sound font recordings, but only as a hack.  Fix the recordings.
+      switch (note.embellishmentAndNoteName) {
+        case EmbellishmentAndNoteName.r: // right????????????
+          note.velocity = 0; // this is just a test/example
+          break;
+        default:
+          log.warning('What the heck was that note? $note.type');
+      }
+
+      log.finest('adjusted velocity is ${note.velocity}');
+      if (note.velocity > 127 || note.velocity < 0) {    // hmmmm did I screw this up by doing the cast with "as" to Note?  Lost velocity value????
+        log.finest('Will clamp velocity because it is ${note.velocity}');
+        note.velocity = note.velocity.clamp(0, 127);
+        log.finest('clamped velocity is ${note.velocity}');
+      }
+    }
+
+    return;
+  }
 
 
   // These two are new.  We want to know the first tempo and time signature that is specified in the score.
@@ -278,23 +459,19 @@ Parser scoreParser = ((commentParser | markerParser | textParser | trackParser |
 });
 
 // Maybe change track to "track"
-/// I think the idea here is to be able to insert the keywords '/track snare' or
+/// I think the idea here is to be able to insert the keywords '/track pipes' or
 /// '/track tenor', ... and that track continues on as the only track being written
 /// to, until either the end of the score, or there's another /track designation.
 /// So, it's 'track <name>'
 enum TrackId {
-  snare,
-  unison, // snareEnsemble
-  pad,
-  tenor, // possibly pitch based notes rather than having tenor1, tenor2, ...
-  bass,
-  met,
-  pipes
+  chanter,
+  pipes,
+  met
 }
 
 class Track {
   // Why not initialize?
-  TrackId id; // the default should be snare.  How do you do that?
+  TrackId id; // the default should be pipes.  How do you do that?
   // Maybe this will be expanded to include more than just TrackId, otherwise just an enum
   // and not a class will do, right?  I mean, why doesn't Dynamic do it this way?
 
@@ -318,31 +495,19 @@ Parser trackParser = ((string('/track')|(string('/staff'))).trim() & trackId).tr
 TrackId trackStringToId(String trackString) {
   TrackId trackId;
   switch (trackString) {
-    case 'snare':
-      trackId = TrackId.snare;
-      break;
-    case 'unison':
-      trackId = TrackId.unison;
-      break;
-    case 'pad':
-      trackId = TrackId.pad;
-      break;
-    case 'tenor':
-      trackId = TrackId.tenor;
-      break;
-    case 'bass':
-      trackId = TrackId.bass;
+    case 'pipes':
+      trackId = TrackId.pipes;
       break;
     case 'met':
     case 'metronome':
       trackId = TrackId.met;
       break;
-    case 'pipes':
-      trackId = TrackId.pipes;
+    case 'chanter':
+      trackId = TrackId.chanter;
       break;
     default:
       log.severe('Bad track identifier: $trackString');
-      trackId = TrackId.snare;
+      trackId = TrackId.chanter;
       break;
   }
   return trackId;
@@ -350,20 +515,12 @@ TrackId trackStringToId(String trackString) {
 
 String trackIdToString(TrackId id) {
   switch (id) {
-    case TrackId.snare:
-      return 'snare';
-    case TrackId.unison:
-      return 'unison';
-    case TrackId.pad:
-      return 'pad';
-    case TrackId.tenor:
-      return 'tenor';
-    case TrackId.bass:
-      return 'bass';
     case TrackId.met:
       return 'met';
     case TrackId.pipes:
       return 'pipes';
+    case TrackId.chanter:
+      return 'chanter';
     default:
       log.severe('Bad track id: $id');
       return null;

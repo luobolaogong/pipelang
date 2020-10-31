@@ -23,10 +23,12 @@ class CommandLine {
   Tempo _tempo;
   num _tempoScalar;
   Track _track;
+  Dynamic _dynamic;
   TimeSig _timeSig;
   List<String> _inputFilesList;
   String _outputMidiFile;
 
+  static final dynamicMapIndex = 'dynamic'; // -d
   static final helpMapIndex = 'help'; // -h
   static final logLevelMapIndex = 'log'; // -l
   static final inputFileListMapIndex = 'input'; // -i  --input
@@ -51,6 +53,9 @@ class CommandLine {
   Track get track {
     return _track;
   }
+  Dynamic get dynamic {
+    return _dynamic;
+  }
   TimeSig get timeSig {
     return _timeSig;
   }
@@ -72,7 +77,7 @@ class CommandLine {
       print('No arguments provided.  Aborting ...');
       print('Usage:\n${parser.usage}');
       print(
-          'Example: <thisProg> -p Tunes/BadgeOfScotland.ppl,Tunes/RowanTree.ppl,Tunes/ScotlandTheBraveSnare.ppl --midi midifiles/BadgeSet.mid');
+          'Example: <thisProg> -p Tunes/BadgeOfScotland.ppl,Tunes/RowanTree.ppl,Tunes/ScotlandTheBravePipes.ppl --midi midifiles/BadgeSet.mid');
       exitCode = 2; // does anything?
       //return;
       exit(exitCode);
@@ -81,7 +86,7 @@ class CommandLine {
       print('Ignoring command line arguments: -->${argResults.rest}<-- and aborting ...');
       print('Usage:\n${parser.usage}');
       print(
-          'Example: <thisProg> -p Tunes/BadgeOfScotland.ppl,Tunes/RowanTree.ppl,Tunes/ScotlandTheBraveSnare.ppl --midi midifiles/BadgeSet.mid');
+          'Example: <thisProg> -p Tunes/BadgeOfScotland.ppl,Tunes/RowanTree.ppl,Tunes/ScotlandTheBravePipes.ppl --midi midifiles/BadgeSet.mid');
       exitCode = 2; // does anything?
       // return;
       exit(exitCode);
@@ -159,6 +164,11 @@ class CommandLine {
     if (argResults[CommandLine.trackMapIndex] != null) {
       _track = parseTrack(argResults[CommandLine.trackMapIndex]);
     }
+    if (argResults[CommandLine.dynamicMapIndex] != null) {
+      String dynamicString = argResults[CommandLine.dynamicMapIndex];
+      _dynamic = stringToDynamic(dynamicString);
+      print('storeTheResultValues(), just set _dynamic to $_dynamic because either something was set on command line, or it wasnt and we just have the default value, but in any case, its set.');
+    }
     if (argResults[CommandLine.timeSigMapIndex] != null) {
       String sig = argResults[CommandLine.timeSigMapIndex];
       List sigParts = sig.split('/');
@@ -208,6 +218,14 @@ class CommandLine {
           'tempo scalar percentage.  eg: "-10" for 10% slower',
           valueHelp: 'percent')
 
+      ..addOption(CommandLine.dynamicMapIndex,
+          abbr: 'd',
+          defaultsTo: 'mf', // works???????   Hey, this is important
+          allowed: ['ppp', 'pp', 'p', 'mp', 'mf', 'f', 'ff', 'fff'],
+          help:
+          'initial dynamic, using values like mf or f or ff, etc',
+          valueHelp: 'name')
+
       ..addOption(CommandLine.logLevelMapIndex,
           hide: true,
           abbr: 'l',
@@ -218,7 +236,7 @@ class CommandLine {
           valueHelp: 'WARNING')
 
       ..addOption(CommandLine.trackMapIndex, // prob should also allow --stave and --track
-          // allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes'],
+          // allowed: ['pipes', 'pipesUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes'],
           allowed: ['pipes', 'chanter', 'metronome', 'met'],
           defaultsTo: 'pipes', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
           help:

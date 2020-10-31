@@ -67,9 +67,6 @@ class Midi {
   static final ticksPerBeat = 10080; // put this elsewhere later
   static final microsecondsPerMinute = 60000000;
 
-  //final log = Logger('Midi'); // does nothing on it's own, right?
-
-
   double cumulativeRoundoffTicks = 0.0;
 
   ///
@@ -80,87 +77,6 @@ class Midi {
     var midiHeaderOut = MidiHeader(ticksPerBeat: ticksPerBeat, format:1, numTracks:2); // puts this in header with prop "ppq"  What would 2 do?
     return midiHeaderOut;
   }
-
-  // List<MidiEvent> createTimingTrackZero(List scoreElements, TimeSig overrideTimeSig, Tempo tempo) { // check on "override" tempo.  Default tempo?
-  //   var timingTrackZeroMidiEventList = <MidiEvent>[];
-  //   // Could immediately add the overrideTimeSig and overrideTempo, I suppose.  But if the first non-comment event is a timesig or tempo, could just do those
-  //   addTimeSigChangeToTrackEventsList(overrideTimeSig, timingTrackZeroMidiEventList);
-  //   addTempoChangeToTrackEventsList(tempo, timingTrackZeroMidiEventList);
-  //   for (var element in scoreElements) { // is this right?
-  //     print('element: $element');
-  //     if (element is TimeSig) {
-  //       addTimeSigChangeToTrackEventsList(element, timingTrackZeroMidiEventList);
-  //       continue;
-  //     }
-  //     if (element is Tempo) {
-  //       addTempoChangeToTrackEventsList(element, timingTrackZeroMidiEventList);
-  //       continue;
-  //     }
-  //     if (element is Note) {
-  //       print('got a note, so do we just put in rests into this timing track?');
-  //       print('Note duration: ${element.duration}');
-  //       var restNote = Note();
-  //       restNote.articulation = element.articulation; // prob unnec
-  //       restNote.duration.firstNumber = element.duration.firstNumber;
-  //       restNote.duration.secondNumber = element.duration.secondNumber;
-  //       restNote.noteName = NoteName.rest;
-  //       restNote.velocity = 0;
-  //       restNote.dynamic = Dynamic.p; // what do you put for rest?
-  //       //restNote.noteNumber = 0; // what's the note number for a rest?  0?  99?  Gets assigned later.
-  //       restNote.noteOffDeltaTimeShift = 0;  // right?  This accounts for gracenotes, right?  Don't bother.
-  //       addNoteOnOffToTrackEventsList(restNote, timingTrackZeroMidiEventList, false, false, Voice.solo); // what about voice?  Can ignore with null?
-  //       continue;
-  //     }
-  //     print('what was that element? $element');  // what if /track?  Messes things up?
-  //   }
-  //   return timingTrackZeroMidiEventList;
-  // }
-
-
-  // // Wow, currently not calling this at all.  I guess most of the time it isn't needed?  But maybe necessary if there are timesig or tempo changes
-  // // DOUBT WE NEED ALL THESE PARAMS
-  // // List<MidiEvent> createTrackZeroMidiEventsList(List elements, TimeSig timeSig, Tempo tempo, Dynamic dynamic) {
-  // List<MidiEvent> createTrackZeroMidiEventsList(List elements, TimeSig timeSig, Tempo tempo) {
-  //   log.fine('In Midi.createTrackZeroMidiEventsList()');
-  //   //
-  //   // Do TrackZero
-  //   //
-  //   var trackZeroEventsList = <MidiEvent>[];
-  //
-  //   Tempo.fillInTempoDuration(tempo, timeSig);
-  //   // Add a track name for track zero, which maybe will be called TempoMap if it's used that way
-  //   var trackNameEvent = TrackNameEvent();
-  //   trackNameEvent.text = 'TrackZero';
-  //   trackNameEvent.deltaTime = 0;
-  //   trackZeroEventsList.add(trackNameEvent);
-  //   log.finer('Added track name event to track zero: ${trackNameEvent.text}');
-  //
-  //   // Add file creation meta data, like the program that created the midi file.
-  //   var textEvent = TextEvent();
-  //   textEvent.type = 'text';
-  //   textEvent.text = 'creator:';
-  //   trackZeroEventsList.add(textEvent);
-  //   textEvent = TextEvent();
-  //   textEvent.type = 'text';
-  //   textEvent.text = 'PipeLang'; // change name later, as we're not just doing snare, something unique saying "language", and ""any duration"
-  //   trackZeroEventsList.add(textEvent);
-  //
-  //   // Add a time signature event for this track, though this can happen anywhere, right?
-  //   // But I guess they need to have this before any notes.
-  //   var timeSignatureEvent = TimeSignatureEvent();
-  //   timeSignatureEvent.type = 'timeSignature';
-  //   timeSignatureEvent.numerator = timeSig.numerator; // how are these used in a midi file?  Affects tempo????
-  //   timeSignatureEvent.denominator = timeSig.denominator;
-  //   timeSignatureEvent.metronome = 18; // for module synchronization
-  //   timeSignatureEvent.thirtyseconds = 8; // What used for?  Is this num 32nd's in a quarter, or in a beat?????????????????????????????????????????????????????
-  //   trackZeroEventsList.add(timeSignatureEvent);
-  //
-  //   //var noteChannel = 0; // Is this essentially a "tempo track", or a "control track"?
-  //
-  //   Tempo.fillInTempoDuration(tempo, timeSig);
-  //   addTempoChangeToTrackEventsList(tempo, trackZeroEventsList); // a bit strange.  Have to convert tempo to midi.  Can't just add tempo to track without converting
-  //   return trackZeroEventsList;
-  // }
 
 
   List<List<MidiEvent>> addMidiEventsToTracks(List<List> midiTracks, List elements, commandLine) {
@@ -196,10 +112,10 @@ class Midi {
         // If the note is flam, drag, or ruff we should adjust placement of the note in the timeline so that the
         // principle part of the note is where it should go (and adjust after the note by the same difference.)
         // To do this, we need access to the previous note to shorten it.  So that means gotta process in a separate
-        // loop, probably, prior to this point, or maybe after.  And it's only for a snare staff/track.
+        // loop, probably, prior to this point, or maybe after.  And it's only for a pipes staff/track.
         // And can't assume the previous element in the list was a note!  Could be a dynamic element, or tempo, etc.
         //
-        // addNoteOnOffToTrackEventsList(element, noteChannel, snareTrackEventsList, usePadSoundFont);
+        // addNoteOnOffToTrackEventsList(element, noteChannel, pipesTrackEventsList, usePadSoundFont);
         addNoteOnOffToTrackEventsList(element, trackEventsList);
         continue;
       }
@@ -218,7 +134,7 @@ class Midi {
         continue;
       }
       if (element is TimeSig) { // THIS IS WRONG.  SHOULD BE 2/2 for that tune in 2/2  not 2/4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-        // addTimeSigChangeToTrackEventsList(element, noteChannel, snareTrackEventsList);
+        // addTimeSigChangeToTrackEventsList(element, noteChannel, pipesTrackEventsList);
         addTimeSigChangeToTrackEventsList(element, trackEventsList); // also add to trackzero?
         continue;
       }
@@ -241,7 +157,7 @@ class Midi {
         continue;
       }
       log.finest('have something else not putting into the track: ${element.runtimeType}, $element');
-    } // end of list of events to add to snare track
+    } // end of list of events to add to pipes track
 
     if (trackEventsList.isEmpty) {  // right here?????
       log.warning('What?  no events for track?');
@@ -282,14 +198,14 @@ class Midi {
   ///
   /// Create and add a NoteOnEvent and a NoteOffEvent to the list of events for a track,
   /// The caller of this method has access to the Note which holds the nameValue and type, etc.
-  /// May want to watch out for cumulative rounding errors.  "snareLangNoteNameValue" can be
+  /// May want to watch out for cumulative rounding errors.  "pipesLangNoteNameValue" can be
   /// a something like 1.333333, so it shouldn't be called a NameValue like "4:3" could be.
   ///
   /// Need to work out timing of notes that have grace notes, like 3 stroke ruffs.
   ///
-  /// First, for a snare drum I usually think of the note as happening at a point in time and
+  /// First, for a pipes drum I usually think of the note as happening at a point in time and
   /// that the note has no duration, but that's not really true.  A tenor drum has a long ring
-  /// to is.  The sound decays over a long period of time.  The snare not so much, but it
+  /// to is.  The sound decays over a long period of time.  The pipes not so much, but it
   /// too has a sound that has a duration, if only for the acoustics of the room where it was
   /// recorded.  It's just not as noticeable.  So, I should forget the idea that a note is
   /// just a point in time.  A note has a duration that is specified by the NoteOn and NoteOff
@@ -335,10 +251,10 @@ class Midi {
     // Determine the noteNumber for the note.  The noteNumber determines what soundFont sample to play
     note.setNoteNumber();
 
-    // // var snareLangNoteNameValue = (note.duration.firstNumber / note.duration.secondNumber).floor(); // is this right???????
-    var snareLangNoteNameValue = note.duration.firstNumber / note.duration.secondNumber; // is this right???????  A double?
+    // // var pipesLangNoteNameValue = (note.duration.firstNumber / note.duration.secondNumber).floor(); // is this right???????
+    var pipesLangNoteNameValue = note.duration.firstNumber / note.duration.secondNumber; // is this right???????  A double?
     // if (note.noteName == NoteName.rest) {
-    if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.rest) {
+    if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.r) {
       note.velocity = 0; // new, nec?
     }
 
@@ -367,7 +283,7 @@ class Midi {
     var noteOffEvent = NoteOffEvent();
     noteOffEvent.type = 'noteOff';
 
-    noteOffEvent.deltaTime = (4 * ticksPerBeat / snareLangNoteNameValue).round(); // keep track of roundoff?
+    noteOffEvent.deltaTime = (4 * ticksPerBeat / pipesLangNoteNameValue).round(); // keep track of roundoff?
     noteOffEvent.deltaTime += note.noteOffDeltaTimeShift; // for grace notes.  May be zero if no grace notes, or if consecutive same grace notes, like 2 or more flams
     noteOffEvent.noteNumber = note.noteNumber;
     noteOffEvent.velocity = 0; // shouldn't this just be 0?
@@ -376,11 +292,11 @@ class Midi {
     trackEventsList.add(noteOffEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOffvent $noteOffEvent to trackEventsList');
 
-    num noteTicksAsDouble = 4 * ticksPerBeat / snareLangNoteNameValue;
+    num noteTicksAsDouble = 4 * ticksPerBeat / pipesLangNoteNameValue;
     var diffTicksAsDouble = noteTicksAsDouble - noteOffEvent.deltaTime;
     cumulativeRoundoffTicks += diffTicksAsDouble;
 
-    log.finest('noteOnNoteOff, Created note events for noteNameValue ${snareLangNoteNameValue}, '
+    log.finest('noteOnNoteOff, Created note events for noteNameValue ${pipesLangNoteNameValue}, '
         'deltaTime ${noteOffEvent.deltaTime} (${noteTicksAsDouble}), velocity: ${note.velocity}, '
         'number: ${note.noteNumber}, cumulative roundoff ticks: $cumulativeRoundoffTicks');
     return diffTicksAsDouble; // kinda strange

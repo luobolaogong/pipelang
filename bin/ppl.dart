@@ -95,6 +95,14 @@ Score doThePhases(List<String> piecesOfMusic, CommandLine commandLine) {
     log.finer('In debug loop After shorthand phase: $element');
   }
 
+  // Phase 3:
+  // Apply dynamics and dynamic ramps
+  //
+  score.applyDynamics();
+  for (var element in score.elements) {
+    log.finer('In debug loop After applyDynamics() phase: $element');
+  }
+
   // What if there's no /tempo given in a file and no -t value specified on command line?  We still need
   // to put a tempoEvent in the midi output
   log.finer('doThePhases(), adding  a few elements at the start, like timesig and tempo, before adjusting for grace notes.');

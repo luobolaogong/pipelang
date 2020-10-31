@@ -1,0 +1,24 @@
+// Exercise #1, p10
+/time 2/4
+/tempo 84
+
+/track chanter
+/marker Exercise #1
+8r 8G
+8a G a G
+8b G b G
+8c G c G
+8d G d G
+8e G e G
+8f G f G
+
+/marker line2
+8G g G
+8a G a G
+8b a b a
+8c a c a
+8d a d a
+8e a e a
+
+/marker line3
+8f a f a

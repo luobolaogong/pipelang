@@ -92,7 +92,7 @@ class NoteDuration { // change this to Duration if possible, which conflicts, I 
   NoteDuration() {
     // No I don't think we should set default values because may have parsed a note without duration
     // and want to fill it in later with the previous note's value.  So it should be null in order to detect this.
-    // And this is different from how it's done in snareLang.
+    // And this is different from how it's done in pipesLang.
     //
     // firstNumber = DefaultFirstNumber;
     // secondNumber = DefaultSecondNumber;
@@ -107,31 +107,6 @@ int beatFractionToTicks(num beatFraction) {
   var durationInTicks = (Midi.ticksPerBeat * beatFraction).round();
   return durationInTicks;
 }
-
-// enum Embellishment {
-//   // Throws
-//   GdGcd, // (\thrwd d maybe),
-//   // doublings
-//   GAGA,
-//   gefe,
-//   gcdc,
-//   aga,
-//   gfg,
-//   gbdb,
-//   gfgf,
-//   // single gracenotes
-//   Ga,
-//   gA,
-//   ge,
-//   gc,
-//   gf,
-//   gb,
-//   dc,
-//   ea,
-//   dA,
-//   gd,
-//   ga
-// }
 enum EmbellishmentAndNoteName {
   // Throws
   GdGcd, // (\thrwd d maybe),
@@ -157,14 +132,9 @@ enum EmbellishmentAndNoteName {
   ga,
 
 G, A, b, c, d, e, f, g, a,
-  rest,
+  r,
   dot // experiment
 }
-// enum NoteName {
-//   G, A, b, c, d, e, f, g, a,
-//   rest,
-//   dot // experiment
-// }
 
 class Note {
   // NoteArticulation articulation;
@@ -173,6 +143,7 @@ class Note {
   //Embellishment embellishment;
   EmbellishmentAndNoteName embellishmentAndNoteName;
   int velocity;
+  Dynamic dynamic;
   int noteNumber;
   int noteOffDeltaTimeShift;
 
@@ -183,15 +154,16 @@ class Note {
     duration = NoteDuration();
     //embellishment = null;
     //noteName = NoteName.rest;
-    embellishmentAndNoteName = EmbellishmentAndNoteName.rest; // ???
-    velocity = 0;
-    noteNumber = 0;
+    embellishmentAndNoteName = EmbellishmentAndNoteName.r; // ???
+    // velocity = dynamicToVelocity(Dynamic.dd); // If not set, gets value of null
+    //velocity = 0; // no sound
+    //noteNumber = 0; // gets null if not set
     noteOffDeltaTimeShift = 0;
   }
 
   String toString() {
     // return 'Note: Articulation: $articulation, Duration: $duration, NoteName: $noteName, Dynamic: $dynamic';
-    return 'Note: Duration: $duration, EmbellishmentAndNoteName: $embellishmentAndNoteName';
+    return 'Note: Duration: $duration, EmbellishmentAndNoteName: $embellishmentAndNoteName dynamic: $dynamic, velocity: $velocity, noteNumber: $noteNumber, shift: $noteOffDeltaTimeShift';
   }
 
 
@@ -255,7 +227,7 @@ Parser embellishmentAndNoteNameParser = (
     // just notes, no embellishments:
     string('G') | string('A') | string('b') | string('c') | string('d') | string('e') | string('f') | string('g') | string('a') | string('b') |
     string('.') |
-    string('rest')
+    string('r')
 ).trim().map((value) {
   log.finer('entering embellishmentAndNoteNameParser, with string value $value');
   EmbellishmentAndNoteName embellishmentAndNoteName;
@@ -347,8 +319,8 @@ Parser embellishmentAndNoteNameParser = (
     case '.':
       embellishmentAndNoteName = EmbellishmentAndNoteName.dot;
       break;
-    case 'rest':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.rest;
+    case 'r':
+      embellishmentAndNoteName = EmbellishmentAndNoteName.r;
       break;
     default:
       log.severe('What happened what is this embellishmentandnotename?');
@@ -358,48 +330,6 @@ Parser embellishmentAndNoteNameParser = (
   return embellishmentAndNoteName;
 });
 
-// Parser noteNameParser =
-//     (string('G') | string('A') | string('b') | string('c') | string('d') | string('e') | string('f') | string('g') | string('a') | string('b'))
-//         .trim()
-//         .map((value) {
-//   log.finer('in noteNameParser, will return $value');
-//   // NoteName noteName;
-//   EmbellishmentAndNoteName embellishmentAndNoteName;
-//   switch (value) {
-//     case 'G':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.G;
-//       break;
-//     case 'A':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.A;
-//       break;
-//     case 'b':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.b;
-//       break;
-//     case 'c':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.c;
-//       break;
-//     case 'd':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.d;
-//       break;
-//     case 'e':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.e;
-//       break;
-//     case 'f':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.f;
-//       break;
-//     case 'g':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.g;
-//       break;
-//     case 'a':
-//       embellishmentAndNoteName = EmbellishmentAndNoteName.a;
-//       break;
-//     default:
-//       log.severe("what the heck was this note name? $value");
-//       break;
-//   }
-//   log.finer('leaving noteNameParser and returning $embellishmentAndNoteName');
-//   return embellishmentAndNoteName;
-// });
 
 ///
 /// NoteParser
@@ -461,29 +391,6 @@ Parser noteParser = (
   else {
     log.severe('got something in note parser that was not a duration or embellishmentNoteName thing: $valuesOrValue');
   }
-  // // Fix the if, else, else if  stuff later.  Should be if, else if, else
-  // if (valuesOrValue is List) {
-  //   log.severe('Ever get here for alist for the note?');
-  //   for (var value in valuesOrValue) { // Case "A B" -- duration followed by letters
-  //     if (value is NoteDuration) { // B
-  //       note.duration.firstNumber = value.firstNumber;
-  //       note.duration.secondNumber = value.secondNumber; // check;
-  //     }
-  //     if (value is EmbellishmentAndNoteName) {
-  //       note.embellishmentAndNoteName = value;
-  //     }
-  //   }
-  // }
-  // else {
-  //   if (valuesOrValue is NoteDuration) { // B   Happens????????????????????????????????
-  //     note.duration.firstNumber = valuesOrValue.firstNumber;
-  //     note.duration.secondNumber = valuesOrValue.secondNumber; // check;
-  //   }
-  //   else if (valuesOrValue is EmbellishmentAndNoteName) { // C
-  //     note.embellishmentAndNoteName = valuesOrValue;
-  //   }
-  // }
-
   log.finer('Leaving NoteParser returning note -->$note<--');
   return note;
 });
