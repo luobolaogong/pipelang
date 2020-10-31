@@ -92,7 +92,7 @@ Score doThePhases(List<String> piecesOfMusic, CommandLine commandLine) {
   // And this would include replacing default dynamics (/dd) with the default dynamic value set on commandline or whatever the default is.
   score.applyShorthands(commandLine);
   for (var element in score.elements) {
-    log.finer('After shorthand phase: $element');
+    log.finer('In debug loop After shorthand phase: $element');
   }
 
   // What if there's no /tempo given in a file and no -t value specified on command line?  We still need

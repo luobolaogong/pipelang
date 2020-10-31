@@ -33,7 +33,7 @@ class Score {
       //
       // Do an initial parse for validity, exiting if failure, and throw away result no matter what.
       //
-      log.finer('Gunna do an initial parse just to check if its a legal file.');
+      log.finer('\t\t\t\tGunna do an initial parse just to check if its a legal file.');
       var result = scoreParser.parse(fileContents);
       if (result.isFailure) {
         log.severe('Failed to parse $filePath. Message: ${result.message}');
@@ -52,7 +52,7 @@ class Score {
     // Parse the score's text elements, notes and other stuff.  The intermediate parse results like Tempo and TimeSig
     // are in the list that is result.value, and processed later.
     //
-    log.finer('here comes the real parse now, since we have a legal file.  I dislike this double thing.');
+    log.finer('\t\t\t\there comes the real parse now, since we have a legal file.  I dislike this double thing.');
     var result = scoreParser.parse(scoresStringBuffer.toString());
     if (result.isSuccess) {
       Score score = result.value;
@@ -90,23 +90,24 @@ class Score {
         // '.T' to mean same duration as previous note, but make this one a right tap, or
         // '>.' to mean same note as before, but accented this time.
         //
-        if (note.noteName == NoteName.previousNoteDurationOrType) { // I think this means "." dot.  Why not just call it "dot"?
+        // if (note.noteName == NoteName.previousNoteDurationOrType) { // I think this means "." dot.  Why not just call it "dot"?
+        if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.dot) { // I think this means "." dot.  Why not just call it "dot"?
           note.duration = previousNote.duration;
-          note.noteName = previousNote.noteName;
+          note.embellishmentAndNoteName = previousNote.embellishmentAndNoteName;
           log.finest('In Score.applyShorthands(), and since note was just a dot, just set note to have previousNote props, so note is now ${note}.');
         }
         else {
 //        note.duration ??= previousNote.duration;
           note.duration.firstNumber ??= previousNote.duration.firstNumber; // new
           note.duration.secondNumber ??= previousNote.duration.secondNumber;
-          note.noteName ??= previousNote.noteName;
+          note.embellishmentAndNoteName ??= previousNote.embellishmentAndNoteName;
           log.finest('In Score.applyShorthands(), and note was not just a dot, but wanted to make sure did the shorthand fill in, so now note is ${note}.');
         }
         //previousNote = note; // No.  Do a copy, not a reference.       watch for previousNoteDurationOrType
         previousNote.velocity = note.velocity; // unnec?
         //previousNote.articulation = note.articulation;
         previousNote.duration = note.duration;
-        previousNote.noteName = note.noteName;
+        previousNote.embellishmentAndNoteName = note.embellishmentAndNoteName;
 
         log.finest('bottom of loop Score.applyShorthands(), just updated previousNote to point to be this ${previousNote}.');
       }
@@ -169,6 +170,9 @@ class Score {
     }
   }
 
+  // Some embellishments start on the beat, and some before the beat.  We need a table to decide
+  // what to do, and then if we slide them before the beat we need to adjust by lengthening them
+  // so that the melody/principle note gets full value.
   void adjustForGraceNotes(CommandLine commandLine) {
 
     log.fine('In adjustForGraceNotes.');
@@ -185,58 +189,58 @@ class Score {
     for (var element in elements) {
       if (element is Tempo) {
         log.finest('In adjustForGraceNotes(), tempo is $element and looks like we will scale it just to keep track of the most recent tempo, but not changing it in the list');
-        //tempoBpm = element.bpm; // but not adjusted for tempo scalar
-        // mostRecentTempoBpm += (element.bpm * tempoScalar / 100).floor(); // OH MY.  Right???????????
-        //mostRecentScaledTempo = Tempo.scaleThis(element, tempoScalar);
-        //print('adjustForGraceNotes(), got a tempo element $element and just scaled it by ${commandLine.tempoScalar} and so mostRecentScaledTempo is $mostRecentTempo');
-        //print('I kinda think this is an okay time to modify this Tempo element in the list.  Why wait until midi???????????????????????????????????????????????????????????????????  Okay do it now.');
-        //element = mostRecentScaledTempo; // Could this possibly work?  We're playing with pointers
-        //mostRecentTempoBpm = mostRecentScaledTempo.bpm;
         mostRecentTempo = element;
         continue;
       }
       else if (element is Note) {
         var note = element as Note; // unnec cast, it says, but I want to
         // Bad logic, I'm sure:
-        // switch (note.noteName) {
-        //   case NoteName.flamLeft:
-        //   case NoteName.flamRight:
-        //   case NoteName.flamUnison:
-        //     graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
-        //     previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
-        //     note.noteOffDeltaTimeShift += graceNotesDuration;
-        //     previousNote = note; // probably wrong.  Just want to work with pointers
-        //     break;
-        //   case NoteName.dragLeft:
-        //   case NoteName.dragRight:
-        //   case NoteName.dragUnison:
-        //     graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round();
-        //     previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
-        //     note.noteOffDeltaTimeShift += graceNotesDuration;
-        //     previousNote = note; // probably wrong.  Just want to work with pointers
-        //     break;
-        //   case NoteName.ruff2Left:
-        //   case NoteName.ruff2Right:
-        //   case NoteName.ruff2Unison:
-        //     graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
-        //     previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
-        //     note.noteOffDeltaTimeShift += graceNotesDuration;
-        //     previousNote = note; // probably wrong.  Just want to work with pointers
-        //     break;
-        //   case NoteName.ruff3Left:
-        //   case NoteName.ruff3Right:
-        //   case NoteName.ruff3Unison:
-        //     graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
-        //     previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
-        //     note.noteOffDeltaTimeShift += graceNotesDuration;
-        //     previousNote = note; // probably wrong.  Just want to work with pointers
-        //     break;
-        //   default: // a note without gracenotes, or a rest
-        //     graceNotesDuration = 0;
-        //     previousNote = note; // probably wrong.  Just want to work with pointers
-        //     break;
-        //
-        // }
+        // Hey, the following is just here for a placeholder and a test.  I've not determined which embellishments need what kind of sliding, if any.
+        switch (note.embellishmentAndNoteName) {
+          case EmbellishmentAndNoteName.dA:
+          case EmbellishmentAndNoteName.dc:
+          case EmbellishmentAndNoteName.ea:
+          case EmbellishmentAndNoteName.Ga:
+          case EmbellishmentAndNoteName.gA:
+          case EmbellishmentAndNoteName.ga:
+          case EmbellishmentAndNoteName.gb:
+          case EmbellishmentAndNoteName.gc:
+          case EmbellishmentAndNoteName.gd:
+          case EmbellishmentAndNoteName.ge:
+          case EmbellishmentAndNoteName.gf:
+            graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          case EmbellishmentAndNoteName.gbdb:
+          case EmbellishmentAndNoteName.gcdc:
+          case EmbellishmentAndNoteName.gefe:
+          case EmbellishmentAndNoteName.GAGA:
+          case EmbellishmentAndNoteName.gfgf:
+            graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round();
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          case EmbellishmentAndNoteName.aga:
+            graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          case EmbellishmentAndNoteName.GdGcd:
+            graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          default: // a note without gracenotes, or a rest
+            graceNotesDuration = 0;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+
+        }
         continue;
       }
       else {
@@ -262,7 +266,7 @@ Parser scoreParser = ((commentParser | markerParser | textParser | trackParser |
     for (var value in values) {
       log.finest('ScoreParser, value: -->$value<--');
       score.elements.add(value);
-      log.finest('ScoreParser, Now score.elements has this many elements: ${score.elements.length}');
+      log.finer('ScoreParser, Now score.elements has this many elements: ${score.elements.length}');
     }
   }
   else { // I don't think this happens when there's only one value.  It's still in a list

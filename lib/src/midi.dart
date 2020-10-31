@@ -3,6 +3,9 @@ import 'package:logging/logging.dart';
 import 'dart:math';
 import '../pipelang.dart';
 
+// program change vs patch vs channel???  Need more than 127 notes for a set of bagpipe recorded embellishments
+// Would like to know how to havemore than one set of 127 notes available.
+
 bool soundFontHasSoftMediumLoudRecordings = false; // Change this later when sound font file has soft,med,loud recordings, and mapped offsets by 10
 ///
 /// The Dart midi library, which is basically a rewrite of a JavaScript library:
@@ -169,7 +172,9 @@ class Midi {
 
     // Go through the elements, seeing what each one is, and add it to the current track if right kind of element.
     // Of course this is not yet written to midi.
+    log.finer('Looping through elements in the list to add to midi track...');
     for (var element in elements) {
+      log.info('element: $element');
       if (element is Track) { // I do not trust the logic in this section.  Revisit later.  Does this mean that we'd better have a Track command at the start of a score?????????????  Bad idea/dependency
         if (trackEventsList.isNotEmpty) {
           var endOfTrackEvent = EndOfTrackEvent(); // this is new
@@ -328,11 +333,12 @@ class Midi {
     }
 
     // Determine the noteNumber for the note.  The noteNumber determines what soundFont sample to play
-    //note.setNoteNumber();
+    note.setNoteNumber();
 
     // // var snareLangNoteNameValue = (note.duration.firstNumber / note.duration.secondNumber).floor(); // is this right???????
     var snareLangNoteNameValue = note.duration.firstNumber / note.duration.secondNumber; // is this right???????  A double?
-    if (note.noteName == NoteName.rest) {
+    // if (note.noteName == NoteName.rest) {
+    if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.rest) {
       note.velocity = 0; // new, nec?
     }
 
@@ -354,6 +360,7 @@ class Midi {
     noteOnEvent.noteNumber = note.noteNumber; // this was determined above by all that code
     noteOnEvent.velocity = note.velocity;
     noteOnEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
+    log.info('hey, are we shifting or not?????  note has note off delta time shift value of ${note.noteOffDeltaTimeShift}');
     trackEventsList.add(noteOnEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOnEvent $noteOnEvent to trackEventsList');
 

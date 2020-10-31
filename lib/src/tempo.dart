@@ -24,6 +24,8 @@ class Tempo {
   Tempo() {
     //print('in Tempo() constructor');
     noteDuration = NoteDuration();
+    noteDuration.firstNumber = NoteDuration.DefaultFirstNumber; // new 10/30/20
+    noteDuration.secondNumber = NoteDuration.DefaultSecondNumber;
     bpm = Tempo.DefaultBpm;
   }
 

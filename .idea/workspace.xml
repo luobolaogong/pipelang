@@ -1,346 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pipelang.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/analysis_options.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/ppl.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pipelang.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/commandline.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/comment.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/marker.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/midi.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/note.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/score.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/tempo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/text.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/timesig.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/midis/AmberOnTheRocks.mid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/midis/BanjoBreakdown.mid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipe.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!all_2-4_marches.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!all_reels.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!all_strathspeys.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!grade_4b_2011_cowal.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!medley_2008_strasbourg.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!quartet_for_2013_cwc.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!quintet_2006_open_grade.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!quintet_2011_msr_open_grade.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!quintet_for_2015_cwc.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/!slow_air_and_jigs.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/2-4_marches.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/3-4_marches.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/4-4_marches_1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/4-4_marches_2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/4-4_marches_3.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/6-8_marches_1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/6-8_marches_2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/9-8_marches.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/christmas.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/complete_a_-_on_the_march.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/medley_selection_2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!collections/msr_set_1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!private/bouncing_off_the_walls.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!private/harmonic_interlude.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!private/ochil_hills.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!private/vapor_trail.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/!private/white_sands_of_gaza.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/0-0_marches/!daylesford_street_march.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/0-0_marches/british_caledonian_airways_pipe_band.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/0-0_marches/glasgow_week_in_hamburg.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/25th_kosb.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/91st_at_modder_river.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/allan_gilmore_tom_of_canna.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/anne_edgar.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/arthur_bignold_of_lochrosque.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/auchmountains_bonnie_glen.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/australian_ladies.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/brigadier_general_ronald_cheape_of_tiroran.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/brown_haired_maiden.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/clan_macrae_society.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/conundrum.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/corriechoillie.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/david_ross.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/dickie_macpherson_macdonald.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/donald_cameron.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/donald_macleans_farewell_to_oban.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/dr_e_g_mackinnon.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/greenwoodside.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/highland_wedding.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/hills_of_perth.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/hugh_kennedy_ma_bsc.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/jimmy_young.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/kantara_to_el_arish.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/leaving_glenurquhart.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/leaving_lunga.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/lord_alexander_kennedy.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/millbank_cottage.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/miss_delicia_chisholm.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/mrs_john_maccoll.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/pipe_major_john_stewart.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/raasay_house.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/teribus.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/2-4_marches/tommy_macdonald_of_barguillean.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/banks_of_allan_water.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/castle_dangerous.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/green_hills_of_tyrol.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/kilworth_hills.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/my_dream_valley_on_the_road_to_glendaruel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/3-4_marches/when_the_battle_is_over.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/!flett_from_flotta.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/badge_of_scotland.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/battle_of_waterloo.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/boys_brigade_centenary_march.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/braes_of_bonhill.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/cabar_feidh.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/lord_lovats_lament.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/march_down_the_aisle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/murdos_wedding.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/rowan_tree.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/scotland_the_brave.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/4-4_marches/silver_wings.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/!duncan_mcgillivray.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/atholl_highlanders.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/ballochyle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/bonawe_highlanders.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/cock_of_the_north.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/farewell_to_the_creeks.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/heights_of_mt_kenya.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/highland_brigade_at_tel_el_kebir.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/leaving_port_askaig.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/macneils_of_ugadale.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/mrs_lily_christie.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/pipe_major_donald_mclean_of_lewis.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/6-8_marches/rabs_wedding.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/9-8_marches/battle_of_the_somme.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/9-8_marches/captain_buster.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/9-8_marches/children_of_tarbert.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/9-8_marches/grinder.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/9-8_marches/heights_of_dargai.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/_template.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/!pipers_prayer.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/!towerhill_view.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/amazing_grace.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/archmore_loch.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/auld_lang_syne.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/banks_of_lochiel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/cairn_on_the_hill.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/dark_isle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/el_alamein.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/flower_of_scotland.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/going_home.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/h_l_macdonalds_favourite.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/highland_cathedral.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/la_baum.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/leaving_lismore.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/macneils_farewell_to_barra.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/mist_covered_mountains.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/mist_covered_sleeves_score.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/monday_blues.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/pipers_weird.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/skye_boat_song.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/airs/waters_of_kylesku.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/bagpipe_extra.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/bagpipe_new.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/bagpipe_removeEmptyStaffs.inc.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/cheatsheet.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/header_book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/header_default.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/!calum_beag.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/!duncan_johnstone.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/!pipe_major_george_allan.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/black_bear_hornpipe.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/blair_highlanders.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/calum_campbells_caprice.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/donald_macleod.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/helen_black_of_inveran.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/high_level.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/itchy_fingers.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/kitchen_piper.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/mad_hornpipe.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/no_bottle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/pumpkins_fancy.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/ronda_blair.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/sandys_new_chanter.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/train_journey_north.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/hornpipes/uphold_the_right.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/!glasgow_police_pipers.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/alan_macpherson_mosspark.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/alena_macaskill.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/angus_john_macneil_of_barra.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/archie_beag.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/banjo_breakdown.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/barbaras_jig.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/braes_of_mellinish.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/cork_hill.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/cutting_bracken.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/donald_maclean.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/donald_mckillop.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/donald_willie_and_his_dog.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/donella_beaton.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/eileen_macdonald.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/fiddlers_rally.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/fiddlers_rally_mpdset.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/foxhunter.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/hammer_on_the_anvil.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/hectors_jig.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/humours_of_ballyloughlin.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/james_mclellans_favourite.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/major_nickersons_fancy.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/murrays_fancy_jig.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/nora_crionna.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/paddys_leather_breeches.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/pm_mats_d_hermansson_of_gothenburg.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/rabs_dilemma.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/red_haired_rafter.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/rocking_the_baby.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/rolling_wave.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/sk_6628_to_helsinki.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/spice_of_life.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/jigs/thunderhead.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/an_exercise.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/ass_in_the_graveyard.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/banana_fingers.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/chalmers_fanfare.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/come_all_ye_faithful.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/er_du_jol_mon.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/faded_cabbage.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/go_to_berwick_johnny.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/good_king_wenceslas.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/heartbeat.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/jingle_bells.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/kungliga_sodermanalands_pansarregementes_marsch.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/lads_of_alnwick.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/neil_barrs_bulgarised_bouzouki.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/pennherez_keroulaz.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/pontevedra.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/slayer_of_kings.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/some_tango.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/somme_tango.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/sonnys_mazurka.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/ton_bale_67.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/tourdion.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/others/undan_ur_vagen.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/a_tribute_to_the_memory_of_the_late_pipe_major_william_ferguson.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/andrew_macneill_of_colonsay.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/bells_of_perth.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/cave_of_gold.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/chehotrao_hodro.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/clan_campbells_gathering.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/clan_campbells_gathering_2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/corrienessan.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/duncan_macrae_of_kintails_lament.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/glengarrys_lament.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/his_fathers_lament_for_donald_mackenzie.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/i_am_proud_to_play_a_pipe.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/lament_for_the_harp_tree.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/lament_for_the_viscount_of_dundee.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/mackays_banner.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/nae_door_pibroch.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/old_womans_lullaby.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/red_speckled_bull.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/piobaireachd/svens_unnamed_tune.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/readme.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/rebuild_all.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/!traditional.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/airlies_big_day.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/alick_c_macgregor.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/back_of_the_moon.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/bridge_of_perth_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/captain_lachlan_macphail_of_tiree.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/carnival_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/colonel_macleod.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/congress_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/don_mansons_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/duntroon.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/egg_and_the_fiddle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/famous_bridge.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/foot_it_neatly.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/gena_macleod.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/good_drying.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/gravel_walk.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/grey_bob.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/high_drive.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/james_mathewson.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/jennys_chickens.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/joes_rant.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/johnnie_macdonalds_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/just_for_seamus.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/little_cascade.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/macleods_reel.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/major_manson.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/me_clootch_is_awee.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/miss_proud.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/mrs_macpherson_of_inveran.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/sheepwife.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/sound_of_sleat.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/wee_eddie.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/reels/wretched_man.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/run.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/du_gamla_du_fria.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/gardebylaten.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/harp_schottis.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/journey_to_hammerdal.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/kryssning_over_sundet.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/scandinavian/polska_fran_narra_finnskoga.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/!bridge_of_perth_strathspey.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/!cameronian_rant.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/!catlodge.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/!susan_macleod.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/autumn_tour.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/because_he_was_a_bonny_lad.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/cabar_feidh.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/captain_colin_campbell.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/devil_in_the_kitchen.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/dora_macleod.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/dornie_ferry.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/ewe_with_the_crooked_horn.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/gomera.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/inverary_castle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/islay_ball.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/lady_madelina_sinclair.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/mac_an_irish.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/mcphedrans_strathspey.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/molly_connell.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/monymusk.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/seonaidhs_tune.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/shepherds_crook.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/smiths_a_gallant_fireman.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/tulloch_castle.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/tulloch_gorm.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/strathspeys/unknown.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/music1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/music2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/music3.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/music4.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/parts1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/parts2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/parts3.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/parts4.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/score1.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/score2.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/score3.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/mftrf/score4.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/murrays_fancy_4_pipe_corps_waltz.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/murrays_fancy_4_pipe_corps_waltz_concert_pitch.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/murrays_fancy_6_hornpipe.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/music_for_the_royal_fireworks-parts.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/suites/music_for_the_royal_fireworks-score.book.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bagpipemusic-master/tutor.ly" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/pipelang_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/AmberOnTheRocks.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/BanjoBreakdown.ppl" afterDir="false" />
+    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="Initial stab at scaffolding for PipeLang.">
+      <change afterPath="$PROJECT_DIR$/tunes/BanjoBreakdownABC.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ppl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ppl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/midi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/midi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/note.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/score.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/score.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/tempo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/tempo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/BanjoBreakdown.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/BanjoBreakdownBWW.ppl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,7 +63,7 @@
   </component>
   <component name="RunManager">
     <configuration name="ppl" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <option name="arguments" value="-i tunes/BanjoBreakdown.ppl -o midis/BanjoBreakdown.mid -l FINER" />
+      <option name="arguments" value="-i tunes/BanjoBreakdownABCTest.ppl -o midis/BanjoBreakdownABCTest.mid -l FINER" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
@@ -390,18 +77,45 @@
       <option name="presentableId" value="Default" />
       <updated>1603930200784</updated>
       <workItem from="1603930201955" duration="8352000" />
-      <workItem from="1603996005072" duration="17837000" />
+      <workItem from="1603996005072" duration="19939000" />
+      <workItem from="1604078690626" duration="17471000" />
+      <workItem from="1604107543228" duration="158000" />
+      <workItem from="1604107792590" duration="15694000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial stab at scaffolding for PipeLang.">
+      <created>1604044190451</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604044190451</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial stab at scaffolding for PipeLang." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial stab at scaffolding for PipeLang." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604043790600">
+    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604109532427">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604043790600" />
+    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604109532427" />
     <state x="1789" y="891" width="594" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603996872374">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
@@ -410,26 +124,34 @@
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state x="2130" y="910" width="525" height="408" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1603931637402" />
-    <state width="2863" height="561" key="GridCell.Tab.0.bottom" timestamp="1604043956090">
+    <state x="2447" y="1179" key="Github.ShareDialog" timestamp="1604049316516">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.bottom/0.0.3840.2120@0.0.3840.2120" timestamp="1604043956090" />
-    <state width="2863" height="561" key="GridCell.Tab.0.center" timestamp="1604043956090">
+    <state x="2447" y="1179" key="Github.ShareDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604049316516" />
+    <state width="2863" height="561" key="GridCell.Tab.0.bottom" timestamp="1604126755469">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.center/0.0.3840.2120@0.0.3840.2120" timestamp="1604043956090" />
-    <state width="2863" height="561" key="GridCell.Tab.0.left" timestamp="1604043956089">
+    <state width="2863" height="561" key="GridCell.Tab.0.bottom/0.0.3840.2120@0.0.3840.2120" timestamp="1604126755469" />
+    <state width="2863" height="561" key="GridCell.Tab.0.center" timestamp="1604126755468">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.left/0.0.3840.2120@0.0.3840.2120" timestamp="1604043956089" />
-    <state width="2863" height="561" key="GridCell.Tab.0.right" timestamp="1604043956090">
+    <state width="2863" height="561" key="GridCell.Tab.0.center/0.0.3840.2120@0.0.3840.2120" timestamp="1604126755468" />
+    <state width="2863" height="561" key="GridCell.Tab.0.left" timestamp="1604126755467">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.right/0.0.3840.2120@0.0.3840.2120" timestamp="1604043956090" />
-    <state x="2219" y="833" width="761" height="560" key="find.popup" timestamp="1604043899141">
+    <state width="2863" height="561" key="GridCell.Tab.0.left/0.0.3840.2120@0.0.3840.2120" timestamp="1604126755467" />
+    <state width="2863" height="561" key="GridCell.Tab.0.right" timestamp="1604126755469">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state x="2219" y="833" width="761" height="560" key="find.popup/0.0.3840.2120@0.0.3840.2120" timestamp="1604043899141" />
+    <state width="2863" height="561" key="GridCell.Tab.0.right/0.0.3840.2120@0.0.3840.2120" timestamp="1604126755469" />
+    <state x="1624" y="930" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1604045055020">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1624" y="930" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.3840.2120@0.0.3840.2120" timestamp="1604045055020" />
+    <state x="2219" y="833" width="761" height="560" key="find.popup" timestamp="1604126870542">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="2219" y="833" width="761" height="560" key="find.popup/0.0.3840.2120@0.0.3840.2120" timestamp="1604126870542" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -464,69 +186,29 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1106</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
           <line>55</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>36</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1109</line>
+          <line>439</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>259</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>272</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>269</line>
+          <line>273</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>264</line>
+          <line>268</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>310</line>
+          <line>314</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1013</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1118</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1119</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1116</line>
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/bin/ppl.dart</url>
@@ -539,24 +221,109 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
-          <line>37</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>592</line>
+          <line>402</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1011</line>
-          <option name="timeStamp" value="33" />
+          <line>400</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>1124</line>
-          <option name="timeStamp" value="34" />
+          <line>230</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>38</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>44</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>79</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>94</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>115</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
+          <line>461</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>82</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>83</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>93</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>95</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>96</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>100</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>106</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/tempo.dart</url>
+          <line>25</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>211</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>212</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>227</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>228</line>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
