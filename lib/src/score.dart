@@ -100,9 +100,9 @@ class Score {
         // '>.' to mean same note as before, but accented this time.
         //
         // if (note.noteName == NoteName.previousNoteDurationOrType) { // I think this means "." dot.  Why not just call it "dot"?
-        if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.dot) { // I think this means "." dot.  Why not just call it "dot"?
+        if (note.pipeNoteName == PipeNoteName.dot) { // I think this means "." dot.  Why not just call it "dot"?
           note.duration = previousNote.duration;
-          note.embellishmentAndNoteName = previousNote.embellishmentAndNoteName;
+          note.pipeNoteName = previousNote.pipeNoteName;
           note.dynamic = previousNote.dynamic;
           log.finest('In Score.applyShorthands(), and since note was just a dot, just set note to have previousNote props, so note is now ${note}.');
         }
@@ -110,7 +110,7 @@ class Score {
 //        note.duration ??= previousNote.duration;
           note.duration.firstNumber ??= previousNote.duration.firstNumber; // new
           note.duration.secondNumber ??= previousNote.duration.secondNumber;
-          note.embellishmentAndNoteName ??= previousNote.embellishmentAndNoteName;
+          note.pipeNoteName ??= previousNote.pipeNoteName;
           note.dynamic ??= previousNote.dynamic;
           log.finest('In Score.applyShorthands(), and note was not just a dot, but wanted to make sure did the shorthand fill in, so now note is ${note}.');
         }
@@ -119,7 +119,7 @@ class Score {
         previousNote.velocity = note.velocity; // unnec?
         //previousNote.articulation = note.articulation;
         previousNote.duration = note.duration;
-        previousNote.embellishmentAndNoteName = note.embellishmentAndNoteName;
+        previousNote.pipeNoteName = note.pipeNoteName;
 
         log.finest('bottom of loop Score.applyShorthands(), just updated previousNote to point to be this ${previousNote}.');
       }
@@ -272,15 +272,15 @@ class Score {
       }
       var note = element as Note;
       // if (element.noteType == NoteType.rest) {
-      if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.r) {
+      if (note.pipeNoteName == PipeNoteName.r) {
         continue;
       }
 
       // This section is questionable.  Should flams be accented normally?
       // I don't think so.  This section maybe could be used to adjust for
       // bad sound font recordings, but only as a hack.  Fix the recordings.
-      switch (note.embellishmentAndNoteName) {
-        case EmbellishmentAndNoteName.r: // right????????????
+      switch (note.pipeNoteName) {
+        case PipeNoteName.r: // right????????????
           note.velocity = 0; // this is just a test/example
           break;
         default:
@@ -377,40 +377,40 @@ class Score {
         var note = element as Note; // unnec cast, it says, but I want to
         // Bad logic, I'm sure:
         // Hey, the following is just here for a placeholder and a test.  I've not determined which embellishments need what kind of sliding, if any.
-        switch (note.embellishmentAndNoteName) {
-          case EmbellishmentAndNoteName.dA:
-          case EmbellishmentAndNoteName.dc:
-          case EmbellishmentAndNoteName.ea:
-          case EmbellishmentAndNoteName.Ga:
-          case EmbellishmentAndNoteName.gA:
-          case EmbellishmentAndNoteName.ga:
-          case EmbellishmentAndNoteName.gb:
-          case EmbellishmentAndNoteName.gc:
-          case EmbellishmentAndNoteName.gd:
-          case EmbellishmentAndNoteName.ge:
-          case EmbellishmentAndNoteName.gf:
+        switch (note.pipeNoteName) {
+          case PipeNoteName.dA:
+          case PipeNoteName.dc:
+          case PipeNoteName.ea:
+          case PipeNoteName.Ga:
+          case PipeNoteName.gA:
+          case PipeNoteName.ga:
+          case PipeNoteName.gb:
+          case PipeNoteName.gc:
+          case PipeNoteName.gd:
+          case PipeNoteName.ge:
+          case PipeNoteName.gf:
             graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case EmbellishmentAndNoteName.gbdb:
-          case EmbellishmentAndNoteName.gcdc:
-          case EmbellishmentAndNoteName.gefe:
-          case EmbellishmentAndNoteName.GAGA:
-          case EmbellishmentAndNoteName.gfgf:
+          case PipeNoteName.gbdb:
+          case PipeNoteName.gcdc:
+          case PipeNoteName.gefe:
+          case PipeNoteName.GAGA:
+          case PipeNoteName.gfgf:
             graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round();
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case EmbellishmentAndNoteName.aga:
+          case PipeNoteName.aga:
             graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case EmbellishmentAndNoteName.GdGcd:
+          case PipeNoteName.GdGcd:
             graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
             note.noteOffDeltaTimeShift += graceNotesDuration;
@@ -458,71 +458,71 @@ Parser scoreParser = ((commentParser | markerParser | textParser | trackParser |
   return score;
 });
 
-// Maybe change track to "track"
-/// I think the idea here is to be able to insert the keywords '/track pipes' or
-/// '/track tenor', ... and that track continues on as the only track being written
-/// to, until either the end of the score, or there's another /track designation.
-/// So, it's 'track <name>'
-enum TrackId {
-  chanter,
-  pipes,
-  met
-}
-
-class Track {
-  // Why not initialize?
-  TrackId id; // the default should be pipes.  How do you do that?
-  // Maybe this will be expanded to include more than just TrackId, otherwise just an enum
-  // and not a class will do, right?  I mean, why doesn't Dynamic do it this way?
-
-  String toString() {
-    return 'Track: id: $id';
-  }
-}
-
-///
-/// trackParser
-///
-final trackId = (letter() & word().star()).flatten();
-Parser trackParser = ((string('/track')|(string('/staff'))).trim() & trackId).trim().map((value) {
-  log.finest('In trackParser and value is -->$value<--');
-  var track = Track();
-  track.id = trackStringToId(value[1]);
-  log.finest('Leaving trackParser returning value $track');
-  return track;
-});
-
-TrackId trackStringToId(String trackString) {
-  TrackId trackId;
-  switch (trackString) {
-    case 'pipes':
-      trackId = TrackId.pipes;
-      break;
-    case 'met':
-    case 'metronome':
-      trackId = TrackId.met;
-      break;
-    case 'chanter':
-      trackId = TrackId.chanter;
-      break;
-    default:
-      log.severe('Bad track identifier: $trackString');
-      trackId = TrackId.chanter;
-      break;
-  }
-  return trackId;
-}
-
-String trackIdToString(TrackId id) {
-  switch (id) {
-    case TrackId.met:
-      return 'met';
-    case TrackId.pipes:
-      return 'pipes';
-    case TrackId.chanter:
-      return 'chanter';
-    default:
-      log.severe('Bad track id: $id');
-      return null;
-  }
-}
+// // Maybe change track to "track"
+// /// I think the idea here is to be able to insert the keywords '/track pipes' or
+// /// '/track tenor', ... and that track continues on as the only track being written
+// /// to, until either the end of the score, or there's another /track designation.
+// /// So, it's 'track <name>'
+// enum TrackId {
+//   chanter,
+//   pipes,
+//   met
+// }
+//
+// class Track {
+//   // Why not initialize?
+//   TrackId id; // the default should be pipes.  How do you do that?
+//   // Maybe this will be expanded to include more than just TrackId, otherwise just an enum
+//   // and not a class will do, right?  I mean, why doesn't Dynamic do it this way?
+//
+//   String toString() {
+//     return 'Track: id: $id';
+//   }
+// }
+//
+// ///
+// /// trackParser
+// ///
+// final trackId = (letter() & word().star()).flatten();
+// Parser trackParser = ((string('/track')|(string('/staff'))).trim() & trackId).trim().map((value) {
+//   log.finest('In trackParser and value is -->$value<--');
+//   var track = Track();
+//   track.id = trackStringToId(value[1]);
+//   log.finest('Leaving trackParser returning value $track');
+//   return track;
+// });
+//
+// TrackId trackStringToId(String trackString) {
+//   TrackId trackId;
+//   switch (trackString) {
+//     case 'pipes':
+//       trackId = TrackId.pipes;
+//       break;
+//     case 'met':
+//     case 'metronome':
+//       trackId = TrackId.met;
+//       break;
+//     case 'chanter':
+//       trackId = TrackId.chanter;
+//       break;
+//     default:
+//       log.severe('Bad track identifier: $trackString');
+//       trackId = TrackId.chanter;
+//       break;
+//   }
+//   return trackId;
+// }
+//
+// String trackIdToString(TrackId id) {
+//   switch (id) {
+//     case TrackId.met:
+//       return 'met';
+//     case TrackId.pipes:
+//       return 'pipes';
+//     case TrackId.chanter:
+//       return 'chanter';
+//     default:
+//       log.severe('Bad track id: $id');
+//       return null;
+//   }
+// }

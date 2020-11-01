@@ -254,7 +254,7 @@ class Midi {
     // // var pipesLangNoteNameValue = (note.duration.firstNumber / note.duration.secondNumber).floor(); // is this right???????
     var pipesLangNoteNameValue = note.duration.firstNumber / note.duration.secondNumber; // is this right???????  A double?
     // if (note.noteName == NoteName.rest) {
-    if (note.embellishmentAndNoteName == EmbellishmentAndNoteName.r) {
+    if (note.pipeNoteName == PipeNoteName.r) {
       note.velocity = 0; // new, nec?
     }
 
@@ -301,5 +301,11 @@ class Midi {
         'number: ${note.noteNumber}, cumulative roundoff ticks: $cumulativeRoundoffTicks');
     return diffTicksAsDouble; // kinda strange
   }
+}
+
+
+int beatFractionToTicks(num beatFraction) {
+  var durationInTicks = (Midi.ticksPerBeat * beatFraction).round();
+  return durationInTicks;
 }
 

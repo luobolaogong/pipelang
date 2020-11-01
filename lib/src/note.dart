@@ -1,8 +1,6 @@
-//import 'dart:html';
-
 import 'package:petitparser/petitparser.dart';
-
 import '../pipelang.dart';
+
 /// Change the way I named notes to follow this:
 /// https://musescore.org/sites/musescore.org/files/bww_doc.pdf
 /// And take a look at this:
@@ -83,6 +81,45 @@ import '../pipelang.dart';
 ///
 
 
+class Note {
+  // NoteArticulation articulation;
+  NoteDuration duration; // prob should have constructor construct one of these.  Of course.  also "PipeLangNoteNameValue".  can be used to calculate ticks, right?  noteTicks = (4 * ticksPerBeat) / PipeLangNoteNameValue
+  //NoteName noteName; // this is kinda wasteful, because the embellishment includes the note name letter, but we may want a rest or a "dot"
+  //Embellishment embellishment;
+  PipeNoteName pipeNoteName;
+  int velocity;
+  Dynamic dynamic;
+  int noteNumber;
+  int noteOffDeltaTimeShift;
+
+  //int midiNoteNumber; // experiment 9/20/2020  This would be the midi soundfont number, related to NoteName
+
+  Note() {
+    //print('in Note() constructor');
+    duration = NoteDuration();
+    //embellishment = null;
+    //noteName = NoteName.rest;
+    pipeNoteName = PipeNoteName.r; // ???
+    // velocity = dynamicToVelocity(Dynamic.dd); // If not set, gets value of null
+    //velocity = 0; // no sound
+    //noteNumber = 0; // gets null if not set
+    noteOffDeltaTimeShift = 0;
+  }
+
+  String toString() {
+    // return 'Note: Articulation: $articulation, Duration: $duration, NoteName: $noteName, Dynamic: $dynamic';
+    return 'Note: Duration: $duration, PipeNoteName: $pipeNoteName dynamic: $dynamic, velocity: $velocity, noteNumber: $noteNumber, shift: $noteOffDeltaTimeShift';
+  }
+
+
+  // this is called on an instance of Note, as in note.setNoteNumber();
+  // In Dart, don't have to use "this."
+  void setNoteNumber() {
+    noteNumber = pipeNoteName.index; // very simplistic.  Might be okay.  Of course can never separate out the embellishments when play a tune
+    log.finer('Just set the noteNumber to be $noteNumber');
+  }
+}
+
 class NoteDuration { // change this to Duration if possible, which conflicts, I think with something
   static final DefaultFirstNumber = 4;
   static final DefaultSecondNumber = 1;
@@ -103,11 +140,11 @@ class NoteDuration { // change this to Duration if possible, which conflicts, I 
   }
 }
 
-int beatFractionToTicks(num beatFraction) {
-  var durationInTicks = (Midi.ticksPerBeat * beatFraction).round();
-  return durationInTicks;
-}
-enum EmbellishmentAndNoteName {
+// int beatFractionToTicks(num beatFraction) {
+//   var durationInTicks = (Midi.ticksPerBeat * beatFraction).round();
+//   return durationInTicks;
+// }
+enum PipeNoteName {
   r,
   G, A, b, c, d, e, f, g, a,
   // single gracenotes
@@ -136,74 +173,36 @@ enum EmbellishmentAndNoteName {
   M
 }
 
-class Note {
-  // NoteArticulation articulation;
-  NoteDuration duration; // prob should have constructor construct one of these.  Of course.  also "PipeLangNoteNameValue".  can be used to calculate ticks, right?  noteTicks = (4 * ticksPerBeat) / PipeLangNoteNameValue
-  //NoteName noteName; // this is kinda wasteful, because the embellishment includes the note name letter, but we may want a rest or a "dot"
-  //Embellishment embellishment;
-  EmbellishmentAndNoteName embellishmentAndNoteName;
-  int velocity;
-  Dynamic dynamic;
-  int noteNumber;
-  int noteOffDeltaTimeShift;
 
-  //int midiNoteNumber; // experiment 9/20/2020  This would be the midi soundfont number, related to NoteName
-
-  Note() {
-    //print('in Note() constructor');
-    duration = NoteDuration();
-    //embellishment = null;
-    //noteName = NoteName.rest;
-    embellishmentAndNoteName = EmbellishmentAndNoteName.r; // ???
-    // velocity = dynamicToVelocity(Dynamic.dd); // If not set, gets value of null
-    //velocity = 0; // no sound
-    //noteNumber = 0; // gets null if not set
-    noteOffDeltaTimeShift = 0;
-  }
-
-  String toString() {
-    // return 'Note: Articulation: $articulation, Duration: $duration, NoteName: $noteName, Dynamic: $dynamic';
-    return 'Note: Duration: $duration, EmbellishmentAndNoteName: $embellishmentAndNoteName dynamic: $dynamic, velocity: $velocity, noteNumber: $noteNumber, shift: $noteOffDeltaTimeShift';
-  }
-
-
-  // this is called on an instance of Note, as in note.setNoteNumber();
-  // In Dart, don't have to use "this."
-  void setNoteNumber() {
-    noteNumber = embellishmentAndNoteName.index; // very simplistic.  Might be okay.  Of course can never separate out the embellishments when play a tune
-    log.finer('Just set the noteNumber to be $noteNumber');
-  }
-}
-
-///
-/// WholeNumberParser
-///
-Parser wholeNumberParser = digit().plus().flatten().trim().map((value) { // not sure need sideeffect true
-  log.finest('In WholeNumberparser');
-  final theWholeNumber = int.parse(value);
-  log.finest('Leaving WholeNumberparser returning theWholeNumber $theWholeNumber');
-  return theWholeNumber;
-});
-
-///
-/// Duration Parser
-///
-
-Parser durationParser = (wholeNumberParser & (char(':').trim() & wholeNumberParser).optional()).map((value) { // trim?
-  log.finer('In DurationParser');
-  var duration = NoteDuration();
-  duration.firstNumber = value[0];
-  if (value[1] != null) { // prob unnec
-    duration.secondNumber = value[1][1];
-  }
-  else {
-    duration.secondNumber = 1; // wild guess that this fixes things
-  }
-  log.finer('Leaving DurationParser returning duration $duration');
-  return duration;
-});
-
-Parser embellishmentAndNoteNameParser = (
+// ///
+// /// WholeNumberParser
+// ///
+// Parser wholeNumberParser = digit().plus().flatten().trim().map((value) { // not sure need sideeffect true
+//   log.finest('In WholeNumberparser');
+//   final theWholeNumber = int.parse(value);
+//   log.finest('Leaving WholeNumberparser returning theWholeNumber $theWholeNumber');
+//   return theWholeNumber;
+// });
+//
+// ///
+// /// Duration Parser
+// ///
+//
+// Parser durationParser = (wholeNumberParser & (char(':').trim() & wholeNumberParser).optional()).map((value) { // trim?
+//   log.finer('In DurationParser');
+//   var duration = NoteDuration();
+//   duration.firstNumber = value[0];
+//   if (value[1] != null) { // prob unnec
+//     duration.secondNumber = value[1][1];
+//   }
+//   else {
+//     duration.secondNumber = 1; // wild guess that this fixes things
+//   }
+//   log.finer('Leaving DurationParser returning duration $duration');
+//   return duration;
+// });
+// rename this thing to something like pipeNoteNameParser and the file name to pipenote.dart maybe
+Parser pipeNoteNameParser = (
     string('GdGcd') |
     string('GAGA') |
     string('gefe') |
@@ -229,105 +228,105 @@ Parser embellishmentAndNoteNameParser = (
     string('.') |
     string('r')
 ).trim().map((value) {
-  log.finer('entering embellishmentAndNoteNameParser, with string value $value');
-  EmbellishmentAndNoteName embellishmentAndNoteName;
+  log.finer('entering pipeNoteNameParser, with string value $value');
+  PipeNoteName pipeNoteName;
   switch (value) {
     case 'GdGcd':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.GdGcd;
+      pipeNoteName = PipeNoteName.GdGcd;
       break;
     case 'GAGA':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.GAGA;
+      pipeNoteName = PipeNoteName.GAGA;
       break;
     case 'gefe':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gefe;
+      pipeNoteName = PipeNoteName.gefe;
       break;
     case 'gcdc':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gcdc;
+      pipeNoteName = PipeNoteName.gcdc;
       break;
     case 'aga':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.aga;
+      pipeNoteName = PipeNoteName.aga;
       break;
     case 'gfg':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gfg;
+      pipeNoteName = PipeNoteName.gfg;
       break;
     case 'gbdb':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gbdb;
+      pipeNoteName = PipeNoteName.gbdb;
       break;
     case 'gfgf':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gfgf;
+      pipeNoteName = PipeNoteName.gfgf;
       break;
     case 'Ga':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.Ga;
+      pipeNoteName = PipeNoteName.Ga;
       break;
     case 'gA':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gA;
+      pipeNoteName = PipeNoteName.gA;
       break;
     case 'ge':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.ge;
+      pipeNoteName = PipeNoteName.ge;
       break;
     case 'gc':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gc;
+      pipeNoteName = PipeNoteName.gc;
       break;
     case 'gf':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gf;
+      pipeNoteName = PipeNoteName.gf;
       break;
     case 'gb':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gb;
+      pipeNoteName = PipeNoteName.gb;
       break;
     case 'dc':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.dc;
+      pipeNoteName = PipeNoteName.dc;
       break;
     case 'ea':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.ea;
+      pipeNoteName = PipeNoteName.ea;
       break;
     case 'dA':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.dA;
+      pipeNoteName = PipeNoteName.dA;
       break;
     case 'gd':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.gd;
+      pipeNoteName = PipeNoteName.gd;
       break;
     case 'ga':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.ga;
+      pipeNoteName = PipeNoteName.ga;
       break;
     case 'G':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.G;
+      pipeNoteName = PipeNoteName.G;
       break;
     case 'A':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.A;
+      pipeNoteName = PipeNoteName.A;
       break;
     case 'b':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.b;
+      pipeNoteName = PipeNoteName.b;
       break;
     case 'c':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.c;
+      pipeNoteName = PipeNoteName.c;
       break;
     case 'd':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.d;
+      pipeNoteName = PipeNoteName.d;
       break;
     case 'e':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.e;
+      pipeNoteName = PipeNoteName.e;
       break;
     case 'f':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.f;
+      pipeNoteName = PipeNoteName.f;
       break;
     case 'g':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.g;
+      pipeNoteName = PipeNoteName.g;
       break;
     case 'a':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.a;
+      pipeNoteName = PipeNoteName.a;
       break;
     case '.':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.dot;
+      pipeNoteName = PipeNoteName.dot;
       break;
     case 'r':
-      embellishmentAndNoteName = EmbellishmentAndNoteName.r;
+      pipeNoteName = PipeNoteName.r;
       break;
     default:
       log.severe('What happened what is this embellishmentandnotename?');
       break;
   }
-  log.info('embellishmentAndNoteNameParser returning embellishmentAndNoteName: $embellishmentAndNoteName');
-  return embellishmentAndNoteName;
+  log.info('pipeNoteNameParser returning pipeNoteName: $pipeNoteName');
+  return pipeNoteName;
 });
 
 
@@ -354,14 +353,14 @@ Parser embellishmentAndNoteNameParser = (
 ///
 ///
 // Parser noteParser = (
-//     (durationParser & embellishmentAndNoteNameParser & noteNameParser) |    // all three
-//     (embellishmentAndNoteNameParser & noteNameParser) |                     // use previous duration
+//     (durationParser & pipeNoteNameParser & noteNameParser) |    // all three
+//     (pipeNoteNameParser & noteNameParser) |                     // use previous duration
 //     noteNameParser |                     // use previous duration but not embellishment
 //     durationParser   // use previous embellishment and note
-Parser noteParser = (
-    (durationParser & embellishmentAndNoteNameParser) |    // Case "A B"
+Parser noteParser = ( // change to pipeNoteParser ???
+    (durationParser & pipeNoteNameParser) |    // Case "A B"
     durationParser |                                       // Case A, use previous embellishment and note
-    embellishmentAndNoteNameParser                        // Case B, use previous duration
+    pipeNoteNameParser                        // Case B, use previous duration
 ).trim().map((valuesOrValue) { // trim?
   log.finer('\t\tIn NoteParser and valuesOrValue is $valuesOrValue'); // huh?
   var note = Note();
@@ -376,8 +375,8 @@ Parser noteParser = (
         note.duration.firstNumber = value.firstNumber;
         note.duration.secondNumber = value.secondNumber; // check;
       }
-      if (value is EmbellishmentAndNoteName) {
-        note.embellishmentAndNoteName = value;
+      if (value is PipeNoteName) {
+        note.pipeNoteName = value;
       }
     }
   }
@@ -385,8 +384,8 @@ Parser noteParser = (
     note.duration.firstNumber = valuesOrValue.firstNumber;
     note.duration.secondNumber = valuesOrValue.secondNumber; // check;
   }
-  else if (valuesOrValue is EmbellishmentAndNoteName) { // case "B", leaving duration null
-    note.embellishmentAndNoteName = valuesOrValue;
+  else if (valuesOrValue is PipeNoteName) { // case "B", leaving duration null
+    note.pipeNoteName = valuesOrValue;
   }
   else {
     log.severe('got something in note parser that was not a duration or embellishmentNoteName thing: $valuesOrValue');

@@ -98,10 +98,8 @@ Parser TempoRampParser = (
 ///
 /// tempoParser
 ///
-Parser tempoParser = ( // what about whitespace?
+Parser tempoParser = (
     string('/tempo').trim() & (durationParser.trim() & char('=').trim()).optional().trim() & wholeNumberParser
-//Parser tempoParser = ( // what about whitespace?
-//    string('\\tempo').trim() & durationParser.trim() & char('=').trim() & wholeNumberParser
 ).trim().map((value) {
   log.finest('In TempoParser and value is -->$value<--');
   var tempo = Tempo();
