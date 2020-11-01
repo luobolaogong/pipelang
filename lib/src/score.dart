@@ -439,8 +439,8 @@ class Score {
 
 ///
 /// ScoreParser
-///
-Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | noteParser).plus()).trim().end().map((values) {    // trim()?
+///Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | noteParser).plus()).trim().end().map((values) {    // trim()?
+Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | dynamicParser | dynamicRampParser | noteParser).plus()).trim().end().map((values) {    // trim()?
   log.finest('In Scoreparser, will now add values from parse result list to score.elements');
   var score = Score();
   if (values is List) {

@@ -19,16 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="Big changes to what a note is. Pretty simplistic right now, just two parts.  Also switched to ABC form&#10;from BWWor whateverit is.">
-      <change afterPath="$PROJECT_DIR$/exercises/rf1.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/dynamic.dart" afterDir="false" />
+    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="Added dynamics back in.">
+      <change afterPath="$PROJECT_DIR$/exercises/rf5.ppl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ppl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ppl.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pipelang.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pipelang.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commandline.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commandline.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/midi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/midi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercises/rf1.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/exercises/rf1.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/dynamic.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/dynamic.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/note.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/score.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/score.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/midis/AmberOnTheRocks.mid" beforeDir="false" afterPath="$PROJECT_DIR$/midis/AmberOnTheRocks.mid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/AmberOnTheRocks.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/AmberOnTheRocks.ppl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,7 @@
   </component>
   <component name="RunManager">
     <configuration name="ppl" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <option name="arguments" value="-i exercises/rf1.ppl -o midis/rf1.mid -l ALL -d fff" />
+      <option name="arguments" value="-i exercises/rf5.ppl -o midis/rf5.mid -l FINE -d f" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
@@ -82,7 +81,7 @@
       <workItem from="1604078690626" duration="17471000" />
       <workItem from="1604107543228" duration="158000" />
       <workItem from="1604107792590" duration="15759000" />
-      <workItem from="1604169567174" duration="8796000" />
+      <workItem from="1604169567174" duration="18673000" />
     </task>
     <task id="LOCAL-00001" summary="Initial stab at scaffolding for PipeLang.">
       <created>1604044190451</created>
@@ -98,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604126931459</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added dynamics back in.">
+      <created>1604182869948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604182869948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,13 +125,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial stab at scaffolding for PipeLang." />
     <MESSAGE value="Big changes to what a note is. Pretty simplistic right now, just two parts.  Also switched to ABC form&#10;from BWWor whateverit is." />
-    <option name="LAST_COMMIT_MESSAGE" value="Big changes to what a note is. Pretty simplistic right now, just two parts.  Also switched to ABC form&#10;from BWWor whateverit is." />
+    <MESSAGE value="Added dynamics back in." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dynamics back in." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604182807492">
+    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604213639675">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604182807492" />
+    <state x="1856" y="763" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604213639675" />
     <state x="1789" y="891" width="594" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603996872374">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
@@ -138,30 +145,30 @@
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state x="2447" y="1179" key="Github.ShareDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1604049316516" />
-    <state width="2863" height="561" key="GridCell.Tab.0.bottom" timestamp="1604182787379">
+    <state width="2863" height="561" key="GridCell.Tab.0.bottom" timestamp="1604214500172">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.bottom/0.0.3840.2120@0.0.3840.2120" timestamp="1604182787379" />
-    <state width="2863" height="561" key="GridCell.Tab.0.center" timestamp="1604182787378">
+    <state width="2863" height="561" key="GridCell.Tab.0.bottom/0.0.3840.2120@0.0.3840.2120" timestamp="1604214500172" />
+    <state width="2863" height="561" key="GridCell.Tab.0.center" timestamp="1604214500172">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.center/0.0.3840.2120@0.0.3840.2120" timestamp="1604182787378" />
-    <state width="2863" height="561" key="GridCell.Tab.0.left" timestamp="1604182787378">
+    <state width="2863" height="561" key="GridCell.Tab.0.center/0.0.3840.2120@0.0.3840.2120" timestamp="1604214500172" />
+    <state width="2863" height="561" key="GridCell.Tab.0.left" timestamp="1604214500172">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.left/0.0.3840.2120@0.0.3840.2120" timestamp="1604182787378" />
-    <state width="2863" height="561" key="GridCell.Tab.0.right" timestamp="1604182787378">
+    <state width="2863" height="561" key="GridCell.Tab.0.left/0.0.3840.2120@0.0.3840.2120" timestamp="1604214500172" />
+    <state width="2863" height="561" key="GridCell.Tab.0.right" timestamp="1604214500172">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state width="2863" height="561" key="GridCell.Tab.0.right/0.0.3840.2120@0.0.3840.2120" timestamp="1604182787378" />
+    <state width="2863" height="561" key="GridCell.Tab.0.right/0.0.3840.2120@0.0.3840.2120" timestamp="1604214500172" />
     <state x="1624" y="930" width="800" height="522" key="Vcs.Push.Dialog.v2" timestamp="1604045055020">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state x="1624" y="930" width="800" height="522" key="Vcs.Push.Dialog.v2/0.0.3840.2120@0.0.3840.2120" timestamp="1604045055020" />
-    <state x="2219" y="833" width="761" height="560" key="find.popup" timestamp="1604182531878">
+    <state x="2219" y="833" width="761" height="560" key="find.popup" timestamp="1604213739359">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
-    <state x="2219" y="833" width="761" height="560" key="find.popup/0.0.3840.2120@0.0.3840.2120" timestamp="1604182531878" />
+    <state x="2219" y="833" width="761" height="560" key="find.popup/0.0.3840.2120@0.0.3840.2120" timestamp="1604213739359" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -304,6 +311,11 @@
           <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
           <line>297</line>
           <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/score.dart</url>
+          <line>281</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -65,9 +65,9 @@ int dynamicToVelocity(Dynamic dynamic) {
     log.severe('stop here, do we want to use a Dynamic.dd for a value to convert?  No, substitute first.');
     //dynamic = Dynamic.mf; // wrong, should be the default value
   }
-  print('Parabolic2');
+  //print('Parabolic2');
   num newVelocity = (10 * 0.19 * (dynamic.index + 1) * (dynamic.index + 1)).round();
-  print('\t\t\t\tHey, dynamic $dynamic, with index ${dynamic.index} gets a velocity of ${newVelocity}');
+  //print('\t\t\t\tHey, dynamic $dynamic, with index ${dynamic.index} gets a velocity of ${newVelocity}');
   return newVelocity;
 
   // Parabolic1:

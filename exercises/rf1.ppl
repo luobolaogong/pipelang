@@ -3,9 +3,10 @@
 /tempo 84
 
 /track chanter
+
 /marker Exercise #1
-8r 8G
-8a G a G
+8G
+8A G A G
 8b G b G
 8c G c G
 8d G d G
@@ -13,12 +14,140 @@
 8f G f G
 
 /marker line2
-8G g G
-8a G a G
-8b a b a
-8c a c a
-8d a d a
-8e a e a
+8g G g G
+8a G a A
+8b A b A
+8c A c A
+8d A d A
+8e A e A
 
 /marker line3
-8f a f a
+8f A f A
+g A g A
+a A a b
+c b c b
+d b d b
+e b e b
+
+f b f b g b g b a b a b d c d c e c e c f c f c
+
+g c g c a c a d e d e d f d f d g d g d a d a d
+
+f e f e g e g e a e a f g f g f a f a g a g a
+
+/tempo 104
+
+/marker Exercise #1
+8G
+8A G A G
+8b G b G
+8c G c G
+8d G d G
+8e G e G
+8f G f G
+
+/marker line2
+8g G g G
+8a G a A
+8b A b A
+8c A c A
+8d A d A
+8e A e A
+
+/marker line3
+8f A f A
+g A g A
+a A a b
+c b c b
+d b d b
+e b e b
+
+f b f b g b g b a b a b d c d c e c e c f c f c
+
+g c g c a c a d e d e d f d f d g d g d a d a d
+
+f e f e g e g e a e a f g f g f a f a g a g a
+
+/tempo 124
+
+/marker Exercise #1
+8G
+8A G A G
+8b G b G
+8c G c G
+8d G d G
+8e G e G
+8f G f G
+
+/marker line2
+8g G g G
+8a G a A
+8b A b A
+8c A c A
+8d A d A
+8e A e A
+
+/marker line3
+8f A f A
+g A g A
+a A a b
+c b c b
+d b d b
+e b e b
+
+f b f b g b g b a b a b d c d c e c e c f c f c
+
+g c g c a c a d e d e d f d f d g d g d a d a d
+
+f e f e g e g e a e a f g f g f a f a g a g a
+
+/tempo 144
+
+/marker Exercise #1
+8G
+8A G A G
+8b G b G
+8c G c G
+8d G d G
+8e G e G
+8f G f G
+
+/marker line2
+8g G g G
+8a G a A
+8b A b A
+8c A c A
+8d A d A
+8e A e A
+
+/marker line3
+8f A f A
+g A g A
+a A a b
+c b c b
+d b d b
+e b e b
+
+f b f b g b g b a b a b d c d c e c e c f c f c
+
+g c g c a c a d e d e d f d f d g d g d a d a d
+
+f e f e g e g e a e a f g f g f a f a g a g a
+
+/tempo 164
+
+8G
+8A G A G 8b G b G 8c G c G 8d G d G 8e G e G 8f G f G
+
+8g G g G 8a G a A 8b A b A 8c A c A 8d A d A 8e A e A
+
+8f A f A g A g A a A a b c b c bd b d b e b e b
+
+f b f b g b g b a b a b d c d c e c e c f c f c
+
+g c g c a c a d e d e d f d f d g d g d a d a d
+
+f e f e g e g e a e a f g f g f a f a g a g 4a
+
+//track met
+//4M . . .

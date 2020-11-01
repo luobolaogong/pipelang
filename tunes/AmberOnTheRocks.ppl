@@ -1,3 +1,39 @@
 // Amber on the Rocks
 
-16:3sga 16d
+/time 6/8
+/tempo 8:3=84
+
+/marker pt 1
+8b b b d e f    4a 8f d a f    e c c e e e    A f A e d c
+8b b b d e f    4a 8f d a f    e c c a A e    c d c b b b
+
+/marker rpt pt1
+8b b b d e f    4a 8f d a f    e c c e e e    A f A e d c
+8b b b d e f    4a 8f d a f    e c c a A e    c d c b b b
+
+/marker pt2
+8f b b b b b    f b a f e d    e c c e e e    A f A e d e
+f b b b b b    f b a d e f    e c c a A e    c d c b b b
+
+/marker rpt pt2
+8f b b b b b    f b a f e d    e c c e e e    A f A e d e
+/marker rpt pt1 2nd
+8b b b d e f    4a 8f d a f    e c c a A e    c d c b b b
+
+/marker pt3
+8b f b d b c    d b b b b b    A c b c A A    8:3a 8e d c
+b f b d b c    d b b 4g 8f    e c c a A e    c d c b b b
+
+/marker rpt pt3
+8b f b d b c    d b b b b b    A c b c A A    8:3a 8e d c
+b f b d b c    d b b 4g 8f    e c c a A e    c d c b b b
+
+/marker pt4
+8f f f b a g    4f 8b a f d    e c c e e e    A f A e d e
+f f f b a g    f d b 4g 8f    e c c a A e    c d c b b b
+
+/marker rpt pt4 1st
+8f f f b a g    4f 8b a f d    e c c e e e    A f A e d e
+/marker rpt pt1 2nd
+8b b b d e f    4a 8f d a f    e c c a A e    c d c b b b
+2b

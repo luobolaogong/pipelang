@@ -108,16 +108,8 @@ int beatFractionToTicks(num beatFraction) {
   return durationInTicks;
 }
 enum EmbellishmentAndNoteName {
-  // Throws
-  GdGcd, // (\thrwd d maybe),
-  // doublings
-  GAGA,
-  gefe,
-  gcdc,
-  aga,
-  gfg,
-  gbdb,
-  gfgf,
+  r,
+  G, A, b, c, d, e, f, g, a,
   // single gracenotes
   Ga,
   gA,
@@ -130,10 +122,18 @@ enum EmbellishmentAndNoteName {
   dA,
   gd,
   ga,
-
-G, A, b, c, d, e, f, g, a,
-  r,
-  dot // experiment
+  // doublings
+  GAGA,
+  gefe,
+  gcdc,
+  aga,
+  gfg,
+  gbdb,
+  gfgf,
+  // Throws
+  GdGcd, // (\thrwd d maybe),
+  dot, // experiment
+  M
 }
 
 class Note {
