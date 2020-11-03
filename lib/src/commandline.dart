@@ -236,9 +236,9 @@ class CommandLine {
           valueHelp: 'WARNING')
 
       ..addOption(CommandLine.trackMapIndex, // prob should also allow --stave and --track
-          // allowed: ['pipes', 'pipesUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes'],
-          allowed: ['pipes', 'chanter', 'metronome', 'met'],
-          defaultsTo: 'pipes', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
+          allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes', 'chanter'],
+          //allowed: ['pipes', 'chanter', 'metronome', 'met'],
+          defaultsTo: 'snare', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
           help:
           'Set the staff/stave/instrument/track name.',
           valueHelp: 'pipes')

@@ -13,16 +13,16 @@ class Text {
   }
 }
 
-///
-/// textParser
-///
-Parser textParser = (
-    string('/text') & pattern('\n\r').neg().star() & pattern('\n\r').optional()
-).flatten().trim().map((value) {
-  log.finest('In textParser and value is -->$value<--');
-  var text = Text();
-  text.text = value.trim().substring(6);
-  log.finest('Leaving textParser returning -->$text<--');
-  return text;
-});
+// ///
+// /// textParser
+// ///
+// Parser textParser = (
+//     string('/text') & pattern('\n\r').neg().star() & pattern('\n\r').optional()
+// ).flatten().trim().map((value) {
+//   log.finest('In textParser and value is -->$value<--');
+//   var text = Text();
+//   text.text = value.trim().substring(6);
+//   log.finest('Leaving textParser returning -->$text<--');
+//   return text;
+// });
 

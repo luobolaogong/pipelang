@@ -40,15 +40,41 @@ void main(List<String> arguments) {
     // print('${record.level.name}: ${record.message}, ,,,, $record'); // wow!!!  I can change how it prints!
     print('$record'); // wow!!!  I can change how it prints!
   });
+
+  var file = File('midis/CastleDangerous.mid');
+  var parser = MidiParser();
+  MidiFile parsedMidi = parser.parseMidiFromFile(file);
+  print(parsedMidi.tracks.length.toString());
+  var snareTrack = parsedMidi.tracks[1];
+
+
+
+
   var commandLine = CommandLine();
   var argResults = commandLine.parseCommandLineArgs(arguments);
 
-  var score = doThePhases(commandLine.inputFilesList, commandLine); // Maybe use tempoScalar to handle gracenote calculations
+  var result = Score.loadAndParse(commandLine.inputFilesList, commandLine); // maybe this should be in the parent method/function
+
+  if (result.isFailure) {
+    log.severe('Failed to parse the scores. Message: ${result.message}');
+    var rowCol = result.toPositionString().split(':');
+    log.severe('Check line ${rowCol[0]}, character ${rowCol[1]}');
+    log.severe('Should be around this character: ${result.buffer[result.position]}');
+    exit(42);
+  }
+  // Since parsing succeeded, we should have the Score element in the result value
+  Score score = result.value;
+
+
+  // var score = doThePhases(commandLine.inputFilesList, commandLine); // Maybe use tempoScalar to handle gracenote calculations
+  doThePhases(score, commandLine); // Maybe use tempoScalar to handle gracenote calculations
 
   var midi = Midi();
   var midiHeader =  midi.createMidiHeader(); // 840 ticks per beat seems good
   var midiTracks = <List<MidiEvent>>[];
   midi.addMidiEventsToTracks(midiTracks, score.elements, commandLine);
+
+  midiTracks.add(snareTrack);
 
   var midiFile = MidiFile(midiTracks, midiHeader);
   var midiWriterCopy = MidiWriter();
@@ -68,23 +94,24 @@ void main(List<String> arguments) {
 // 5.  Go through the elements and adjust timings due to notes with grace notes.  Keep track of current tempo?  What if other tracks change tempo?
 //     Probably should work on trackZero and move all tempos to it somehow and go off of it.
 
-Score doThePhases(List<String> piecesOfMusic, CommandLine commandLine) {
+// Score doThePhases(List<String> piecesOfMusic, CommandLine commandLine) {
+void doThePhases(Score score, CommandLine commandLine) {
   log.fine('In doThePhases, and tempo coming in from commandLine tempo is ${commandLine.tempo}');
   //
   // Phase 1: load and parse the score, returning the Score, which contains a list of all elements, as PetitParser parses and creates them.
   // There is no processing of the elements put into the list.
   //
-  var result = Score.loadAndParse(piecesOfMusic, commandLine);
-
-  if (result.isFailure) {
-    log.severe('Failed to parse the scores. Message: ${result.message}');
-    var rowCol = result.toPositionString().split(':');
-    log.severe('Check line ${rowCol[0]}, character ${rowCol[1]}');
-    log.severe('Should be around this character: ${result.buffer[result.position]}');
-    exit(42);
-  }
-  // Since parsing succeeded, we should have the Score element in the result value
-  Score score = result.value;
+  // var result = Score.loadAndParse(piecesOfMusic, commandLine); // maybe this should be in the parent method/function
+  //
+  // if (result.isFailure) {
+  //   log.severe('Failed to parse the scores. Message: ${result.message}');
+  //   var rowCol = result.toPositionString().split(':');
+  //   log.severe('Check line ${rowCol[0]}, character ${rowCol[1]}');
+  //   log.severe('Should be around this character: ${result.buffer[result.position]}');
+  //   exit(42);
+  // }
+  // // Since parsing succeeded, we should have the Score element in the result value
+  // Score score = result.value;
 
   //
   // Phase 2:
@@ -119,7 +146,8 @@ Score doThePhases(List<String> piecesOfMusic, CommandLine commandLine) {
   // Do grace notes
   score.adjustForGraceNotes(commandLine); // maybe do this similar to how applyShorthands is done
 
-  return score;
+  //return score;
+  return;
 }
 
 

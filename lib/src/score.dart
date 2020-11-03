@@ -1,6 +1,7 @@
 import 'dart:io';
+
 import 'package:petitparser/petitparser.dart';
-import 'package:logging/logging.dart';
+
 import '../pipelang.dart';
 
 
@@ -8,7 +9,7 @@ class Score {
   List elements = [];
   TimeSig firstTimeSig;
   Tempo firstTempo;
-  num tempoScalar = 1; // new
+  num tempoScalar = 0; // new, shouldn't this be zero?
   Track firstTrack;
 
   String toString() {
@@ -17,6 +18,8 @@ class Score {
 
   static Result loadAndParse(List<String> scoresPaths, CommandLine commandLine) {
     var scoresStringBuffer = StringBuffer();
+
+    // Do prep by putting all files into one file, but also doing syntax parse as you go
     for (var filePath in scoresPaths) {
       log.info('Loading file $filePath');
       var inputFile = File(filePath);
@@ -32,15 +35,21 @@ class Score {
       }
       //
       // Do an initial parse for validity, exiting if failure, and throw away result no matter what.
+      // Thw whole reason for doing this is to help identify the file and line in that file where
+      // there's a syntax error.  So, the parse is done on a file by file basis, not as concatenated
+      // file.
       //
-      log.finer('\t\t\t\tGunna do an initial parse just to check if its a legal file.');
-      var result = scoreParser.parse(fileContents);
-      if (result.isFailure) {
-        log.severe('Failed to parse $filePath. Message: ${result.message}');
-        var rowCol = result.toPositionString().split(':');
-        log.severe('Check line ${rowCol[0]}, character ${rowCol[1]}');
-        log.severe('Should be around this character: ${result.buffer[result.position]}');
-        return result; // yeah I know the parent function will report too.  Fix later.
+      bool wantSyntaxParsePhase = true;
+      if (wantSyntaxParsePhase) {
+        log.finer('\t\t\t\tGunna do an initial parse just to check if its a legal file and output a syntax error line.');
+        var result = scoreParser.parse(fileContents);
+        if (result.isFailure) {
+          log.severe('Failed to parse $filePath. Message: ${result.message}');
+          var rowCol = result.toPositionString().split(':');
+          log.severe('Check line ${rowCol[0]}, character ${rowCol[1]}');
+          log.severe('Should be around this character: ${result.buffer[result.position]}');
+          return result; // yeah I know the parent function will report too.  Fix later.
+        }
       }
       scoresStringBuffer.write(fileContents); // what the crap?  Why write this?  I thought we were only checking.
     }
@@ -48,11 +57,13 @@ class Score {
       log.severe('There is nothing to parse.  Exiting...');
       exit(42); // 42 is a joke
     }
+
+
     //
-    // Parse the score's text elements, notes and other stuff.  The intermediate parse results like Tempo and TimeSig
+    // Parse the (concatenated) score's text elements, notes and other stuff.  The intermediate parse results like Tempo and TimeSig
     // are in the list that is result.value, and processed later.
     //
-    log.finer('\t\t\t\there comes the real parse now, since we have a legal file.  I dislike this double thing.');
+    log.finer('\n\n\n\t\t\t\tHere comes the real parse now, since we have a legal file.  I dislike this double thing.');
     var result = scoreParser.parse(scoresStringBuffer.toString());
     if (result.isSuccess) {
       Score score = result.value;
@@ -77,7 +88,8 @@ class Score {
   /// Also, if there's a /dd (default dynamic), it is replaced by the default dynamic value.
   void applyShorthands(CommandLine commandLine) {
     log.fine('In applyShorthands');
-    var previousNote = Note();
+    //var previousNote = PipeNote(); // hey!!!!!
+    var previousNote = Note(); // hey!!!!! Decide now whether to make this a PipeNote or a Note?
     // I don't like the way this is done to account for a first note situation.  Perhaps use a counter and special case for first note
     previousNote.dynamic = commandLine.dynamic; // unnec???
     for (var elementIndex = 0; elementIndex < elements.length; elementIndex++) {
@@ -89,7 +101,9 @@ class Score {
         previousNote.dynamic = elements[elementIndex];
         continue;
       }
+      // if (elements[elementIndex] is PipeNote) {
       if (elements[elementIndex] is Note) {
+        // var note = elements[elementIndex] as PipeNote; // new
         var note = elements[elementIndex] as Note; // new
         // So this next stuff assumes element is a Note, and it could be a rest
         // This section is risky. This could contain bad logic:
@@ -100,68 +114,86 @@ class Score {
         // '>.' to mean same note as before, but accented this time.
         //
         // if (note.noteName == NoteName.previousNoteDurationOrType) { // I think this means "." dot.  Why not just call it "dot"?
-        if (note.pipeNoteName == PipeNoteName.dot) { // I think this means "." dot.  Why not just call it "dot"?
+        if (note.noteType == NoteType.dot) { // hey hey hey, stop here.  Fill this in before trying to do some math using duration!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           note.duration = previousNote.duration;
-          note.pipeNoteName = previousNote.pipeNoteName;
+          note.noteType = previousNote.noteType;
+          //note.noteType = previousNote.noteType;
           note.dynamic = previousNote.dynamic;
-          log.finest('In Score.applyShorthands(), and since note was just a dot, just set note to have previousNote props, so note is now ${note}.');
+          log.finest('In Score.applyShorthands(), and since note was just a dot, just set note to have previousNote props, so note is now ${note}');
         }
         else {
 //        note.duration ??= previousNote.duration;
           note.duration.firstNumber ??= previousNote.duration.firstNumber; // new
           note.duration.secondNumber ??= previousNote.duration.secondNumber;
-          note.pipeNoteName ??= previousNote.pipeNoteName;
+          note.noteType ??= previousNote.noteType;
           note.dynamic ??= previousNote.dynamic;
-          log.finest('In Score.applyShorthands(), and note was not just a dot, but wanted to make sure did the shorthand fill in, so now note is ${note}.');
+          //log.finest('In Score.applyShorthands(), and now note is ${note}');
         }
         //previousNote = note; // No.  Do a copy, not a reference.       watch for previousNoteDurationOrType
         previousNote.dynamic = note.dynamic;
         previousNote.velocity = note.velocity; // unnec?
         //previousNote.articulation = note.articulation;
         previousNote.duration = note.duration;
-        previousNote.pipeNoteName = note.pipeNoteName;
+        previousNote.noteType = note.noteType;
 
-        log.finest('bottom of loop Score.applyShorthands(), just updated previousNote to point to be this ${previousNote}.');
+        //log.finest('bottom of loop Score.applyShorthands(), just updated previousNote to point to be this ${previousNote}.');
       }
     }
     log.finest('leaving Score.applyShorthands()\n');
     return;
   }
 
-  // This is a big one.  Maybe break it up?
-  // Looks like several phases to this.
   void applyDynamics() {
-    log.fine('In Score.applyDynamics()');
-    // For each note in the list set the velocity field based on the dynamic field, which is strange, because why not do it initially?
+    log.finest('In Score.applyDynamics().  First this only applies to Notes and PipeNotes elements.  But not much for pipes, maybe just setting an initial volume.');
+    setDynamicFieldOfNoteElementsIfNotDonePreviously();
+    doDynamicRampStuff();
+    //adjustVelocitiesByArticulations(); // only really for non-pipe notes
+    log.finest('Leaving Score.applyDynamics');
+    return;
+  }
+
+  void setDynamicFieldOfNoteElementsIfNotDonePreviously() {
+    // SET THE note.dynamic FIELD AS IF NOT DONE PREVIOUSLY
+    // For each note in the list, set the velocity field based on the dynamic field, which is strange, because why not do it initially?
     for (var element in elements) {
+      // if (!(element is PipeNote)) {
       if (!(element is Note)) {
         continue;
       }
+      //var note = element as PipeNote; // this looks like a cast, which is what I want
       var note = element as Note; // this looks like a cast, which is what I want
-      if (note.dynamic == null) {
+      if (note.dynamic == null) { // why?
         continue;
       }
-      element.velocity = dynamicToVelocity(element.dynamic);
+      element.velocity = dynamicToVelocity(
+          note.dynamic); // hmmmmm pipes and drums could have different dynamics.  I mean ff for snare different for pipes, or tenor or bass????
     }
+  }
 
+  void determineDynamicRampSlopeValues() {
+    // FIRST DETERMINE SLOPE VALUE
     log.finest('gunna start looking for dynamic ramp markers and set their values');
     // Scan the elements list for dynamicRamp markers, and set their properties
     print('');
-    log.finest('Score.applyDynamics(), Starting search for dynamicRamps and setting their values.  THIS MAY BE WRONG NOW THAT I''M APPLYING DYNAMICS DURING SHORTHAND PHASE');
+    log.finest(
+        'Score.applyDynamics(), Starting search for dynamicRamps and setting their values.  THIS MAY BE WRONG NOW THAT I''M APPLYING DYNAMICS DURING SHORTHAND PHASE');
     DynamicRamp currentDynamicRamp;
     Dynamic mostRecentDynamic;
     num accumulatedDurationAsFraction = 0;
     var inDynamicRamp = false;
     for (var element in elements) {
-
-      if (element is Note) {
+      //if (element is PipeNote) { // PipeNote and Note should be extensions of Note, probably.
+      //if (element is Note) { // PipeNote and Note should be extensions of Note, probably.
+      if (element is Note) { // PipeNote and Note should be extensions of Note, probably.
         mostRecentDynamic = element.dynamic; // I know, hack,
         if (inDynamicRamp) {
+          print('In determineDynamicRampSlopeValues(), element: $element');
           accumulatedDurationAsFraction += element.duration.secondNumber / element.duration.firstNumber;
           log.finest('Score.applyDynamics(), Doing dynamicRamps... This note is inside a dynamicRamp.  accumulated duration: $accumulatedDurationAsFraction');
         }
         else {
-          log.finest('Score.applyDynamics(), Doing dynamicRamps... This note is NOT inside a dynamicRamp, so is ignored in this phase of setting dynamicRamp values.');
+          log.finest(
+              'Score.applyDynamics(), Doing dynamicRamps... This note is NOT inside a dynamicRamp, so is ignored in this phase of setting dynamicRamp values.');
         }
         continue;
       }
@@ -181,8 +213,10 @@ class Score {
           currentDynamicRamp.endVelocity = dynamicToVelocity(element);
           var accumulatedTicks = (Midi.ticksPerBeat * accumulatedDurationAsFraction).round();
           currentDynamicRamp.totalTicksStartToEnd = accumulatedTicks;
-          currentDynamicRamp.slope = (currentDynamicRamp.endVelocity - currentDynamicRamp.startVelocity) / accumulatedTicks;    // rise / run
-          log.finest('Score.applyDynamics(), Doing dynamicsDynamicRamps... hit a Dynamic ($element) and currently in dynamicRamp, so ending dynamicRamp.  dynamicRamp slope: ${currentDynamicRamp.slope}, accumulatedTicks: $accumulatedTicks, accumulatedDurationAsFraction: $accumulatedDurationAsFraction');
+          currentDynamicRamp.slope = (currentDynamicRamp.endVelocity - currentDynamicRamp.startVelocity) / accumulatedTicks; // rise / run
+          log.finest(
+              'Score.applyDynamics(), Doing dynamicsDynamicRamps... hit a Dynamic ($element) and currently in dynamicRamp, so ending dynamicRamp.  dynamicRamp slope: ${currentDynamicRamp
+                  .slope}, accumulatedTicks: $accumulatedTicks, accumulatedDurationAsFraction: $accumulatedDurationAsFraction');
           accumulatedDurationAsFraction = 0;
 
           currentDynamicRamp = null; // good idea?
@@ -191,19 +225,27 @@ class Score {
         else {
           log.finest('Score.applyDynamics(), Doing dynamicRamps... hit a Dynamic but not in currently in dynamicRamp.');
         }
-        mostRecentDynamic = element; // yeah, we can have a dynamic mark followed immediately by a dynamicRamp, and so the previous note will not have the new dynamic
+        mostRecentDynamic =
+            element; // yeah, we can have a dynamic mark followed immediately by a dynamicRamp, and so the previous note will not have the new dynamic
         continue;
       }
-      log.finest('Score.applyDynamics(), Doing dynamicRamps... found other kine element: ${element.runtimeType} and ignoring.');
+      //log.finest('Score.applyDynamics(), Doing dynamicRamps... found other kine element: ${element.runtimeType} and ignoring.');
     }
-    log.finer('Score.applyDynamics(), Done finding and setting dynamicRamp values for entire score.\n');
+    log.finer('determineDynamicRampSlopeValues(), Done finding and setting dynamicRamp values for entire score.\n');
+  }
 
 
-    log.finer('Score.applyDynamics(), starting to adjust dynamicRamped notes...');
+  void adjustEachNotesDynamicValueIfInARamp() {
+    DynamicRamp currentDynamicRamp;
+    var inDynamicRamp = false;
+
+    // NOW ADJUST EACH NOTE'S DYNAMIC VALUE IF IT'S IN A RAMP
+    log.finer('Score.adjustEachNotesDynamicValueIfInARamp(), starting to adjust dynamicRamped notes...');
     // Adjust dynamicRamp note velocities based solely on their dynamicRamp and position in dynamicRamp, not articulations or type.
     // Each note already has a velocity.
     inDynamicRamp = false;
     var isFirstNoteInDynamicRamp = true;
+    // PipeNote previousNote;
     Note previousNote;
     num cumulativeDurationSinceDynamicRampStartNote = 0;
     var elementCtr = 0; // test to see if can help pinpoint dynamic ramp mistake in score
@@ -225,8 +267,10 @@ class Score {
         cumulativeDurationSinceDynamicRampStartNote = 0; // new
         continue;
       }
+      // if (element is PipeNote) {
       if (element is Note) {
-        log.finest('\telement is a Note...');
+        log.finest('\telement is a Note..., lets see it: $element');
+        // var note = element as PipeNote;
         var note = element as Note;
         // If a note is not in a dynamicRamp, skip it
         if (!inDynamicRamp) {
@@ -241,11 +285,13 @@ class Score {
         }
         else {
           // Get note's current time position in the dynamicRamp.
-          log.finest('\t\tGot subsequent note (#$elementCtr) in a dynamicRamp, so will calculate time position relative to first note by doing accumulation.');
+          // Got subsequent note (#$elementCtr) in a dynamicRamp, so will calculate time position relative to first note by doing accumulation.');
           cumulativeDurationSinceDynamicRampStartNote += (previousNote.duration.secondNumber / previousNote.duration.firstNumber);
           log.finest('\t\t\tcumulativeDurationSinceRampStartNote: $cumulativeDurationSinceDynamicRampStartNote');
           var cumulativeTicksSinceDynamicRampStartNote = beatFractionToTicks(cumulativeDurationSinceDynamicRampStartNote);
-          log.finest('\t\t\tcumulativeTicksSinceDynamicRampStartNote: $cumulativeTicksSinceDynamicRampStartNote and dynamicsDynamicRamp slope is ${currentDynamicRamp.slope}');
+          log.finest(
+              '\t\t\tcumulativeTicksSinceDynamicRampStartNote: $cumulativeTicksSinceDynamicRampStartNote and dynamicsDynamicRamp slope is ${currentDynamicRamp
+                  .slope}');
           if (currentDynamicRamp.slope == null) { // hack
             print('Still in dynamic ramp, right?  Well, got a null at note element $elementCtr, Note duration: ${note.duration}');
             log.severe('Error in dynamic ramp.  Not sure what to do.  Did we have a ramp start, and no ramp end?');
@@ -253,7 +299,7 @@ class Score {
           else {
             log.finest('\t\t\tUsing slope and position in dynamicRamp, wanna add this much to the velocity: ${currentDynamicRamp.slope *
                 cumulativeTicksSinceDynamicRampStartNote}');
-            note.velocity += (currentDynamicRamp.slope * cumulativeTicksSinceDynamicRampStartNote).round();
+            note.velocity += (currentDynamicRamp.slope * cumulativeTicksSinceDynamicRampStartNote).round(); // HERE IT IS, FINALLY SET THE VELOCITY VALUE
             log.finest('\t\t\tSo now this element has velocity ${note.velocity}');
             isFirstNoteInDynamicRamp = false;
             previousNote = note; // new
@@ -261,43 +307,164 @@ class Score {
         }
       }
     }
-
-    log.finer('Adjusting note velocities by articulation...');
-
-    // Adjust note velocity based on articulation and type, and then clamp.
-    // No, adjust note velocity based on dynamic and articulation together, and then clamp if nec.
-    for (var element in elements) {
-      if (!(element is Note)) {
-        continue;
-      }
-      var note = element as Note;
-      // if (element.noteType == NoteType.rest) {
-      if (note.pipeNoteName == PipeNoteName.r) {
-        continue;
-      }
-
-      // This section is questionable.  Should flams be accented normally?
-      // I don't think so.  This section maybe could be used to adjust for
-      // bad sound font recordings, but only as a hack.  Fix the recordings.
-      switch (note.pipeNoteName) {
-        case PipeNoteName.r: // right????????????
-          note.velocity = 0; // this is just a test/example
-          break;
-        default:
-          log.warning('What the heck was that note? $note.type');
-      }
-
-      log.finest('adjusted velocity is ${note.velocity}');
-      if (note.velocity > 127 || note.velocity < 0) {    // hmmmm did I screw this up by doing the cast with "as" to Note?  Lost velocity value????
-        log.finest('Will clamp velocity because it is ${note.velocity}');
-        note.velocity = note.velocity.clamp(0, 127);
-        log.finest('clamped velocity is ${note.velocity}');
-      }
-    }
-
-    return;
+    log.finest('Leaving adjustEachNotesDynamicValueIfInARamp()');
   }
 
+  void doDynamicRampStuff() {
+    determineDynamicRampSlopeValues();
+    adjustEachNotesDynamicValueIfInARamp();
+  }
+
+  // void adjustVelocitiesByArticulations() { // only for drums, right?
+  //   // NOW ADJUST VELOCITY OF EACH NOTE IF IT HAS AN ARTICULATION.  THIS IS NOT FOR PIPES
+  //   log.finest('In adjustVelocitiesByArticulations(), Adjusting note velocities by articulation...  This probably shouldnt be done for pipe notes');
+  //
+  //   // Adjust note velocity based on articulation and type, and then clamp.
+  //   // No, adjust note velocity based on dynamic and articulation together, and then clamp if nec.
+  //   for (var element in elements) {
+  //     // if (!(element is PipeNote)) {
+  //     if (!(element is Note)) {
+  //       continue;
+  //     }
+  //     var note = element as Note;
+  //     // if (element.noteType == NoteType.rest) {
+  //     if (note.noteType == NoteType.rest) {
+  //       // if (note.noteType == NoteType.r) {
+  //       note.velocity = 0; // new
+  //       continue;
+  //     }
+  //
+  //     // This section is questionable.  Should flams be accented normally?
+  //     // I don't think so.  This section maybe could be used to adjust for
+  //     // bad sound font recordings, but only as a hack.  Fix the recordings.
+  //     // switch (note.articulation) {
+  //     //   case NoteType.r: // right????????????
+  //     //     note.velocity = 0; // this is just a test/example
+  //     //     break;
+  //     //   default:
+  //     //     log.warning('What the heck was that note? $note.type');
+  //     // }
+  //
+  //     // couldn't this stuff be done by a function?  The idea is to boost
+  //     // the velocity more if the notes are quiet, and less if they're already loud.
+  //     // Like determine the headroom at each articulation and boost it a percentage
+  //     // of that.
+  //     // Okay, try it...
+  //     print('\t\t\t\tnote dynamic: ${note.dynamic}, which has index of ${note.dynamic.index}');
+  //     print('\t\t\t\tand that has a dynamic value of ${dynamicToVelocity(note.dynamic)}');
+  //     print('\t\t\t\twhich is this percentage of the loudest/127: ${dynamicToVelocity(note.dynamic) * 100 / 127}');
+  //     num newVelocity;
+  //     switch (note.dynamic) {
+  //       case Dynamic.ppp:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 14;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 24;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 34;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.pp:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 20;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 32;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 44;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.p:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 25;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 36;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 48;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.mp:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 24;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 34;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 44;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.mf:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 16;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 26;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 36;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.f:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 8;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 14;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 18;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.ff:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 1;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 3;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 5;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       case Dynamic.fff: // if fff is at 127 then these numbers will just get clipped:
+  //         if (note.articulation == NoteArticulation.tenuto) {
+  //           note.velocity += 1;
+  //         }
+  //         if (note.articulation == NoteArticulation.accent) {
+  //           note.velocity += 3;
+  //         }
+  //         if (note.articulation == NoteArticulation.marcato) {
+  //           note.velocity += 5;
+  //         }
+  //         print('what happened?');
+  //         break;
+  //       default:
+  //         print('uh oh');
+  //     }
+  //
+  //     log.finest('adjusted velocity is ${note.velocity}');
+  //     if (note.velocity > 127 || note.velocity < 0) {
+  //       // hmmmm did I screw this up by doing the cast with "as" to Note?  Lost velocity value????
+  //       log.finest('Will clamp velocity because it is ${note.velocity}');
+  //       note.velocity = note.velocity.clamp(0, 127);
+  //       log.finest('clamped velocity is ${note.velocity}');
+  //     }
+  //   }
+  //   log.finest('Leaving adjustVelocitiesByArticulations()');
+  // }
 
   // These two are new.  We want to know the first tempo and time signature that is specified in the score.
   // There may not be either value, but if there is we want to set them for the midi file header, I think.
@@ -362,7 +529,7 @@ class Score {
     var noteOffDeltaTimeShift = 0;
 
     // just a wild stab to handle first note case in list
-    var previousNote = Note();
+    var previousNote = PipeNote();
     previousNote.noteOffDeltaTimeShift = 0;
 
     // Tempo mostRecentScaledTempo; // assuming here that we'll hit a tempo before we hit a note, because already added a scaled tempo at start of list.
@@ -373,44 +540,44 @@ class Score {
         mostRecentTempo = element;
         continue;
       }
-      else if (element is Note) {
-        var note = element as Note; // unnec cast, it says, but I want to
+      else if (element is PipeNote) {
+        var note = element as PipeNote; // unnec cast, it says, but I want to
         // Bad logic, I'm sure:
         // Hey, the following is just here for a placeholder and a test.  I've not determined which embellishments need what kind of sliding, if any.
-        switch (note.pipeNoteName) {
-          case PipeNoteName.dA:
-          case PipeNoteName.dc:
-          case PipeNoteName.ea:
-          case PipeNoteName.Ga:
-          case PipeNoteName.gA:
-          case PipeNoteName.ga:
-          case PipeNoteName.gb:
-          case PipeNoteName.gc:
-          case PipeNoteName.gd:
-          case PipeNoteName.ge:
-          case PipeNoteName.gf:
+        switch (note.noteType) {
+          case NoteType.dA:
+          case NoteType.dc:
+          case NoteType.ea:
+          case NoteType.Ga:
+          case NoteType.gA:
+          case NoteType.ga:
+          case NoteType.gb:
+          case NoteType.gc:
+          case NoteType.gd:
+          case NoteType.ge:
+          case NoteType.gf:
             graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case PipeNoteName.gbdb:
-          case PipeNoteName.gcdc:
-          case PipeNoteName.gefe:
-          case PipeNoteName.GAGA:
-          case PipeNoteName.gfgf:
+          case NoteType.gbdb:
+          case NoteType.gcdc:
+          case NoteType.gefe:
+          case NoteType.GAGA:
+          case NoteType.gfgf:
             graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round();
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case PipeNoteName.aga:
+          case NoteType.aga:
             graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case PipeNoteName.GdGcd:
+          case NoteType.GdGcd:
             graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
             note.noteOffDeltaTimeShift += graceNotesDuration;
@@ -437,26 +604,26 @@ class Score {
 
 }
 
-///
-/// ScoreParser
-///Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | noteParser).plus()).trim().end().map((values) {    // trim()?
-Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | dynamicParser | dynamicRampParser | noteParser).plus()).trim().end().map((values) {    // trim()?
-  log.finest('In Scoreparser, will now add values from parse result list to score.elements');
-  var score = Score();
-  if (values is List) {
-    for (var value in values) {
-      log.finest('ScoreParser, value: -->$value<--');
-      score.elements.add(value);
-      log.finer('ScoreParser, Now score.elements has this many elements: ${score.elements.length}');
-    }
-  }
-  else { // I don't think this happens when there's only one value.  It's still in a list
-    log.info('Did not get a list, got this: -->$values<--');
-    score.elements.add(values); // right? new
-  }
-  log.finest('Leaving Scoreparser returning score in parsed and objectified form.');
-  return score;
-});
+// ///
+// /// ScoreParser
+// ///Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | noteParser).plus()).trim().end().map((values) {    // trim()?
+// Parser scoreParser = ((commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | dynamicParser | dynamicRampParser | pipeNoteParser | drumNoteParser).plus()).trim().end().map((values) {    // trim()?
+//   log.finest('In Scoreparser, will now add values from parse result list to score.elements');
+//   var score = Score();
+//   if (values is List) {
+//     for (var value in values) {
+//       log.finest('ScoreParser, value: -->$value<--');
+//       score.elements.add(value);
+//       log.finer('ScoreParser, Now score.elements has this many elements: ${score.elements.length}');
+//     }
+//   }
+//   else { // I don't think this happens when there's only one value.  It's still in a list
+//     log.info('Did not get a list, got this: -->$values<--');
+//     score.elements.add(values); // right? new
+//   }
+//   log.finest('Leaving Scoreparser returning score in parsed and objectified form.');
+//   return score;
+// });
 
 // // Maybe change track to "track"
 // /// I think the idea here is to be able to insert the keywords '/track pipes' or

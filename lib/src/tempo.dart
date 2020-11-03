@@ -79,44 +79,44 @@ class Tempo {
 //  accel, // \accel ?
 //  deaccel // \deaccel ?
 //}
-Parser TempoRampParser = (
-    string('/deaccel') |
-    string('/accel')
-).trim().map((value) {
-  log.finest('In TempoRampParser');
-  TempoRamp tempoRamp;
-  switch (value) {
-    case '/accel':
-    case '/deaccel':
-      tempoRamp =  TempoRamp();
-      break;
-  }
-  log.finest('Leaving TempoRampParser returning value $tempoRamp');
-  return tempoRamp;
-});
-
-///
-/// tempoParser
-///
-Parser tempoParser = (
-    string('/tempo').trim() & (durationParser.trim() & char('=').trim()).optional().trim() & wholeNumberParser
-).trim().map((value) {
-  log.finest('In TempoParser and value is -->$value<--');
-  var tempo = Tempo();
-  if (value[1] != null) {
-    NoteDuration noteDuration = value[1][0]; // NoteDurationParser returns an object
-    tempo.noteDuration = noteDuration;
-  }
-  // else {
-  //   print('hey, watch out for tempos that do not have noteDuration values for firstNumber etc.'); // this is fixed later as a phase
-  // }
-  // else { // new.  Probably should not be done here.  Need timesig info to fill this in if NoteDuration is null
-  //   tempo.noteDuration.firstNumber = 4; // this is for 1/4, 2/4, 3/4, 4/4, 5/4 ...   Not 6/8, 9/8, 12/8, etc.  Depends on timeSig.
-  //   tempo.noteDuration.secondNumber = 1;
-  // }
-  tempo.bpm = value[2];    // hey, what if we have '/tempo 84', shouldn't we set the duration to be something?
-  log.finest('Leaving tempoParser returning value $tempo which may need to be augmented later if Duration.firstNumber and secondNumber are null');
-  return tempo; // This goes into the list of elements that make up a score, which we process one by one later.
-});
+// Parser TempoRampParser = (
+//     string('/deaccel') |
+//     string('/accel')
+// ).trim().map((value) {
+//   log.finest('In TempoRampParser');
+//   TempoRamp tempoRamp;
+//   switch (value) {
+//     case '/accel':
+//     case '/deaccel':
+//       tempoRamp =  TempoRamp();
+//       break;
+//   }
+//   log.finest('Leaving TempoRampParser returning value $tempoRamp');
+//   return tempoRamp;
+// });
+//
+// ///
+// /// tempoParser
+// ///
+// Parser tempoParser = (
+//     string('/tempo').trim() & (durationParser.trim() & char('=').trim()).optional().trim() & wholeNumberParser
+// ).trim().map((value) {
+//   log.finest('In TempoParser and value is -->$value<--');
+//   var tempo = Tempo();
+//   if (value[1] != null) {
+//     NoteDuration noteDuration = value[1][0]; // NoteDurationParser returns an object
+//     tempo.noteDuration = noteDuration;
+//   }
+//   // else {
+//   //   print('hey, watch out for tempos that do not have noteDuration values for firstNumber etc.'); // this is fixed later as a phase
+//   // }
+//   // else { // new.  Probably should not be done here.  Need timesig info to fill this in if NoteDuration is null
+//   //   tempo.noteDuration.firstNumber = 4; // this is for 1/4, 2/4, 3/4, 4/4, 5/4 ...   Not 6/8, 9/8, 12/8, etc.  Depends on timeSig.
+//   //   tempo.noteDuration.secondNumber = 1;
+//   // }
+//   tempo.bpm = value[2];    // hey, what if we have '/tempo 84', shouldn't we set the duration to be something?
+//   log.finest('Leaving tempoParser returning value $tempo which may need to be augmented later if Duration.firstNumber and secondNumber are null');
+//   return tempo; // This goes into the list of elements that make up a score, which we process one by one later.
+// });
 
 

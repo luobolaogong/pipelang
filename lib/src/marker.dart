@@ -13,18 +13,18 @@ class Marker {
     return 'marker: $text';
   }
 }
-
-///
-/// markerParser
-///
-Parser markerParser = (
-    string('/marker') & pattern('\n\r').neg().star() & pattern('\n\r').optional()
-).flatten().trim().map((value) {
-  log.finest('In markerParser and value is -->$value<--');
-  var marker = Marker();
-  var textPart = value.trim().substring(7);
-  marker.text = textPart;
-  log.finest('Leaving markerParser returning -->$marker<--');
-  return marker;
-});
-
+//
+// ///
+// /// markerParser
+// ///
+// Parser markerParser = (
+//     string('/marker') & pattern('\n\r').neg().star() & pattern('\n\r').optional()
+// ).flatten().trim().map((value) {
+//   log.finest('In markerParser and value is -->$value<--');
+//   var marker = Marker();
+//   var textPart = value.trim().substring(7);
+//   marker.text = textPart;
+//   log.finest('Leaving markerParser returning -->$marker<--');
+//   return marker;
+// });
+//

@@ -1,4 +1,3 @@
-import 'package:petitparser/petitparser.dart';
 import 'package:logging/logging.dart';
 
 final log = Logger('Dynamic');
@@ -67,7 +66,7 @@ int dynamicToVelocity(Dynamic dynamic) {
   }
   //print('Parabolic2');
   num newVelocity = (10 * 0.19 * (dynamic.index + 1) * (dynamic.index + 1)).round();
-  //print('\t\t\t\tHey, dynamic $dynamic, with index ${dynamic.index} gets a velocity of ${newVelocity}');
+  //log.finest('dynamicToVelocity(), dynamic $dynamic, with index ${dynamic.index} returns a velocity of ${newVelocity}');
   return newVelocity;
 
   // Parabolic1:
@@ -101,77 +100,77 @@ Dynamic stringToDynamic(dynamicString) {
   }
 }
 
-// something's wrong here.  Looks strange.
-// Also, put in own file?  Maybe, although it's a kind of dynamic marking.
-// But still, it's kinda a pseudo element.
-// All of these tokens map down into a single DynamicRamp object, but all its fields are null
-Parser dynamicRampParser = (
-    string('/>') |
-    string('/<') |
-    string('/dim') |
-    string('/decresc') |
-    string('/cresc')
-).trim().map((value) {
-  log.finest('In dynamicRampParser, and the value was $value');
-  DynamicRamp dynamicRamp;
-  switch (value) {
-    case '/>':
-    case '/<':
-    case '/cresc':
-    case '/dim':
-    case '/decresc':
-      dynamicRamp =  DynamicRamp();
-      break;
-  }
-  log.finest('Leaving dynamicRampParser returning a DynamicRamp object $dynamicRamp');
-  return dynamicRamp;
-});
-
-///
-/// DynamicParser
-///
-Parser dynamicParser = (
-    string('/mf') |
-    string('/mp') |
-    string('/ppp') |
-    string('/pp') |
-    string('/p') |
-    string('/fff') |
-    string('/ff') |
-    string('/f') |
-    string('/dd')
-).trim().map((value) { // trim?  Yes!  Makes a difference
-  log.finest('In Dynamicparser');
-  Dynamic dynamic;
-  switch (value) {
-    case '/ppp':
-      dynamic = Dynamic.ppp;
-      break;
-    case '/pp':
-      dynamic =  Dynamic.pp;
-      break;
-    case '/p':
-      dynamic =  Dynamic.p;
-      break;
-    case '/mp':
-      dynamic =  Dynamic.mp;
-      break;
-    case '/mf':
-      dynamic =  Dynamic.mf;
-      break;
-    case '/f':
-      dynamic =  Dynamic.f;
-      break;
-    case '/ff':
-      dynamic =  Dynamic.ff;
-      break;
-    case '/fff':
-      dynamic =  Dynamic.fff;
-      break;
-    case '/dd':
-      dynamic =  Dynamic.dd;
-      break;
-  }
-  //log.info('Leaving DynamicParser returning value $dynamic');
-  return dynamic;
-});
+// // something's wrong here.  Looks strange.
+// // Also, put in own file?  Maybe, although it's a kind of dynamic marking.
+// // But still, it's kinda a pseudo element.
+// // All of these tokens map down into a single DynamicRamp object, but all its fields are null
+// Parser dynamicRampParser = (
+//     string('/>') |
+//     string('/<') |
+//     string('/dim') |
+//     string('/decresc') |
+//     string('/cresc')
+// ).trim().map((value) {
+//   log.finest('In dynamicRampParser, and the value was $value');
+//   DynamicRamp dynamicRamp;
+//   switch (value) {
+//     case '/>':
+//     case '/<':
+//     case '/cresc':
+//     case '/dim':
+//     case '/decresc':
+//       dynamicRamp =  DynamicRamp();
+//       break;
+//   }
+//   log.finest('Leaving dynamicRampParser returning a DynamicRamp object $dynamicRamp');
+//   return dynamicRamp;
+// });
+//
+// ///
+// /// DynamicParser
+// ///
+// Parser dynamicParser = (
+//     string('/mf') |
+//     string('/mp') |
+//     string('/ppp') |
+//     string('/pp') |
+//     string('/p') |
+//     string('/fff') |
+//     string('/ff') |
+//     string('/f') |
+//     string('/dd')
+// ).trim().map((value) { // trim?  Yes!  Makes a difference
+//   log.finest('In Dynamicparser');
+//   Dynamic dynamic;
+//   switch (value) {
+//     case '/ppp':
+//       dynamic = Dynamic.ppp;
+//       break;
+//     case '/pp':
+//       dynamic =  Dynamic.pp;
+//       break;
+//     case '/p':
+//       dynamic =  Dynamic.p;
+//       break;
+//     case '/mp':
+//       dynamic =  Dynamic.mp;
+//       break;
+//     case '/mf':
+//       dynamic =  Dynamic.mf;
+//       break;
+//     case '/f':
+//       dynamic =  Dynamic.f;
+//       break;
+//     case '/ff':
+//       dynamic =  Dynamic.ff;
+//       break;
+//     case '/fff':
+//       dynamic =  Dynamic.fff;
+//       break;
+//     case '/dd':
+//       dynamic =  Dynamic.dd;
+//       break;
+//   }
+//   //log.info('Leaving DynamicParser returning value $dynamic');
+//   return dynamic;
+// });

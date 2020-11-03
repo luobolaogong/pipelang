@@ -90,7 +90,7 @@ class Midi {
     // Of course this is not yet written to midi.
     log.finer('Looping through elements in the list to add to midi track...');
     for (var element in elements) {
-      log.info('element: $element');
+      //log.info('element: $element');
       if (element is Track) { // I do not trust the logic in this section.  Revisit later.  Does this mean that we'd better have a Track command at the start of a score?????????????  Bad idea/dependency
         if (trackEventsList.isNotEmpty) {
           var endOfTrackEvent = EndOfTrackEvent(); // this is new
@@ -108,7 +108,7 @@ class Midi {
         log.finer('Added track name: ${trackNameEvent.text}');
         continue; // new here
       }
-      if (element is Note) {
+      if (element is PipeNote) {
         // If the note is flam, drag, or ruff we should adjust placement of the note in the timeline so that the
         // principle part of the note is where it should go (and adjust after the note by the same difference.)
         // To do this, we need access to the previous note to shorten it.  So that means gotta process in a separate
@@ -242,7 +242,7 @@ class Midi {
   ///
   /// And should we add rest notes to track zero so that we know where to do the timesig and tempo changes?
   // double addNoteOnOffToTrackEventsList(Note note, int channel, List<MidiEvent> trackEventsList, bool usePadSoundFont) {
-  double addNoteOnOffToTrackEventsList(Note note, List<MidiEvent> trackEventsList) { // add track?
+  double addNoteOnOffToTrackEventsList(PipeNote note, List<MidiEvent> trackEventsList) { // add track?
     // var graceOffset = 0;
     if (note.duration == null) {
       log.severe('note should not have a null duration.');
@@ -254,7 +254,7 @@ class Midi {
     // // var pipesLangNoteNameValue = (note.duration.firstNumber / note.duration.secondNumber).floor(); // is this right???????
     var pipesLangNoteNameValue = note.duration.firstNumber / note.duration.secondNumber; // is this right???????  A double?
     // if (note.noteName == NoteName.rest) {
-    if (note.pipeNoteName == PipeNoteName.r) {
+    if (note.noteType == NoteType.rest) {
       note.velocity = 0; // new, nec?
     }
 
@@ -276,7 +276,7 @@ class Midi {
     noteOnEvent.noteNumber = note.noteNumber; // this was determined above by all that code
     noteOnEvent.velocity = note.velocity;
     noteOnEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
-    log.info('hey, are we shifting or not?????  note has note off delta time shift value of ${note.noteOffDeltaTimeShift}');
+    log.fine('hey, are we shifting or not?????  note has note off delta time shift value of ${note.noteOffDeltaTimeShift}');
     trackEventsList.add(noteOnEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOnEvent $noteOnEvent to trackEventsList');
 
