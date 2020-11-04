@@ -108,7 +108,7 @@ class Midi {
         log.finer('Added track name: ${trackNameEvent.text}');
         continue; // new here
       }
-      if (element is PipeNote) {
+      if (element is Note) {
         // If the note is flam, drag, or ruff we should adjust placement of the note in the timeline so that the
         // principle part of the note is where it should go (and adjust after the note by the same difference.)
         // To do this, we need access to the previous note to shorten it.  So that means gotta process in a separate
@@ -242,7 +242,7 @@ class Midi {
   ///
   /// And should we add rest notes to track zero so that we know where to do the timesig and tempo changes?
   // double addNoteOnOffToTrackEventsList(Note note, int channel, List<MidiEvent> trackEventsList, bool usePadSoundFont) {
-  double addNoteOnOffToTrackEventsList(PipeNote note, List<MidiEvent> trackEventsList) { // add track?
+  double addNoteOnOffToTrackEventsList(Note note, List<MidiEvent> trackEventsList) { // add track?
     // var graceOffset = 0;
     if (note.duration == null) {
       log.severe('note should not have a null duration.');
@@ -276,7 +276,6 @@ class Midi {
     noteOnEvent.noteNumber = note.noteNumber; // this was determined above by all that code
     noteOnEvent.velocity = note.velocity;
     noteOnEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
-    log.fine('hey, are we shifting or not?????  note has note off delta time shift value of ${note.noteOffDeltaTimeShift}');
     trackEventsList.add(noteOnEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOnEvent $noteOnEvent to trackEventsList');
 

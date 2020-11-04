@@ -89,9 +89,9 @@ class Score {
   void applyShorthands(CommandLine commandLine) {
     log.fine('In applyShorthands');
     //var previousNote = PipeNote(); // hey!!!!!
-    var previousNote = Note(); // hey!!!!! Decide now whether to make this a PipeNote or a Note?
+    var previousNote = Note(); // this has adefault dynamic value, good or bad?  I think bad
     // I don't like the way this is done to account for a first note situation.  Perhaps use a counter and special case for first note
-    previousNote.dynamic = commandLine.dynamic; // unnec???
+    previousNote.dynamic = commandLine.dynamic; // unnec?
     for (var elementIndex = 0; elementIndex < elements.length; elementIndex++) {
       if (elements[elementIndex] is Dynamic) { // new
         if (elements[elementIndex] == Dynamic.dd) {
@@ -144,7 +144,7 @@ class Score {
   }
 
   void applyDynamics() {
-    log.finest('In Score.applyDynamics().  First this only applies to Notes and PipeNotes elements.  But not much for pipes, maybe just setting an initial volume.');
+    log.finest('In Score.applyDynamics().  First this maybe only applies to non-pipe scores, but maybe just setting an initial volume.');
     setDynamicFieldOfNoteElementsIfNotDonePreviously();
     doDynamicRampStuff();
     //adjustVelocitiesByArticulations(); // only really for non-pipe notes
@@ -529,7 +529,7 @@ class Score {
     var noteOffDeltaTimeShift = 0;
 
     // just a wild stab to handle first note case in list
-    var previousNote = PipeNote();
+    var previousNote = Note();
     previousNote.noteOffDeltaTimeShift = 0;
 
     // Tempo mostRecentScaledTempo; // assuming here that we'll hit a tempo before we hit a note, because already added a scaled tempo at start of list.
@@ -540,15 +540,16 @@ class Score {
         mostRecentTempo = element;
         continue;
       }
-      else if (element is PipeNote) {
-        var note = element as PipeNote; // unnec cast, it says, but I want to
+      else if (element is Note) {
+        var note = element as Note; // unnec cast, it says, but I want to
         // Bad logic, I'm sure:
         // Hey, the following is just here for a placeholder and a test.  I've not determined which embellishments need what kind of sliding, if any.
         switch (note.noteType) {
           case NoteType.dA:
           case NoteType.dc:
-          case NoteType.ea:
-          case NoteType.Ga:
+          // case NoteType.ea:
+          case NoteType.eA:
+          case NoteType.GA:
           case NoteType.gA:
           case NoteType.ga:
           case NoteType.gb:
@@ -556,7 +557,8 @@ class Score {
           case NoteType.gd:
           case NoteType.ge:
           case NoteType.gf:
-            graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
+            // graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
@@ -564,21 +566,25 @@ class Score {
           case NoteType.gbdb:
           case NoteType.gcdc:
           case NoteType.gefe:
+          case NoteType.Gdcd:
           case NoteType.GAGA:
           case NoteType.gfgf:
-            graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round();
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
+            // graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round(); // do this after we get recordings and also measure the gracenote durations
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
           case NoteType.aga:
-            graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
+            // graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
           case NoteType.GdGcd:
-            graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
+            // graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers

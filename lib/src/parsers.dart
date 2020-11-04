@@ -121,7 +121,7 @@ Parser pipeNoteParser = ( // change to pipeNoteParser ???
 ).trim().map((valuesOrValue) { // trim?
   // print('\t\t\tIN PIPE NOTE PARSER!');
   log.finer('\t\tIn pipeNoteParser and valuesOrValue is $valuesOrValue'); // huh?
-  var note = PipeNote();
+  var note = Note();
 
   if (valuesOrValue == null) {  //
     log.warning('does this ever happen?  Hope not.  Perhaps if no match?');
@@ -287,27 +287,41 @@ Parser markerParser = (
 
 Parser pipeNoteNameParser = (
     string('GdGcd') |
-    string('GAGA') |
+    string('gfgf') |
     string('gefe') |
     string('gcdc') |
+    string('gbdb') |
+    string('Gdcd') |
+    string('GAGA') |
     string('aga') |
     string('gfg') |
-    string('gbdb') |
-    string('gfgf') |
-    // single gracenotes:
-    string('Ga') |
-    string('gA') |
-    string('ge') |
-    string('gc') |
-    string('gf') |
-    string('gb') |
-    string('dc') |
-    string('ea') |
-    string('dA') |
-    string('gd') |
     string('ga') |
-    // just notes, no embellishments:
-    string('G') | string('A') | string('b') | string('c') | string('d') | string('e') | string('f') | string('g') | string('a') | string('b') |
+    string('ea') |
+    string('GA') |
+    string('gf') |
+    string('ef') |
+    string('ge') |
+    string('Ae') |
+    string('gd') |
+    string('gc') |
+    string('ec') |
+    string('dc') |
+    string('gb') |
+    string('eb') |
+    string('db') |
+    string('gA') | // used?
+    string('eA') |
+    string('dA') |
+    string('a') |
+    string('g') |
+    string('f') |
+    string('e') |
+    string('d') |
+    string('c') |
+    string('b') |
+    string('A') |
+    string('G') |
+
     string('.') |
     string('r')
 ).trim().map((value) {
@@ -317,8 +331,8 @@ Parser pipeNoteNameParser = (
     case 'GdGcd':
       noteType = NoteType.GdGcd;
       break;
-    case 'GAGA':
-      noteType = NoteType.GAGA;
+    case 'gfgf':
+      noteType = NoteType.gfgf;
       break;
     case 'gefe':
       noteType = NoteType.gefe;
@@ -326,77 +340,98 @@ Parser pipeNoteNameParser = (
     case 'gcdc':
       noteType = NoteType.gcdc;
       break;
+    case 'gbdb':
+      noteType = NoteType.gbdb;
+      break;
+    case 'Gdcd':
+      noteType = NoteType.Gdcd;
+      break;
+    case 'GAGA':
+      noteType = NoteType.GAGA;
+      break;
     case 'aga':
       noteType = NoteType.aga;
       break;
     case 'gfg':
       noteType = NoteType.gfg;
       break;
-    case 'gbdb':
-      noteType = NoteType.gbdb;
-      break;
-    case 'gfgf':
-      noteType = NoteType.gfgf;
-      break;
-    case 'Ga':
-      noteType = NoteType.Ga;
-      break;
-    case 'gA':
-      noteType = NoteType.gA;
-      break;
-    case 'ge':
-      noteType = NoteType.ge;
-      break;
-    case 'gc':
-      noteType = NoteType.gc;
-      break;
-    case 'gf':
-      noteType = NoteType.gf;
-      break;
-    case 'gb':
-      noteType = NoteType.gb;
-      break;
-    case 'dc':
-      noteType = NoteType.dc;
+    case 'ga': // Used??????
+      noteType = NoteType.ga;
       break;
     case 'ea':
       noteType = NoteType.ea;
       break;
-    case 'dA':
-      noteType = NoteType.dA;
+    case 'GA':
+      noteType = NoteType.GA;
+      break;
+    case 'gf':
+      noteType = NoteType.gf;
+      break;
+    case 'ef':
+      noteType = NoteType.ef;
+      break;
+    case 'ge':
+      noteType = NoteType.ge;
+      break;
+    case 'Ae':
+      noteType = NoteType.Ae;
       break;
     case 'gd':
       noteType = NoteType.gd;
       break;
-    case 'ga':
-      noteType = NoteType.ga;
+    case 'gc':
+      noteType = NoteType.gc;
       break;
-    case 'G':
-      noteType = NoteType.G;
+    case 'dc':
+      noteType = NoteType.dc;
       break;
-    case 'A':
-      noteType = NoteType.A;
+    case 'ec': // new
+      noteType = NoteType.ec;
       break;
-    case 'b':
-      noteType = NoteType.b;
+    case 'gb':
+      noteType = NoteType.gb;
       break;
-    case 'c':
-      noteType = NoteType.c;
+    case 'eb':
+      noteType = NoteType.eb;
       break;
-    case 'd':
-      noteType = NoteType.d;
+    case 'db':
+      noteType = NoteType.db;
       break;
-    case 'e':
-      noteType = NoteType.e;
+    case 'gA':
+      noteType = NoteType.gA;
       break;
-    case 'f':
-      noteType = NoteType.f;
+    case 'eA':
+      noteType = NoteType.eA;
+      break;
+    case 'dA':
+      noteType = NoteType.dA;
+      break;
+    case 'a':
+      noteType = NoteType.a;
       break;
     case 'g':
       noteType = NoteType.g;
       break;
-    case 'a':
-      noteType = NoteType.a;
+    case 'f':
+      noteType = NoteType.f;
+      break;
+    case 'e':
+      noteType = NoteType.e;
+      break;
+    case 'd':
+      noteType = NoteType.d;
+      break;
+    case 'c':
+      noteType = NoteType.c;
+      break;
+    case 'b':
+      noteType = NoteType.b;
+      break;
+    case 'A':
+      noteType = NoteType.A;
+      break;
+    case 'G':
+      noteType = NoteType.G;
       break;
     case '.':
       noteType = NoteType.dot;

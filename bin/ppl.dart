@@ -33,6 +33,9 @@ import 'package:pipelang/pipelang.dart';
 ///
 // final log = Logger('ppl');
 void main(List<String> arguments) {
+
+
+
   print('Staring ppl ...');
   Logger.root.level = Level.ALL; // get this from the command line, as a secret setting
   Logger.root.onRecord.listen((record) {
@@ -40,14 +43,6 @@ void main(List<String> arguments) {
     // print('${record.level.name}: ${record.message}, ,,,, $record'); // wow!!!  I can change how it prints!
     print('$record'); // wow!!!  I can change how it prints!
   });
-
-  var file = File('midis/CastleDangerous.mid');
-  var parser = MidiParser();
-  MidiFile parsedMidi = parser.parseMidiFromFile(file);
-  print(parsedMidi.tracks.length.toString());
-  var snareTrack = parsedMidi.tracks[1];
-
-
 
 
   var commandLine = CommandLine();
@@ -73,8 +68,6 @@ void main(List<String> arguments) {
   var midiHeader =  midi.createMidiHeader(); // 840 ticks per beat seems good
   var midiTracks = <List<MidiEvent>>[];
   midi.addMidiEventsToTracks(midiTracks, score.elements, commandLine);
-
-  midiTracks.add(snareTrack);
 
   var midiFile = MidiFile(midiTracks, midiHeader);
   var midiWriterCopy = MidiWriter();
