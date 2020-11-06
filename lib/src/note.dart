@@ -53,6 +53,8 @@ class Note {
     NoteType.gcdc: 4,
     NoteType.gefe: 6,
     NoteType.gfgf: 7,
+    NoteType.afgf: 7,
+    NoteType.AGAGA: 2,
     NoteType.GdGcd: 5,
     NoteType.met: 112
   };
@@ -134,6 +136,8 @@ enum NoteType {
   Gdcd, // new, replaces throw GdGcd?
   gefe,
   gfgf,
+  afgf,
+  AGAGA,
   GdGcd,
   dot,
   met // was M

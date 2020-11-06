@@ -8,11 +8,11 @@ import '../pipelang.dart';
 /// to, until either the end of the score, or there's another /track designation.
 /// So, it's 'track <name>'
 enum TrackId {
-  snare,
-  unison, // snareEnsemble
-  pad,
-  tenor, // possibly pitch based notes rather than having tenor1, tenor2, ...
-  bass,
+  // snare,
+  // unison, // snareEnsemble
+  // pad,
+  // tenor, // possibly pitch based notes rather than having tenor1, tenor2, ...
+  // bass,
   met,
   pipes,
   chanter
@@ -23,7 +23,7 @@ class Track {
   TrackId id; // the default should be pipes.  How do you do that?
   // Maybe this will be expanded to include more than just TrackId, otherwise just an enum
   // and not a class will do, right?  I mean, why doesn't Dynamic do it this way?
-
+  @override
   String toString() {
     return 'Track: id: $id';
   }
@@ -47,21 +47,21 @@ class Track {
 TrackId trackStringToId(String trackString) {
   TrackId trackId;
   switch (trackString) {
-    case 'snare':
-      trackId = TrackId.snare;
-      break;
-    case 'unison':
-      trackId = TrackId.unison;
-      break;
-    case 'pad':
-      trackId = TrackId.pad;
-      break;
-    case 'tenor':
-      trackId = TrackId.tenor;
-      break;
-    case 'bass':
-      trackId = TrackId.bass;
-      break;
+    // case 'snare':
+    //   trackId = TrackId.snare;
+    //   break;
+    // case 'unison':
+    //   trackId = TrackId.unison;
+    //   break;
+    // case 'pad':
+    //   trackId = TrackId.pad;
+    //   break;
+    // case 'tenor':
+    //   trackId = TrackId.tenor;
+    //   break;
+    // case 'bass':
+    //   trackId = TrackId.bass;
+    //   break;
     case 'met':
     case 'metronome':
       trackId = TrackId.met;
@@ -74,7 +74,7 @@ TrackId trackStringToId(String trackString) {
       break;
     default:
       log.severe('Bad track identifier: $trackString');
-      trackId = TrackId.snare;
+      trackId = TrackId.pipes;
       break;
   }
   return trackId;
@@ -82,20 +82,22 @@ TrackId trackStringToId(String trackString) {
 
 String trackIdToString(TrackId id) {
   switch (id) {
-    case TrackId.snare:
-      return 'snare';
-    case TrackId.unison:
-      return 'unison';
-    case TrackId.pad:
-      return 'pad';
-    case TrackId.tenor:
-      return 'tenor';
-    case TrackId.bass:
-      return 'bass';
+    // case TrackId.snare:
+    //   return 'snare';
+    // case TrackId.unison:
+    //   return 'unison';
+    // case TrackId.pad:
+    //   return 'pad';
+    // case TrackId.tenor:
+    //   return 'tenor';
+    // case TrackId.bass:
+    //   return 'bass';
     case TrackId.met:
       return 'met';
     case TrackId.pipes:
       return 'pipes';
+    case TrackId.chanter:
+      return 'chanter';
     default:
       log.severe('Bad track id: $id');
       return null;

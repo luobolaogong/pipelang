@@ -4,7 +4,9 @@
 
 // Jig
 /time 6/8
-/tempo 8:3=104
+//tempo 8:3=104
+/tempo 104
+/track chanter
 /mp
 
 

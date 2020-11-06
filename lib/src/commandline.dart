@@ -175,6 +175,7 @@ class CommandLine {
       _timeSig = TimeSig();
       _timeSig.numerator = int.parse(sigParts[0]);
       _timeSig.denominator = int.parse(sigParts[1]);
+      Tempo.fillInTempoDuration(_tempo, _timeSig);
     }
   }
 

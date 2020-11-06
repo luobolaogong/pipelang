@@ -127,6 +127,9 @@ void doThePhases(Score score, CommandLine commandLine) {
   // to put a tempoEvent in the midi output
   log.finer('doThePhases(), adding  a few elements at the start, like timesig and tempo, before adjusting for grace notes.');
   log.finest('doThePhases(), tempo to use for adding a couple events at the start, is ${commandLine.tempo} which WILL NOT be scaled next.');
+
+  score.correctTripletTempos(commandLine); // new
+
   score.elements.insert(0, commandLine.tempo); // yes in this order
   score.elements.insert(0, commandLine.timeSig);
   log.finer('Added elements ${commandLine.timeSig}, ${commandLine.tempo} to head of list of elements.');

@@ -24,8 +24,8 @@ class Tempo {
   Tempo() {
     //print('in Tempo() constructor');
     noteDuration = NoteDuration();
-    noteDuration.firstNumber = NoteDuration.DefaultFirstNumber; // new 10/30/20
-    noteDuration.secondNumber = NoteDuration.DefaultSecondNumber;
+    //noteDuration.firstNumber = NoteDuration.DefaultFirstNumber; // new 10/30/20, removed 11/4/20
+    //noteDuration.secondNumber = NoteDuration.DefaultSecondNumber;
     bpm = Tempo.DefaultBpm;
   }
 
@@ -57,13 +57,12 @@ class Tempo {
     if (modifyThisTempo.noteDuration.firstNumber == null || modifyThisTempo.noteDuration.secondNumber == null) {
       if (timeSig.denominator == 8 && timeSig.numerator % 3 == 0) { // if timesig is 6/8, or 9/8 or 12/8, or maybe even 3/8, then it should be 8:3
         modifyThisTempo.noteDuration.firstNumber = 8;
-        modifyThisTempo.noteDuration.secondNumber = 3;
+        modifyThisTempo.noteDuration.secondNumber = 3; // the beat for 6/8, 9/8, 12/8, 3/8 is a dotted quarter, which is 8:3
         print('ever happen?????  maven!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
       }
       else {
         modifyThisTempo.noteDuration.firstNumber ??= timeSig.denominator; // If timeSig is anything other than 3/8, 6/8, 9/8, 12/8, ...
         modifyThisTempo.noteDuration.secondNumber ??= 1;
-        print('ever maven happens?????????????????????????????????????????????????????????????????????????????????????????????');
       }
     }
     //return modifyThisTempo;

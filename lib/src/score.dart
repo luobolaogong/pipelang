@@ -143,6 +143,22 @@ class Score {
     return;
   }
 
+  void correctTripletTempos(CommandLine commandLine) {
+    latestTimeSig = commandLine.timeSig;
+    for (var element in elements) {
+      if (element is Tempo) {
+        Tempo.fillInTempoDuration(element, latestTimeSig); // Yes, I know latestTimeSig is a global, just a test.  There's no guarantee commandLine.timeSig or tempo will have values that represent what's in the file
+        continue;
+      }
+      if (element is TimeSig) {
+        latestTimeSig = element; // latestTimeSig is a global defined in timesig.dart file
+        continue;
+      }
+      continue;
+    }
+    return;
+  }
+
   void applyDynamics() {
     log.finest('In Score.applyDynamics().  First this maybe only applies to non-pipe scores, but maybe just setting an initial volume.');
     setDynamicFieldOfNoteElementsIfNotDonePreviously();
@@ -569,6 +585,7 @@ class Score {
           case NoteType.Gdcd:
           case NoteType.GAGA:
           case NoteType.gfgf:
+          case NoteType.afgf:
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
             // graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round(); // do this after we get recordings and also measure the gracenote durations
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
@@ -583,6 +600,7 @@ class Score {
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
           case NoteType.GdGcd:
+          case NoteType.AGAGA:
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             // graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late

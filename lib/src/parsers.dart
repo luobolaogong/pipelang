@@ -286,8 +286,10 @@ Parser markerParser = (
 });
 
 Parser pipeNoteNameParser = (
+    string('AGAGA') |
     string('GdGcd') |
     string('gfgf') |
+    string('afgf') |
     string('gefe') |
     string('gcdc') |
     string('gbdb') |
@@ -328,8 +330,14 @@ Parser pipeNoteNameParser = (
   log.finer('entering pipeNoteNameParser, with string value $value');
   NoteType noteType;
   switch (value) {
+    case 'AGAGA':
+      noteType = NoteType.AGAGA;
+      break;
     case 'GdGcd':
       noteType = NoteType.GdGcd;
+      break;
+    case 'afgf':
+      noteType = NoteType.afgf;
       break;
     case 'gfgf':
       noteType = NoteType.gfgf;
