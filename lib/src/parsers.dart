@@ -285,26 +285,34 @@ Parser markerParser = (
   return marker;
 });
 
+// Of course the order is important here.  Want to parse the longest
+// string before a shorter one.
 Parser pipeNoteNameParser = (
-    string('AGAGA') |
     string('GdGcd') |
-    string('gfgf') |
+    string('AGAGA') |
     string('afgf') |
+    string('gfgf') |
     string('gefe') |
+    string('gdcd') |
     string('gcdc') |
     string('gbdb') |
+    string('gbGb') |
+    string('GdGe') |
+    string('Gded') |
     string('Gdcd') |
     string('GAGA') |
     string('aga') |
     string('gfg') |
+    string('fgf') |
     string('ga') |
     string('ea') |
-    string('GA') |
+    string('eg') |
     string('gf') |
     string('ef') |
     string('ge') |
     string('Ae') |
     string('gd') |
+    string('ed') |
     string('gc') |
     string('ec') |
     string('dc') |
@@ -314,6 +322,10 @@ Parser pipeNoteNameParser = (
     string('gA') | // used?
     string('eA') |
     string('dA') |
+    string('GA') |
+    string('gG') | // ??
+    string('eG') |
+    string('dG') |
     string('a') |
     string('g') |
     string('f') |
@@ -323,18 +335,18 @@ Parser pipeNoteNameParser = (
     string('b') |
     string('A') |
     string('G') |
-
+    string('M') |
     string('.') |
     string('r')
 ).trim().map((value) {
   log.finer('entering pipeNoteNameParser, with string value $value');
   NoteType noteType;
   switch (value) {
-    case 'AGAGA':
-      noteType = NoteType.AGAGA;
-      break;
     case 'GdGcd':
       noteType = NoteType.GdGcd;
+      break;
+    case 'AGAGA':
+      noteType = NoteType.AGAGA;
       break;
     case 'afgf':
       noteType = NoteType.afgf;
@@ -345,11 +357,23 @@ Parser pipeNoteNameParser = (
     case 'gefe':
       noteType = NoteType.gefe;
       break;
+    case 'gded':
+      noteType = NoteType.gded;
+      break;
+    case 'gdcd':
+      noteType = NoteType.gdcd;
+      break;
     case 'gcdc':
       noteType = NoteType.gcdc;
       break;
     case 'gbdb':
       noteType = NoteType.gbdb;
+      break;
+    case 'gbGb':
+      noteType = NoteType.gbGb;
+      break;
+    case 'GdGe':
+      noteType = NoteType.GdGe;
       break;
     case 'Gdcd':
       noteType = NoteType.Gdcd;
@@ -363,14 +387,17 @@ Parser pipeNoteNameParser = (
     case 'gfg':
       noteType = NoteType.gfg;
       break;
-    case 'ga': // Used??????
+    case 'fgf':
+      noteType = NoteType.fgf;
+      break;
+    case 'ga':
       noteType = NoteType.ga;
       break;
     case 'ea':
       noteType = NoteType.ea;
       break;
-    case 'GA':
-      noteType = NoteType.GA;
+    case 'eg':
+      noteType = NoteType.eg;
       break;
     case 'gf':
       noteType = NoteType.gf;
@@ -387,14 +414,17 @@ Parser pipeNoteNameParser = (
     case 'gd':
       noteType = NoteType.gd;
       break;
+    case 'ed':
+      noteType = NoteType.ed;
+      break;
     case 'gc':
       noteType = NoteType.gc;
       break;
+    case 'ec':
+      noteType = NoteType.ec;
+      break;
     case 'dc':
       noteType = NoteType.dc;
-      break;
-    case 'ec': // new
-      noteType = NoteType.ec;
       break;
     case 'gb':
       noteType = NoteType.gb;
@@ -413,6 +443,18 @@ Parser pipeNoteNameParser = (
       break;
     case 'dA':
       noteType = NoteType.dA;
+      break;
+    case 'GA':
+      noteType = NoteType.GA;
+      break;
+    case 'gG': // ??
+      noteType = NoteType.gG;
+      break;
+    case 'eG':
+      noteType = NoteType.eG;
+      break;
+    case 'dG':
+      noteType = NoteType.dG;
       break;
     case 'a':
       noteType = NoteType.a;
@@ -440,6 +482,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'G':
       noteType = NoteType.G;
+      break;
+    case 'M':
+      noteType = NoteType.met;
       break;
     case '.':
       noteType = NoteType.dot;

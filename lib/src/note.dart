@@ -17,45 +17,55 @@ class Note {
   // And single notes, followed by single grace notes, followed by doubles, followed by, whatever
   // When fix the sound font and add in a bunch of notes, then update this list/table/map
   var NoteTypeNoteNumber = {
-    NoteType.rest: 0,
-    NoteType.G: 1,
-    NoteType.A: 2,
-    NoteType.b: 3,
-    NoteType.c: 4,
-    NoteType.d: 5,
-    NoteType.e: 6,
-    NoteType.f: 7,
-    NoteType.g: 8,
-    NoteType.a: 9,
-    NoteType.GA: 2, // fix later
-    NoteType.dA: 2,
-    NoteType.eA: 2,
-    NoteType.gA: 2,
-    NoteType.db: 3,
-    NoteType.eb: 3,
-    NoteType.gb: 3,
+    NoteType.GdGcd: 5,
+    NoteType.AGAGA: 2,
+    NoteType.afgf: 7,
+    NoteType.gfgf: 7,
+    NoteType.gefe: 6,
+    NoteType.gded: 5,
+    NoteType.gdcd: 5,
+    NoteType.gcdc: 4,
+    NoteType.gbdb: 3,
+    NoteType.gbGb: 3,
+    NoteType.GdGe: 6,
+    NoteType.Gdcd: 5,
+    NoteType.GAGA: 2,
+    NoteType.aga: 9,
+    NoteType.gfg: 8,
+    NoteType.fgf: 7,
+    NoteType.ga: 9,
+    NoteType.ea: 9,
+    NoteType.eg: 8,
+    NoteType.gf: 7,
+    NoteType.ef: 7,
+    NoteType.ge: 6,
+    NoteType.Ae: 6,
+    NoteType.gd: 5,
+    NoteType.ed: 5,
     NoteType.gc: 4,
     NoteType.ec: 4,
     NoteType.dc: 4,
-    NoteType.gd: 5,
-    NoteType.Ae: 6,
-    NoteType.ge: 6,
-    NoteType.ef: 7,
-    NoteType.gf: 7,
-    // NoteType.Ga: 10,
-    NoteType.ea: 9, // used???
-    NoteType.ga: 9,
-    NoteType.gfg: 8,
-    NoteType.aga: 9,
-    NoteType.GAGA: 2,
-    NoteType.Gdcd: 5, // new, replaces the throw GdGcd ?
-    NoteType.gbdb: 3,
-    NoteType.gcdc: 4,
-    NoteType.gefe: 6,
-    NoteType.gfgf: 7,
-    NoteType.afgf: 7,
-    NoteType.AGAGA: 2,
-    NoteType.GdGcd: 5,
+    NoteType.gb: 3,
+    NoteType.eb: 3,
+    NoteType.db: 3,
+    NoteType.gA: 2,
+    NoteType.eA: 2,
+    NoteType.dA: 2,
+    NoteType.GA: 2,
+    NoteType.gG: 1, //?
+    NoteType.eG: 1,
+    NoteType.dG: 1,
+    NoteType.a: 9,
+    NoteType.g: 8,
+    NoteType.f: 7,
+    NoteType.e: 6,
+    NoteType.d: 5,
+    NoteType.c: 4,
+    NoteType.b: 3,
+    NoteType.A: 2,
+    NoteType.G: 1,
+
+    NoteType.rest: 0,
     NoteType.met: 112
   };
 
@@ -81,13 +91,13 @@ class Note {
 
 
 
-  // THIS IS A SPECIAL PURPOSE HACK.  BASED ON INDEX OF NOTE IN THE ENUMERATION LIST OF NOTETYPE!!!!!!!!!!!!!!!!!!!!!!!!1
-  // this is called on an instance of Note, as in note.setNoteNumber();
-  // In Dart, don't have to use "this."
   void setNoteNumber() { // this is specifically for pipe notes, not snare, based on the order of the enumeration of notetype to match sound font.
     //noteNumber = noteType.index; // very simplistic.  Might be okay.  Of course can never separate out the embellishments when play a tune
     noteNumber = NoteTypeNoteNumber[noteType];
-    log.finer('Just set the noteNumber to be $noteNumber');
+    if (noteNumber == null) {
+      print('stop here, noteType is $noteType');
+    }
+    log.finest('Just set the noteNumber to be $noteNumber');
   }
 
   @override
@@ -100,45 +110,54 @@ class Note {
 // And the parsing in NoteParser ... the ordering is important.
 // Nope, no longer.  Not doing it that way.
 enum NoteType {
-  rest,
-  G,
-  A,
-  b,
-  c,
-  d,
-  e,
-  f,
-  g,
-  a,
-  GA,
-  dA,
-  eA,
-  gA,
-  db,
-  eb,
-  gb,
-  dc,
-  ec,
-  gc,
-  gd,
-  Ae,
-  ge,
-  ef,
-  gf,
-  // Ga,
-  ea,
-  ga,
-  gfg,
-  aga,
-  GAGA,
-  gbdb,
-  gcdc,
-  Gdcd, // new, replaces throw GdGcd?
-  gefe,
-  gfgf,
-  afgf,
-  AGAGA,
   GdGcd,
+  AGAGA,
+  afgf,
+  gfgf,
+  gefe,
+  gded,
+  gdcd,
+  gcdc,
+  gbdb,
+  gbGb,
+  GdGe,
+  Gdcd,
+  GAGA,
+  aga,
+  gfg,
+  fgf,
+  ga,
+  ea,
+  eg,
+  gf,
+  ef,
+  ge,
+  Ae,
+  gd,
+  ed,
+  gc,
+  ec,
+  dc,
+  gb,
+  eb,
+  db,
+  gA,
+  eA,
+  dA,
+  GA,
+  gG,
+  eG, //?
+  dG, //?
+  a,
+  g,
+  f,
+  e,
+  d,
+  c,
+  b,
+  A,
+  G,
+  rest,
   dot,
-  met // was M
+  met
 }
