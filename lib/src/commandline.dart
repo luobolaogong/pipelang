@@ -237,7 +237,7 @@ class CommandLine {
           valueHelp: 'WARNING')
 
       ..addOption(CommandLine.trackMapIndex, // prob should also allow --stave and --track
-          allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes', 'chanter'],
+          allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes', 'pipesharmony', 'chanter'],
           //allowed: ['pipes', 'chanter', 'metronome', 'met'],
           defaultsTo: 'snare', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
           help:

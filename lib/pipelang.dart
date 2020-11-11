@@ -7,7 +7,7 @@ export 'src/text.dart';
 export 'src/dynamic.dart';
 export 'src/midi.dart';
 export 'src/note.dart';
-export 'src/pipenote.dart';
+//export 'src/pipenote.dart';
 // export 'src/drumnote.dart';
 export 'src/duration.dart';
 export 'src/score.dart';

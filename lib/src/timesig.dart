@@ -25,18 +25,3 @@ class TimeSig {
 
 }
 
-// ///
-// /// timeSigParser
-// ///
-// Parser timeSigParser = ( // what about whitespace?
-// //    string('/time').trim() & wholeNumberParser.trim() & char('/').trim() & wholeNumberParser.trim()
-//     string('/time').trim() & wholeNumberParser.trim() & char('/').trim() & wholeNumberParser
-//
-// ).trim().map((value) {
-//   log.finest('In timeSigParser');
-//   var timeSig = TimeSig();
-//   timeSig.numerator = value[1];
-//   timeSig.denominator = value[3];
-//   log.finest('Leaving TimeSigParser returning value $timeSig');
-//   return timeSig; // this element eventually goes into a list of other elements that make up a score
-// });

@@ -27,66 +27,6 @@ Parser scoreParser = ((pipeNoteParser | commentParser | markerParser | textParse
 });
 
 
-
-// /// Supposedly PetitParser is a dynamic parser and can change based on what input it finds.
-// /// So this is an attempt to change between drumNoteParser and pipeNoteParser.
-// // Parser noteParser = ((pipeNoteParser | drumNoteParser).plus()).trim().end().map((values) {
-// Parser noteParser = ((drumNoteParser | pipeNoteParser)).trim().end().map((values) {
-//   log.finest('\n\n\n\t\t\t\t\t\tIn noteParser, so parsed either a pipeNoteParser or drumNoteParser, and it is probably the first one: ${values}');
-//   return Note(); // return either drum or pipe note depending on what it got
-// });
-
-
-//
-// // A note must consist of A or B or C or AB or AC or BC or ABC
-// // Be careful of order!
-// Parser drumNoteParser = (
-//     (articulationParser & durationParser & typeParser) |
-//     (articulationParser & durationParser) |
-//     (articulationParser & typeParser) |
-//     (durationParser & typeParser) |
-//     (articulationParser) |
-//     (durationParser) |
-//     (typeParser)
-// ).trim().map((valuesOrValue) { // trim?
-//   log.finest('In drumNoteParser');
-//   var note = Note();
-//
-//   if (valuesOrValue == null) {  //
-//     log.info('does this ever happen?  Hope not.  Perhaps if no match?');
-//   }
-//   // Handle cases ABC, AB, AC, BC
-//   if (valuesOrValue is List) {
-//     for (var value in valuesOrValue) {
-//       if (value is NoteArticulation) { // A
-//         note.articulation = value;
-//       }
-//       else if (value is NoteDuration) { // B
-//         note.duration.firstNumber = value.firstNumber;
-//         note.duration.secondNumber = value.secondNumber; // check;
-//       }
-//       else if (value is NoteType) { // C
-//         note.noteType = value; // this notetype might be "dot", in which case it would be nice to fill in noteduration, but that's in shorthand section
-//       }
-//     }
-//   }
-//   else { // Handle cases A, B, C
-//     if (valuesOrValue is NoteArticulation) { // A
-//       note.articulation = valuesOrValue;
-//     }
-//     else if (valuesOrValue is NoteDuration) { // B
-//       note.duration.firstNumber = valuesOrValue.firstNumber;
-//       note.duration.secondNumber = valuesOrValue.secondNumber; // check;
-//     }
-//     else if (valuesOrValue is NoteType) { // C
-//       note.noteType = valuesOrValue;
-//     }
-//   }
-//
-//   log.finest('Leaving drumNoteParser returning note -->$note<--');
-//   return note;
-// });
-
 ///
 /// NoteParser
 /// I keep changing the definition of what a note is.  Technically it has atleast 3parts, but for now it has two main parts:
@@ -290,9 +230,11 @@ Parser markerParser = (
 Parser pipeNoteNameParser = (
     string('GdGcd') |
     string('AGAGA') |
+    string('GdGa') |
     string('afgf') |
     string('gfgf') |
     string('gefe') |
+    string('gded') |
     string('gdcd') |
     string('gcdc') |
     string('gbdb') |
@@ -313,6 +255,7 @@ Parser pipeNoteNameParser = (
     string('Ae') |
     string('gd') |
     string('ed') |
+    string('cd') |
     string('gc') |
     string('ec') |
     string('dc') |
@@ -347,6 +290,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'AGAGA':
       noteType = NoteType.AGAGA;
+      break;
+    case 'GdGa':
+      noteType = NoteType.GdGa;
       break;
     case 'afgf':
       noteType = NoteType.afgf;
@@ -416,6 +362,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'ed':
       noteType = NoteType.ed;
+      break;
+    case 'cd':
+      noteType = NoteType.cd;
       break;
     case 'gc':
       noteType = NoteType.gc;
@@ -587,56 +536,3 @@ Parser trackParser = (
   return track;
 });
 
-// ///
-// /// VoiceParser
-// ///
-// Parser voiceParser = (
-//     string('/unison') |
-//     string('/chips') |
-//     string('/tutti') |
-//     string('/solo') |
-//     string('/tip')
-// ).trim().map((value) { // trim?  Yes!  Makes a difference
-//   Voice voice;
-//   switch (value) {
-//     case '/unison':
-//     case '/chips':
-//     case '/tutti':
-//       voice = Voice.unison;
-//       break;
-//     case '/solo':
-//     case '/tip':
-//       voice =  Voice.solo;
-//       break;
-//   }
-//   //log.info('Leaving VoiceParser returning value $voice');
-//   return voice;
-// });
-
-// ///
-// /// ArticulationParser
-// ///
-// Parser articulationParser = (
-//     char('^') | // maybe change these to pattern('/^>-_')
-//     char('>') |
-//     char('_') |
-//     char('-')    // get rid of this one
-// ).trim().map((value) { // trim()?
-//   log.finest('In Articulationparser');
-//   NoteArticulation articulation;
-//   switch (value) {
-//     case '_':
-//       articulation = NoteArticulation.tenuto;
-//       break;
-//     case '>':
-//       articulation = NoteArticulation.accent;
-//       break;
-//     case '^':
-//       articulation = NoteArticulation.marcato;
-//       break;
-//     default:
-//       log.info('What was that articulation? -->${value}<--');
-//   }
-//   log.finest('Leaving Articulationparser returning articulation $articulation');
-//   return articulation;
-// });
