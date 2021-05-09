@@ -14,7 +14,12 @@ class Track {
   // Why not initialize?
   TrackId id; // the default should be pipes.  How do you do that?
   // Maybe this will be expanded to include more than just TrackId, otherwise just an enum
+  //int channel;  // not sure how this works yet or the range of values possible, probably 0-15.  Default 0
   // and not a class will do, right?  I mean, why doesn't Dynamic do it this way?
+
+  Track() {
+    id = TrackId.pipes; // new 11/11/20  Why now?
+  }
   @override
   String toString() {
     return 'Track: id: $id';
@@ -25,7 +30,6 @@ class Track {
 TrackId trackStringToId(String trackString) {
   TrackId trackId;
   switch (trackString) {
-
     case 'met':
     case 'metronome':
       trackId = TrackId.met;

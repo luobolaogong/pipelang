@@ -5,6 +5,7 @@
 /time 4/4
 /tempo 2=72
 /track pipes  // can't be chanter for some reason
+/channel 1
 /mf
 
 // Met count in

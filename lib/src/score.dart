@@ -423,16 +423,32 @@ class Score {
           case NoteType.gd:
           case NoteType.ge:
           case NoteType.gf:
+          case NoteType.af:
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             // graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
+          case NoteType.aga:
+          case NoteType.cdc:
+          case NoteType.dcd:
+          case NoteType.gfg:
+          case NoteType.fgf:
+          case NoteType.efe:
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
+            // graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          case NoteType.gdGd: // new
           case NoteType.gbdb:
           case NoteType.gcdc:
           case NoteType.gefe:
           case NoteType.Gdcd:
+          case NoteType.Gbdb:
+          case NoteType.GdGb: // new
           case NoteType.GAGA:
           case NoteType.gfgf:
           case NoteType.afgf:
@@ -442,17 +458,17 @@ class Score {
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
-          case NoteType.aga:
-            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
-            // graceNotesDuration = (1400 / (100 / mostRecentTempo.bpm)).round();
-            previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
-            note.noteOffDeltaTimeShift += graceNotesDuration;
-            previousNote = note; // probably wrong.  Just want to work with pointers
-            break;
           case NoteType.GdGcd:
           case NoteType.AGAGA:
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             // graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
+            previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
+            note.noteOffDeltaTimeShift += graceNotesDuration;
+            previousNote = note; // probably wrong.  Just want to work with pointers
+            break;
+          case NoteType.gAGAGA:
+            graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
+            // graceNotesDuration = (???? / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration; // at slow tempos coming in too late
             note.noteOffDeltaTimeShift += graceNotesDuration;
             previousNote = note; // probably wrong.  Just want to work with pointers

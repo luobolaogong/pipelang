@@ -23,6 +23,7 @@ class CommandLine {
   Tempo _tempo;
   num _tempoScalar;
   Track _track;
+  Channel _channel;
   Dynamic _dynamic;
   TimeSig _timeSig;
   List<String> _inputFilesList;
@@ -34,6 +35,7 @@ class CommandLine {
   static final inputFileListMapIndex = 'input'; // -i  --input
   static final outputMidiFilePathMapIndex = 'midiout'; // -o --output  --outmidi
   static final trackMapIndex = 'track'; // -s --track --stave --part --instrument
+  static final channelMapIndex = 'channel'; // -c --channel --chan --program
   static final tempoMapIndex = 'tempo'; // -t, --tempo
   static final tempoScalarMapIndex = 'temposcalar'; // -S? --ts --temposcalar
   static final timeSigMapIndex = 'timesig'; // --timesig --sig
@@ -52,6 +54,9 @@ class CommandLine {
   }
   Track get track {
     return _track;
+  }
+  Channel get channel {
+    return _channel;
   }
   Dynamic get dynamic {
     return _dynamic;
@@ -164,10 +169,13 @@ class CommandLine {
     if (argResults[CommandLine.trackMapIndex] != null) {
       _track = parseTrack(argResults[CommandLine.trackMapIndex]);
     }
+    if (argResults[CommandLine.channelMapIndex] != null) {
+      _channel = parseChannel(argResults[CommandLine.channelMapIndex]);
+    }
     if (argResults[CommandLine.dynamicMapIndex] != null) {
       String dynamicString = argResults[CommandLine.dynamicMapIndex];
       _dynamic = stringToDynamic(dynamicString);
-      print('storeTheResultValues(), just set _dynamic to $_dynamic because either something was set on command line, or it wasnt and we just have the default value, but in any case, its set.');
+      log.fine('storeTheResultValues(), just set _dynamic to $_dynamic because either something was set on command line, or it wasnt and we just have the default value, but in any case, its set.');
     }
     if (argResults[CommandLine.timeSigMapIndex] != null) {
       String sig = argResults[CommandLine.timeSigMapIndex];
@@ -177,6 +185,7 @@ class CommandLine {
       _timeSig.denominator = int.parse(sigParts[1]);
       Tempo.fillInTempoDuration(_tempo, _timeSig);
     }
+    return;
   }
 
 
@@ -237,12 +246,22 @@ class CommandLine {
           valueHelp: 'WARNING')
 
       ..addOption(CommandLine.trackMapIndex, // prob should also allow --stave and --track
-          allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes', 'pipesharmony', 'chanter'],
+          allowed: ['pipes', 'pipesharmony', 'chanter'],
           //allowed: ['pipes', 'chanter', 'metronome', 'met'],
-          defaultsTo: 'snare', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
+          defaultsTo: 'pipes', // I think this is the reason we get a value!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 without a constructor
           help:
           'Set the staff/stave/instrument/track name.',
           valueHelp: 'pipes')
+
+
+      ..addOption(CommandLine.channelMapIndex,
+          //allowed: ['snare', 'snareUnison', 'tenor', 'bass', 'metronome', 'met', 'pipes', 'pipesharmony', 'chanter'],
+          //allowed: ['pipes', 'chanter', 'metronome', 'met'],
+          abbr: 'c',
+          defaultsTo: '0',
+          help:
+          'Set the channel/program number.',
+          valueHelp: '0')
 
 
       ..addOption(CommandLine.timeSigMapIndex, // of questionable utillity
@@ -283,6 +302,12 @@ class CommandLine {
     var track = Track();
     track.id = trackStringToId(trackString);
     return track;
+  }
+
+  Channel parseChannel(String channelString) {
+    var channel = Channel();
+    channel.number = int.parse(channelString);
+    return channel;
   }
 
 }

@@ -5,7 +5,8 @@
 /time 4/4
 /tempo 2=72
 /track pipesharmony  // can't be chanter for some reason
-/mf
+/channel 2
+/mp
 
 // Met count in
 1r
@@ -15,14 +16,14 @@
 2r . .
 
 /marker L1
-//4gd e
-4r 4r
+4gd e
+//4r 4r
 1gded
 1G
-//1gA
-1r
-//2A 4gc d
-2r 4r 4r
+1gA
+//1r
+2A 4gc d
+//2r 4r 4r
 
 
 /marker L2
@@ -65,7 +66,7 @@
 /marker L8B29
 2gefe GAGA
 2gd c
-1G
+1GAGA
 1GAGA
 
 
@@ -95,14 +96,14 @@
 /marker L8B29Rpt
 2gefe GAGA
 2gd c
-1G
 1GAGA
+1A
 
 
 /marker L8B29RptRpt
 2gefe GAGA
 2gd c
-2G .
-2GAGA
+2A .
+2A
 
 

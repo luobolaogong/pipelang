@@ -12,6 +12,7 @@ export 'src/note.dart';
 export 'src/duration.dart';
 export 'src/score.dart';
 export 'src/track.dart';
+export 'src/channel.dart';
 export 'src/tempo.dart';
 export 'src/timesig.dart';
 export 'src/commandline.dart';

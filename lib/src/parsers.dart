@@ -8,12 +8,12 @@ import '../pipelang.dart';
 /// doing the actions, I think.  So, the actions cannot influence the parse, it seems.
 ///
 /// ScoreParser
-Parser scoreParser = ((pipeNoteParser | commentParser | markerParser | textParser | trackParser | timeSigParser | tempoParser | dynamicParser | dynamicRampParser).plus()).trim().end().map((values) {    // trim()?
+Parser scoreParser = ((pipeNoteParser | commentParser | markerParser | textParser | trackParser | channelParser | timeSigParser | tempoParser | dynamicParser | dynamicRampParser).plus()).trim().end().map((values) {    // trim()?
   log.finest('\t\t\t\t\t\tIn Scoreparser, and parsed this many elements: ${values.length}, and will now add values from parse result list to score.elements');
   var score = Score();
   if (values is List) {
     for (var value in values) {
-      log.info('\t\t\t\tIn loop of values after parsing a score, and will add to score.elements value: -->$value<--');
+      log.finest('\t\t\t\tIn loop of values after parsing a score, and will add to score.elements value: -->$value<--');
       score.elements.add(value);
       //log.finest('ScoreParser, Now score.elements has this many elements: ${score.elements.length}');
     }
@@ -122,7 +122,7 @@ Parser wholeNumberParser = digit().plus().flatten().trim().map((value) { // not 
 ///
 
 Parser durationParser = (wholeNumberParser & (char(':').trim() & wholeNumberParser).optional()).map((value) { // trim?
-  log.finer('In DurationParser');
+  log.finest('In DurationParser');
   var duration = NoteDuration();
   duration.firstNumber = value[0];
   if (value[1] != null) { // prob unnec
@@ -228,27 +228,37 @@ Parser markerParser = (
 // Of course the order is important here.  Want to parse the longest
 // string before a shorter one.
 Parser pipeNoteNameParser = (
+    string('gAGAGA') |
     string('GdGcd') |
     string('AGAGA') |
     string('GdGa') |
+    string('GdGb') | // new
     string('afgf') |
     string('gfgf') |
     string('gefe') |
+    string('gdGd') |
     string('gded') |
     string('gdcd') |
     string('gcdc') |
     string('gbdb') |
     string('gbGb') |
+    string('GdGb') | // new
+    string('GbGA') | // new
     string('GdGe') |
     string('Gded') |
     string('Gdcd') |
+    string('Gbdb') |
     string('GAGA') |
     string('aga') |
+    string('dcd') |
+    string('cdc') |
     string('gfg') |
     string('fgf') |
+    string('efe') |
     string('ga') |
     string('ea') |
     string('eg') |
+    string('af') |
     string('gf') |
     string('ef') |
     string('ge') |
@@ -269,6 +279,7 @@ Parser pipeNoteNameParser = (
     string('gG') | // ??
     string('eG') |
     string('dG') |
+    string('aG') |
     string('a') |
     string('g') |
     string('f') |
@@ -282,9 +293,12 @@ Parser pipeNoteNameParser = (
     string('.') |
     string('r')
 ).trim().map((value) {
-  log.finer('entering pipeNoteNameParser, with string value $value');
+  log.finest('entering pipeNoteNameParser, with string value $value');
   NoteType noteType;
   switch (value) {
+    case 'gAGAGA':
+      noteType = NoteType.gAGAGA;
+      break;
     case 'GdGcd':
       noteType = NoteType.GdGcd;
       break;
@@ -293,6 +307,12 @@ Parser pipeNoteNameParser = (
       break;
     case 'GdGa':
       noteType = NoteType.GdGa;
+      break;
+    case 'GdGb':
+      noteType = NoteType.GdGb;
+      break;
+    case 'GbGA':
+      noteType = NoteType.GbGA;
       break;
     case 'afgf':
       noteType = NoteType.afgf;
@@ -306,6 +326,9 @@ Parser pipeNoteNameParser = (
     case 'gded':
       noteType = NoteType.gded;
       break;
+    case 'gdGd':    // new
+      noteType = NoteType.gdGd;
+      break;
     case 'gdcd':
       noteType = NoteType.gdcd;
       break;
@@ -314,6 +337,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'gbdb':
       noteType = NoteType.gbdb;
+      break;
+    case 'Gbdb':
+      noteType = NoteType.Gbdb;
       break;
     case 'gbGb':
       noteType = NoteType.gbGb;
@@ -330,11 +356,20 @@ Parser pipeNoteNameParser = (
     case 'aga':
       noteType = NoteType.aga;
       break;
+    case 'cdc':
+      noteType = NoteType.cdc;
+      break;
+    case 'dcd':
+      noteType = NoteType.dcd;
+      break;
     case 'gfg':
       noteType = NoteType.gfg;
       break;
     case 'fgf':
       noteType = NoteType.fgf;
+      break;
+    case 'efe':
+      noteType = NoteType.efe;
       break;
     case 'ga':
       noteType = NoteType.ga;
@@ -350,6 +385,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'ef':
       noteType = NoteType.ef;
+      break;
+    case 'af':
+      noteType = NoteType.af;
       break;
     case 'ge':
       noteType = NoteType.ge;
@@ -404,6 +442,9 @@ Parser pipeNoteNameParser = (
       break;
     case 'dG':
       noteType = NoteType.dG;
+      break;
+    case 'aG':
+      noteType = NoteType.aG;
       break;
     case 'a':
       noteType = NoteType.a;
@@ -530,9 +571,22 @@ Parser trackParser = (
   var track = Track();
   track.id = trackStringToId(value[1]);
   if (track.id == TrackId.pipes || track.id == TrackId.chanter) {
-    print('switch to pipes parser, otherwise dont use it');
+    log.fine('switch to pipes parser, otherwise dont use it');
   }
   log.finest('Leaving trackParser returning value $track');
   return track;
+});
+
+///
+/// channelParser
+///
+Parser channelParser = (
+    (string('/channel') | string('/chan') | string('/program')).trim()
+    & wholeNumberParser.trim()).trim().map((value) {
+  log.finest('In channelParser and value is -->$value<--');
+  var channel = Channel();
+  channel.number = value[1];
+  log.finest('Leaving channelParser returning value $channel');
+  return channel;
 });
 

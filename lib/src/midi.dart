@@ -79,11 +79,14 @@ class Midi {
   }
 
 
+  // List<List<MidiEvent>> addMidiEventsToTracks(List<List> midiTracks, List elements,commandLine) {
   List<List<MidiEvent>> addMidiEventsToTracks(List<List> midiTracks, List elements, commandLine) {
     log.fine('In Midi.createMidiEventsTracksList()');
     var trackEventsList = <MidiEvent>[];
     var trackNameEvent = TrackNameEvent();
     trackNameEvent.text = trackIdToString(commandLine.track.id);
+    log.fine('\t\t\tWhat is this track.id text thing?:  ${trackNameEvent.text}');
+    var noteChannel = Channel.DefaultChannelNumber;
     trackNameEvent.deltaTime = 0;
 
     // Go through the elements, seeing what each one is, and add it to the current track if right kind of element.
@@ -91,6 +94,9 @@ class Midi {
     log.finer('Looping through elements in the list to add to midi track...');
     for (var element in elements) {
       //log.info('element: $element');
+      if (element is Channel) {
+        noteChannel = element.number;
+      }
       if (element is Track) { // I do not trust the logic in this section.  Revisit later.  Does this mean that we'd better have a Track command at the start of a score?????????????  Bad idea/dependency
         if (trackEventsList.isNotEmpty) {
           var endOfTrackEvent = EndOfTrackEvent(); // this is new
@@ -116,7 +122,7 @@ class Midi {
         // And can't assume the previous element in the list was a note!  Could be a dynamic element, or tempo, etc.
         //
         // addNoteOnOffToTrackEventsList(element, noteChannel, pipesTrackEventsList, usePadSoundFont);
-        addNoteOnOffToTrackEventsList(element, trackEventsList);
+        addNoteOnOffToTrackEventsList(element, noteChannel, trackEventsList);
         continue;
       }
       if (element is Tempo) {
@@ -242,7 +248,8 @@ class Midi {
   ///
   /// And should we add rest notes to track zero so that we know where to do the timesig and tempo changes?
   // double addNoteOnOffToTrackEventsList(Note note, int channel, List<MidiEvent> trackEventsList, bool usePadSoundFont) {
-  double addNoteOnOffToTrackEventsList(Note note, List<MidiEvent> trackEventsList) { // add track?
+  // double addNoteOnOffToTrackEventsList(Note note, List<MidiEvent> trackEventsList) { // add track?
+  double addNoteOnOffToTrackEventsList(Note note, int channel, List<MidiEvent> trackEventsList) { // add track?
     // var graceOffset = 0;
     if (note.duration == null) {
       log.severe('note should not have a null duration.');
@@ -275,7 +282,8 @@ class Midi {
     noteOnEvent.deltaTime = 0; // might need to adjust to handle roundoff???  Can you do a negative amount, and add the rest on the off note?????????????????????????????????????????
     noteOnEvent.noteNumber = note.noteNumber; // this was determined above by all that code
     noteOnEvent.velocity = note.velocity;
-    noteOnEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
+    // noteOnEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
+    noteOnEvent.channel = channel; // dumb question: What's a channel?  Will I ever need to use it?
     trackEventsList.add(noteOnEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOnEvent $noteOnEvent to trackEventsList');
 
@@ -286,7 +294,8 @@ class Midi {
     noteOffEvent.deltaTime += note.noteOffDeltaTimeShift; // for grace notes.  May be zero if no grace notes, or if consecutive same grace notes, like 2 or more flams
     noteOffEvent.noteNumber = note.noteNumber;
     noteOffEvent.velocity = 0; // shouldn't this just be 0?
-    noteOffEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
+    // noteOffEvent.channel = 0; // dumb question: What's a channel?  Will I ever need to use it?
+    noteOffEvent.channel = channel; // dumb question: What's a channel?  Will I ever need to use it?
 
     trackEventsList.add(noteOffEvent);
     log.finest('addNoteOnOffToTrackEventsList() added endOffvent $noteOffEvent to trackEventsList');
@@ -297,7 +306,7 @@ class Midi {
 
     log.finest('noteOnNoteOff, Created note events for noteNameValue ${pipesLangNoteNameValue}, '
         'deltaTime ${noteOffEvent.deltaTime} (${noteTicksAsDouble}), velocity: ${note.velocity}, '
-        'number: ${note.noteNumber}, cumulative roundoff ticks: $cumulativeRoundoffTicks');
+        'number: ${note.noteNumber}, channel: $channel, cumulative roundoff ticks: $cumulativeRoundoffTicks');
     return diffTicksAsDouble; // kinda strange
   }
 }

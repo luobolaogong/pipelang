@@ -1,0 +1,67 @@
+// Amazing Grace, Chanter
+
+// Sounds to me like it should be 9/8 time
+// And the subdivisions should be 20th notes
+/time 3/4
+/tempo 4=66
+
+/track chanter
+/channel 5
+/mp
+// Count in and pickup
+
+4r . 20:3r 10r
+4r .
+// pickup:
+20:3gA 10d
+
+//marker B1-4
+2gdGd  10gf 20e 10d
+2gf 8gf 8e
+2Gdcd  4gb
+2GA  20:3gA 10d
+
+//marker B5-8
+2gdGd  10gf 20e 10d
+2gf 20:3ge 10f
+2aga  4ga
+2ga 20:3f 10a
+
+//marker B9-12
+2ga 10fgf 20e 10d
+2gf 8gf 8e
+2Gdcd 4gb
+2GA 20:3gA 10d
+
+//marker 13-16
+2gdGd 10gf 20e 10d
+2gf 4e
+// 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
+2Gdcd 4Gdcd // this is the fix
+2gdGd      20:3gA 10d
+
+// Repeat
+//marker B1-4
+2gdGd  10gf 20e 10d
+2gf 8gf 8e
+2Gdcd  4gb
+2GA  20:3gA 10d
+
+//marker B5-8
+2gdGd  10gf 20e 10d
+2gf 20:3ge 10f
+2aga  4ga
+2ga 20:3f 10a
+
+//marker B9-12
+2ga 10fgf 20e 10d
+2gf 8gf 8e
+2Gdcd 4gb
+2GA 20:3gA 10d
+
+//marker 13-16
+2gdGd 10gf 20e 10d
+2gf 4e
+// 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
+2Gdcd 4Gdcd // this is the fix
+2gdGd

@@ -1,0 +1,34 @@
+// The Haunting, Chanter
+
+/time 6/4
+/tempo 4=80
+
+/track chanter
+/channel 5
+/mp
+// Count in
+4r . . . . .
+
+//marker B1-4
+2gb 8d 8f  2gefe  8d 8c
+8:3gb 8c 8gd 8e  2gcdc  4eA
+2gb 8d f  2gefe 8d c
+2Gdcd 8gc d  2gefe  8gd e
+
+//marker B5-8
+2gfgf 8d eb  2gefe 8c dA
+8:3Gdcd 8e gded b 2gcdc 8b A
+2gb 8f d 2gefe 8c dA
+2gbdb 4eA 2GdGb       8gd e
+
+//marker B9-12
+2gf 8g f 2gefe  8gf e
+8:3gd 8e gded b 2gcdc 8b A
+2gb 8c d 2gefe 8gd e
+8:3gf 8g af d 2gefe  8gd e
+
+//marker B13-16
+2gfgf 8d eb 2gefe 8c dA
+8:3Gdcd 8e gded b  2gcdc 8b A
+2gb 8f d 8:3gefe 8d c dA
+2gbdb 4eA 2GdGb
