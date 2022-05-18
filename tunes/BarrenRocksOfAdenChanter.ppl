@@ -1,0 +1,64 @@
+// Barren Rocks - chanter
+
+/track chanter
+/channel 4
+/f
+/time 2/4
+/tempo 76
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r 1r
+
+/marker L1
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge 24:5gAGAGA 24e
+8gf gAGAGA  24:5GdGcd 24e
+
+/marker L2
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge gAGAGA 12gf 24e
+4GdGcd 24:5gdcd 24e
+
+/marker L1Rpt
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge 24:5gAGAGA 24e
+8gf gAGAGA  24:5GdGcd 24e
+
+/marker L2Rpt
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge gAGAGA 12gf 24e
+4GdGcd 8gdcd 12gf 24g
+
+/marker L3
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc ge
+8GdGcd gf 12gfgf 24e 12gf 24g
+
+/marker L4
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc eA
+4GdGcd 8gdcd 12gf 24g
+
+/marker L3Rpt
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc ge
+8GdGcd gf 12gfgf 24e 12gf 24g
+
+/marker L4
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc eA
+4GdGcd gdcd
+
+

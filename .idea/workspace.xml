@@ -22,27 +22,61 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="Don't remember all I changed.">
-      <change afterPath="$PROJECT_DIR$/lib/src/channel.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/AmazingGraceChanter.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/CameronianRant.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/CameronianRantStrath.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/CastleDangerousChanter.ppl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tunes/TheHauntingChanter.ppl" afterDir="false" />
+    <list default="true" id="8224478b-bc36-42b3-8625-a0bdc999864d" name="Default Changelist" comment="Tons of changes.  Been a long time.">
+      <change afterPath="$PROJECT_DIR$/exercises/ForRecordingChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/24MarchSetChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/AmazingGrace3xChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/AnnettesChatterChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/BadgeOfScotlandChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/BadgeSetChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/BarrenRocksOfAdenChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/BattleOfWaterlooChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/BrownHairedMaidenChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/CaptEwingMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/CastleDangerousMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/CastleDangerousMassedBandsShiftedChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/CastleDangerousSimpleChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/CockneyJocksChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/Competition44SetChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/Competition44SetMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/DiuRegnareChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/DiuRegnareHarmonyChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/FlettFromFlottaChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ForestLodgeChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/HauntingCastleSetChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/HauntingCastleSetSimpleAndMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/HauntingCastleSetSimpleChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/HawaiiAlohaChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/HighlandLaddieChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/JigSetGeneralJigChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/LochansideChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/MaltOnTheOpticsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/MurdosWeddingChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/PrimroseGirlChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ReelSetChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/RowanTreeChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/RowanTreeScotBrave2xJL24MassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ScotlandTheBrave2XMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ScotlandTheBraveChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ScotlandTheBraveMarch44Chanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/ScotlandTheBraveMassedBandsChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/SkymansJigChanter.ppl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tunes/TheHauntingSimpleChanter.ppl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pipelang.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pipelang.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commandline.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commandline.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/midi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/midi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ppl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ppl.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/note.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/note.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/parsers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/parsers.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/score.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/score.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/tempo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/tempo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/track.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/track.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/midis/AmberOnTheRocks.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tunes/CastleDangerous.snl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tunes/HawaiiAlohaChanter.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/HawaiiAlohaChanterMelody.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/AmazingGraceChanter.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/AmazingGrace2xChanter.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/BanjoBreakdown.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/BanjoBreakdown.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/CameronianRant.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/CameronianRantChanter.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/CameronianRantStrath.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/CameronianRantStrath.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/CaptEwingChanter.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/CaptEwingChanter.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/CastleDangerousChanter.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/CastleDangerousChanter.ppl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tunes/HawaiiAlohaChanterHarmony.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/HawaiiAlohaChanterHarmony.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/HawaiiAlohaChanterMelody.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/HawaiiAlohaChanterMelody.ppl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tunes/TheHauntingChanter.ppl" beforeDir="false" afterPath="$PROJECT_DIR$/tunes/TheHauntingChanter.ppl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +121,19 @@
       <recent name="$PROJECT_DIR$/lib/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.CastleDangerousChanter">
+  <component name="RunManager" selected="Dart Command Line App.DiuRegnare">
+    <configuration name="24MarchSet" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/24MarchSetChanter.ppl -o midis/24MarchSetChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="AmazingGraceChanter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="arguments" value="-i tunes/AmazingGraceChanter.ppl -o midis/AmazingGraceChanter.mid -l ALL" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="AmazingGraceSimple" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/AmazingGraceSimpleChanter.ppl -o midis/AmazingGraceSimpleChanter.mid" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
@@ -98,8 +142,28 @@
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="AnnettesChatter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/AnnettesChatterChanter.ppl -o midis/AnnettesChatterChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BadgeScotland" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" singleton="false">
+      <option name="arguments" value="-i tunes/BadgeOfScotlandChanter.ppl -o midis/BadgeOfScotlandChanter.mid -l INFO" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="BanjoBreakdown" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="arguments" value="-i tunes/BanjoBreakdown.ppl -o midis/BanjoBreakdown.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BarrenRocks" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/BarrenRocksChanter.ppl -o midis/BarrenRocksChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BrownHairedMaiden" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/BrownHairedMaidenChanter.ppl -o midis/BrownHairedMaidenChanter.mid" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
@@ -108,13 +172,83 @@
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="CameronianRantChanter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/CameronianRantChanter.ppl -o midis/CameronianRantChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CaptNormEwing" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/CaptEwingChanter.ppl -o midis/CaptEwingChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="CastleDangerousChanter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="arguments" value="-i tunes/CastleDangerousChanter.ppl -o midis/CastleDangerousChanter.mid -l FINER" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="CockneyJocks" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/CockneyJocks.ppl -o midis/CockneyJocks.mid -l ALL" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CompSet44" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/Competition44SetChanter.ppl -o midis/Competition44SetChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DiuRegnare" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/DiuRegnareChanter.ppl -o midis/DiuRegnareChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FlettFromFlotta" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/FlettFromFlottaChanter.ppl -o midis/FlettFromFlottaChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ForRecording" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i exercises/ForRecordingChanter.ppl -o midis/ForRecordingChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ForestLodge" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/ForestLodgeChanter.ppl -o midis/ForestLodgeChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="Haunting" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="arguments" value="-i tunes/TheHauntingChanter.ppl -o midis/TheHauntingChanter.mid -l INFO " />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HauntingCastleSetChanter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/HauntingCastleSetChanter.ppl -o midis/HauntingCastleSetChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HighlandLaddieChanter" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/HighlandLaddieChanter.ppl -o midis/HighlandLaddieChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Lochanside" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/LochansideChanter.ppl -o midis/LochansideChanter.mid -l FINE" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MaltOnTheOptics" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/MaltOnTheOpticsChanter.ppl -o midis/MaltOnTheOpticsChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MurdosWedding" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/MurdosWeddingChanter.ppl -o midis/MurdosWeddingChanter.mid -l ALL" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PrimroseGirl" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/PromroseGirlChanter.ppl -o midis/PrimroseGirleChanter.mid" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
@@ -128,21 +262,65 @@
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="ReelSet" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/ReelSetChanter.ppl -o midis/ReelSetChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RowanTree" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/RowanTreeChanter.ppl -o midis/RowanTreeChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ScotlandBrave" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/ScotlandTheBraveChanter.ppl -o midis/ScotlandTheBraveChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SkymansJig" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="arguments" value="-i tunes/SkymansJigChanter.ppl -o midis/SkymansJigChanter.mid" />
+      <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="ppl" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="arguments" value="-i tunes/BanjoBreakdown.ppl -o midis/BanjoBreakdown.mid -l ALL" />
       <option name="filePath" value="$PROJECT_DIR$/bin/ppl.dart" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Dart Command Line App.AmberOnTheRocks" />
+      <item itemvalue="Dart Command Line App.24MarchSet" />
       <item itemvalue="Dart Command Line App.AmazingGraceChanter" />
-      <item itemvalue="Dart Command Line App.Haunting" />
-      <item itemvalue="Dart Command Line App.CastleDangerousChanter" />
+      <item itemvalue="Dart Command Line App.AmazingGraceSimple" />
+      <item itemvalue="Dart Command Line App.AmberOnTheRocks" />
+      <item itemvalue="Dart Command Line App.AnnettesChatter" />
+      <item itemvalue="Dart Command Line App.BadgeScotland" />
       <item itemvalue="Dart Command Line App.BanjoBreakdown" />
+      <item itemvalue="Dart Command Line App.BarrenRocks" />
+      <item itemvalue="Dart Command Line App.BrownHairedMaiden" />
       <item itemvalue="Dart Command Line App.CamRantStrath" />
-      <item itemvalue="Dart Command Line App.ppl" />
-      <item itemvalue="Dart Command Line App.Rant" />
+      <item itemvalue="Dart Command Line App.CameronianRantChanter" />
+      <item itemvalue="Dart Command Line App.CaptNormEwing" />
+      <item itemvalue="Dart Command Line App.CastleDangerousChanter" />
+      <item itemvalue="Dart Command Line App.CockneyJocks" />
+      <item itemvalue="Dart Command Line App.CompSet44" />
+      <item itemvalue="Dart Command Line App.DiuRegnare" />
+      <item itemvalue="Dart Command Line App.FlettFromFlotta" />
+      <item itemvalue="Dart Command Line App.ForRecording" />
+      <item itemvalue="Dart Command Line App.ForestLodge" />
+      <item itemvalue="Dart Command Line App.HauntingCastleSetChanter" />
+      <item itemvalue="Dart Command Line App.Haunting" />
+      <item itemvalue="Dart Command Line App.HighlandLaddieChanter" />
+      <item itemvalue="Dart Command Line App.Lochanside" />
+      <item itemvalue="Dart Command Line App.MaltOnTheOptics" />
+      <item itemvalue="Dart Command Line App.MurdosWedding" />
+      <item itemvalue="Dart Command Line App.PrimroseGirl" />
       <item itemvalue="Dart Command Line App.RantStrathStyle" />
+      <item itemvalue="Dart Command Line App.Rant" />
+      <item itemvalue="Dart Command Line App.ReelSet" />
+      <item itemvalue="Dart Command Line App.RowanTree" />
+      <item itemvalue="Dart Command Line App.ScotlandBrave" />
+      <item itemvalue="Dart Command Line App.SkymansJig" />
+      <item itemvalue="Dart Command Line App.ppl" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -214,7 +392,75 @@
       <workItem from="1619920341048" duration="597000" />
       <workItem from="1619942150936" duration="49000" />
       <workItem from="1620441642236" duration="5915000" />
-      <workItem from="1620490552366" duration="10402000" />
+      <workItem from="1620490552366" duration="13928000" />
+      <workItem from="1620616835374" duration="5108000" />
+      <workItem from="1620663357574" duration="289000" />
+      <workItem from="1620663666955" duration="14986000" />
+      <workItem from="1620749835987" duration="4498000" />
+      <workItem from="1620838112878" duration="10666000" />
+      <workItem from="1620922569750" duration="5348000" />
+      <workItem from="1621014167156" duration="3876000" />
+      <workItem from="1621036924297" duration="2385000" />
+      <workItem from="1621106299557" duration="1471000" />
+      <workItem from="1621140396935" duration="2409000" />
+      <workItem from="1621210875940" duration="2306000" />
+      <workItem from="1621236420438" duration="2240000" />
+      <workItem from="1621269192030" duration="5441000" />
+      <workItem from="1621357536051" duration="2620000" />
+      <workItem from="1621453458827" duration="17657000" />
+      <workItem from="1621530756533" duration="7974000" />
+      <workItem from="1621621421983" duration="11548000" />
+      <workItem from="1621717562541" duration="4347000" />
+      <workItem from="1621790906264" duration="2928000" />
+      <workItem from="1621877410891" duration="3669000" />
+      <workItem from="1621965204049" duration="599000" />
+      <workItem from="1621988544809" duration="30000" />
+      <workItem from="1622063830035" duration="5125000" />
+      <workItem from="1622141790428" duration="1836000" />
+      <workItem from="1622187733582" duration="1699000" />
+      <workItem from="1622226100582" duration="6460000" />
+      <workItem from="1622303731530" duration="3334000" />
+      <workItem from="1622400117761" duration="1198000" />
+      <workItem from="1622477974068" duration="4963000" />
+      <workItem from="1622567581761" duration="2937000" />
+      <workItem from="1622667528244" duration="4920000" />
+      <workItem from="1622744522533" duration="825000" />
+      <workItem from="1622755910021" duration="599000" />
+      <workItem from="1622845485832" duration="1198000" />
+      <workItem from="1622873411442" duration="599000" />
+      <workItem from="1622914295051" duration="1528000" />
+      <workItem from="1623030699195" duration="4312000" />
+      <workItem from="1623114683747" duration="604000" />
+      <workItem from="1623180137874" duration="1249000" />
+      <workItem from="1623451393896" duration="731000" />
+      <workItem from="1623479069046" duration="4000" />
+      <workItem from="1632089973899" duration="1368000" />
+      <workItem from="1632791705488" duration="1238000" />
+      <workItem from="1633371629218" duration="3264000" />
+      <workItem from="1633390625002" duration="599000" />
+      <workItem from="1634345566274" duration="543000" />
+      <workItem from="1635741039168" duration="20026000" />
+      <workItem from="1636152766696" duration="593000" />
+      <workItem from="1636153639280" duration="12252000" />
+      <workItem from="1636838564015" duration="598000" />
+      <workItem from="1637547008009" duration="1253000" />
+      <workItem from="1637986738562" duration="600000" />
+      <workItem from="1638036231187" duration="75000" />
+      <workItem from="1644037133711" duration="596000" />
+      <workItem from="1644692757597" duration="598000" />
+      <workItem from="1644775504938" duration="597000" />
+      <workItem from="1645233523436" duration="4337000" />
+      <workItem from="1646345034987" duration="599000" />
+      <workItem from="1646504836684" duration="980000" />
+      <workItem from="1646702692740" duration="2125000" />
+      <workItem from="1646790077577" duration="10903000" />
+      <workItem from="1651270639772" duration="597000" />
+      <workItem from="1651708528144" duration="598000" />
+      <workItem from="1652134897686" duration="10582000" />
+      <workItem from="1652472274802" duration="595000" />
+      <workItem from="1652483098687" duration="596000" />
+      <workItem from="1652488219282" duration="14000" />
+      <workItem from="1652488414703" duration="1349000" />
     </task>
     <task id="LOCAL-00001" summary="Initial stab at scaffolding for PipeLang.">
       <created>1604044190451</created>
@@ -279,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605120850383</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Tons of changes.  Been a long time.">
+      <created>1620524901783</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620524901783</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,35 +560,46 @@
     <MESSAGE value="Checkpoint, don't wanna lose stuff." />
     <MESSAGE value="I think I added more pipe notes." />
     <MESSAGE value="Don't remember all I changed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Don't remember all I changed." />
+    <MESSAGE value="Tons of changes.  Been a long time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tons of changes.  Been a long time." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1147" y="729" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1652136240423">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1147" y="729" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1652136240423" />
+    <state x="1436" y="1022" width="626" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646180951680">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1436" y="1022" width="626" height="384" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3840.2120@0.0.3840.2120" timestamp="1646180951680" />
+    <state width="2843" height="714" key="GridCell.Tab.0.bottom" timestamp="1652644551907">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="2843" height="714" key="GridCell.Tab.0.bottom/0.0.3840.2120@0.0.3840.2120" timestamp="1652644551907" />
+    <state width="2843" height="714" key="GridCell.Tab.0.center" timestamp="1652644551906">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="2843" height="714" key="GridCell.Tab.0.center/0.0.3840.2120@0.0.3840.2120" timestamp="1652644551906" />
+    <state width="2843" height="714" key="GridCell.Tab.0.left" timestamp="1652644551906">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="2843" height="714" key="GridCell.Tab.0.left/0.0.3840.2120@0.0.3840.2120" timestamp="1652644551906" />
+    <state width="2843" height="714" key="GridCell.Tab.0.right" timestamp="1652644551906">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="2843" height="714" key="GridCell.Tab.0.right/0.0.3840.2120@0.0.3840.2120" timestamp="1652644551906" />
+    <state x="1842" y="613" width="672" height="678" key="search.everywhere.popup" timestamp="1646790537146">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1842" y="613" width="672" height="678" key="search.everywhere.popup/0.0.3840.2120@0.0.3840.2120" timestamp="1646790537146" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/parsers.dart</url>
-          <line>329</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>190</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>28</line>
+          <line>32</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/note.dart</url>
-          <line>162</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/parsers.dart</url>
-          <line>91</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

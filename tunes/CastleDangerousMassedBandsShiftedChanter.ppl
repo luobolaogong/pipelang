@@ -1,7 +1,7 @@
-// Castle Dangerous, Chanter
+// Castle Dangerous, Chanter, for use with the massed bands drum version Peter wants to use, which is parts 1 and 3 only, repeated.
 // The dotted eighth 16th's are quite pointed, I think, and therefore use 24ths
 // The bar lines are 1 beat too soon.  The pickups are shown at the first of the bars.
-// Oh well.
+// Will compensate in the drum score.  Not here.
 
 
 /track chanter
@@ -19,14 +19,19 @@
 48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
 48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
 
+//time 3/4
+//tempo 75
 
-/time 3/4
-/tempo 75
 
-
-/time 3/4
+//time 3/4
+/time 1/4
 // marker L1
-24:5Gdcd 24e 4gf aga
+24:5Gdcd 24e       // yes, those first two notes are pickups, and should be written such, but that's against tradition, but to match drums will shift here, for midi looping
+
+/time 3/4
+
+4gf aga
+
 8fgf d 4gG db
 4gd GbGA Gdcd
 8gf a 2efe
@@ -71,6 +76,6 @@
 24:5Gdcd 24e 4gf aga
 8fgf d 4gG db
 4gd GbGA gf
-8gfg ac 2Gdcd
+8gfg ac 4Gdcd
 
 

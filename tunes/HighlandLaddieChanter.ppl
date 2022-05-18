@@ -1,0 +1,67 @@
+// HighlandLaddie - chanter
+
+/track chanter
+/channel 4
+/f
+/time 2/4
+/tempo 76
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r 4r . .
+
+/marker L1
+8r 12gA 24b
+24:5GdGcd 24e 8gf a
+12g 24f 12ge 24d 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe 24d 12eb
+
+/marker L2
+24:5GdGcd 24 e 8gf a
+12g 24f 12ge 24d 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb 12gA 24b
+
+/marker L1Rpt
+24:5GdGcd 24e 8gf a
+12g 24f 12ge 24d 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe 24d 12eb
+
+/marker L2Rpt
+24:5GdGcd 24 e 8gf a
+12g 24f 12ge 24d 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb gfg
+
+/marker L3
+8aga 24g 12f 8gfg 24f 12e
+12gfgf 24e 12d 24e 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe gfg
+
+/marker L4
+8aga 24g 12f 8gfg 24f12e
+12gfgf 24e 12d 24e 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb gfg
+
+/marker L3Rpt
+8aga 24g 12f 8gfg 24f 12e
+12gfgf 24e 12d 24e 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe gfg
+
+/marker L4Rpt
+8aga 24g 12f 8gfg 24f12e
+12gfgf 24e 12d 24e 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb 8r
+
+
+
+

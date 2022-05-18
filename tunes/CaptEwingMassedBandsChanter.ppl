@@ -2,11 +2,21 @@
 // P/M William Ross
 // "Setting played by Jack Lee"
 // From Bagpipemusic.com
-
+// This chanter part is identical to CaptEwingChanter.ppl.  New name to match the snare massed bands, for build purposes.
+// The drummers are playing a 4/4 massed bands setting, and their time sig is in 4/4, but keep this one 2/4 and
+// maybe change the drummers to 2/4 to match?
 // March
 /time 2/4
-/tempo 76  // was 70
+/tempo 70  // for b'day party gig
 /track pipes  // can't be chanter for some reason
+
+
+//// Sync:
+//1r
+//// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+//1r
+//// Roll off
+//1r 4r . . 8r
 
 // They think the following is funny, but without drums they wouldn't know when to start
 // sync
@@ -16,7 +26,11 @@
 32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
 // Roll-off
 48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
-48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r
+
+
+
+
 
 
 12gf 24e

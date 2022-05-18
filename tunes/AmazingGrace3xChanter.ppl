@@ -1,0 +1,104 @@
+// Amazing Grace, Chanter -- for use with "simple drums", but this version for chanter
+// has a different note duration for those two figures that I previously based on
+// 20th notes.
+
+// Recording:  https://youtu.be/lpZiPZwwXhM
+// shows the figures are these:
+// 6 12 | 2  8 24 12 |
+// And the tempo is slow, as in 64 bpm.  Though some singers will do it at about 72.  It can be as slow as 56.
+// But based on true triplets as in 12ths and 24ths.
+// I think Peter took the drum part from this:  https://youtu.be/zLfkDvz9wUE   because it's rolls all the way, wih crescendos.
+
+/time 3/4
+//tempo 4=70
+/tempo 4=60
+
+/track chanter
+/channel 4
+/f
+// Count in and pickup
+
+4r . .
+4r .
+
+///////// First time through  //////////////
+
+// pickup:
+6gA 12d
+
+2gdGd  8gf 24e 12d
+2gf 8gf 8e
+2Gdcd  4gb
+2GA  6gA 12d
+
+2gdGd  8gf 24e 12d
+2gf 6ge 12f
+2aga  4ga
+2ga 6f 12a
+
+2ga 8fgf 24e 12d
+2gf 8gf 8e
+2Gdcd 4gb
+2GA 6gA 12d
+
+2gdGd 8gf 24e 12d
+2gf 4e
+// 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
+2Gdcd 4Gdcd // this is the fix
+2gdGd      6gA 12d
+
+
+///////// 2nd time through  //////////////
+
+
+//marker B1-4
+2gdGd  8gf 24e 12d
+2gf 8gf 8e
+2Gdcd  4gb
+2GA  6gA 12d
+
+//marker B5-8
+2gdGd  8gf 24e 12d
+2gf 6ge 12f
+2aga  4ga
+2ga 6f 12a
+
+//marker B9-12
+2ga 8fgf 24e 12d
+2gf 8gf 8e
+2Gdcd 4gb
+2GA 6gA 12d
+
+//marker 13-16
+2gdGd 8gf 24e 12d
+2gf 4e
+// 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
+2Gdcd 4Gdcd // this is the fix
+2gdGd   6gA 12d
+
+///////// Third time through  //////////////
+
+//marker B1-4
+2gdGd  8gf 24e 12d
+2gf 8gf 8e
+2Gdcd  4gb
+2GA  6gA 12d
+
+//marker B5-8
+2gdGd  8gf 24e 12d
+2gf 6ge 12f
+2aga  4ga
+2ga 6f 12a
+
+//marker B9-12
+2ga 8fgf 24e 12d
+2gf 8gf 8e
+2Gdcd 4gb
+2GA 6gA 12d
+
+//marker 13-16
+2gdGd 8gf 24e 12d
+2gf 4e
+// 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
+2Gdcd 4Gdcd // this is the fix
+2gdGd

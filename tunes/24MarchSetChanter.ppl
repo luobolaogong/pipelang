@@ -1,0 +1,180 @@
+// 2/4 March Set -- Chanter
+/track chanter
+/channel 4
+/f
+/time 2/4
+/tempo 76
+
+// They think the following is funny, but without drums they wouldn't know when to start
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+
+
+// Barren Rocks - chanter
+
+//marker L1
+/marker Barren Rocks
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge 24:5gAGAGA 24e
+8gf gAGAGA  24:5GdGcd 24e
+
+//marker L2
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge gAGAGA 12gf 24e
+4GdGcd 24:5gdcd 24e
+
+//marker L1Rpt
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge 24:5gAGAGA 24e
+8gf gAGAGA  24:5GdGcd 24e
+
+//marker L2Rpt
+24:5gf 24g 24:5fgf 24e
+8GdGcd gf gAGAGA GdGcd
+8gcdc ge gAGAGA 12gf 24e
+4GdGcd 8gdcd 12gf 24g
+
+//marker L3
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc ge
+8GdGcd gf 12gfgf 24e 12gf 24g
+
+//marker L4
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc eA
+4GdGcd 8gdcd 12gf 24g
+
+//marker L3Rpt
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc ge
+8GdGcd gf 12gfgf 24e 12gf 24g
+
+//marker L4
+24:5aga 24f 24:5GdGcd 24f
+8gefe gf gAGAGA 12ge 24f
+8gfg e gcdc eA
+4GdGcd 8gdcd
+
+
+// Brown Haired Maiden
+
+
+8A
+//marker L1
+/marker Brown Haired Maiden
+24:5GdGcd 24c 8gb GA
+4GdGcd 8eA GdGcd
+8gf d gfg f
+8gf e Ge gfg
+
+//marker L2
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd A
+
+//marker L1Rpt
+24:5GdGcd 24c 8gb GA
+4GdGcd 8eA GdGcd
+8gf d gfg f
+8gf e Ge gfg
+
+//marker L2Rpt
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd gfg
+
+//marker L3
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+8gf d gfg f
+8gf e Ge gfg
+
+//marker L4
+24af 24:5a 8fgf a // first ending
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd gfg
+
+//marker L3Rpt
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+8gf d gfg f
+8gf e Ge gfg
+
+//marker L4Rpt
+24:5aga 24g 8afgf a // 2nd ending
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd
+
+// Highland Laddie
+
+/marker Highland Laddie
+12gA 24b
+24:5GdGcd 24e 8gf a
+12g 24f 12ge 24d 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe 24d 12eb
+
+//marker L2
+24:5GdGcd 24 e 8gf a
+12g 24f 12ge 24d 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb 12gA 24b
+
+//marker L1Rpt
+24:5GdGcd 24e 8gf a
+12g 24f 12ge 24d 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe 24d 12eb
+
+//marker L2Rpt
+24:5GdGcd 24 e 8gf a
+12g 24f 12ge 24d 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb gfg
+
+//marker L3
+8aga 24g 12f 8gfg 24f 12e
+12gfgf 24e 12d 24e 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe gfg
+
+//marker L4
+8aga 24g 12f 8gfg 24f12e
+12gfgf 24e 12d 24e 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb gfg
+
+//marker L3Rpt
+8aga 24g 12f 8gfg 24f 12e
+12gfgf 24e 12d 24e 4gf
+8gfgf e gefe 12gd 24e
+8gfgf e gefe gfg
+
+//marker L4Rpt
+8aga 24g 12f 8gfg 24f12e
+12gfgf 24e 12d 24e 8gfgf 12ge 24f
+8GdGcd eb gbdb 12gA 24b
+8GdGcd eb gbdb 8r
+
+
+
+
+
+
+

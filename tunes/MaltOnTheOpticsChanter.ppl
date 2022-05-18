@@ -1,0 +1,47 @@
+// Malt(s) on the Optic(s).  Some kind of brewing alcohol thing.
+// Let it be called "MaltOnTheOptics" for now
+// Part of the "Reel Set", which is comprised of Malt on the Optics, Forest Lodge, and Primrose Girl
+// The pipe score shows cut time.  The drum score shows 2/2 time.
+// In both cases there are 4 quarter notes per bar.
+// For simplicity we'll make it 4/4
+
+/track chanter
+/channel 4
+// tune type: straight reel
+/f
+/time 4/4
+/tempo 136
+
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+
+//marker L1
+8gb Gb gf b  gb f ge c
+8gb Gb gf b  gb d gc A
+8gb Gb gf b  gb f ge c
+8gd c gb d  gcdc A gb dc
+
+//marker L1Rpt
+8gb Gb gf b  gb f ge c
+8gb Gb gf b  gb d gc A
+8gb Gb gf b  gb f ge c
+8gd c gb d  gcdc A gb dc
+
+//marker L2
+8gb f gf e  4gf 8ge f
+4gf 8ge f  gf e gd b
+8gb f gf e 4gf 8ge f
+8g G gb d  gcdc A gb dc
+
+//marker L2Rpt
+8gb f gf e  4gf 8ge f
+4gf 8ge f  gf e gd b
+8gb f gf e 4gf 8ge f
+8g G gb d  gcdc A gb dc
+

@@ -1,0 +1,204 @@
+// For recording - chanter
+// The goal is to create a soundfont file that has the notes that we use,
+// along with their grace notes, as a single unit.
+//
+// I know pipers are not used to seeing notes like this.  They have special
+// names like "throw G" or something.  So, most likely Allison would need to
+// write these out in a way she understands them.
+
+/track chanter // I think this is ignored!
+/channel 4
+/f
+/time 4/4
+/tempo 120
+
+// This is for sync
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// no grace notes, G...c
+//G<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1G 2G 2r   1G 2G 2r   1G 2G 2r   1G 2G 2r
+//A<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1A 2A 2r  1A 2A 2r  1A 2A 2r  1A 2A 2r
+//b<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1b 2b 2r  1b 2b 2r  1b 2b 2r  1b 2b 2r
+//c<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1c 2c 2r  1c 2c 2r  1c 2c 2r  1c 2c 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// no grace notes, d...a
+//d<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1d 2d 2r  1d 2d 2r  1d 2d 2r  1d 2d 2r
+//e<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1e 2e 2r  1e 2e 2r  1e 2e 2r  1e 2e 2r
+//f<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1f 2f 2r  1f 2f 2r  1f 2f 2r  1f 2f 2r
+//g<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1g 2g 2r  1g 2g 2r  1g 2g 2r  1g 2g 2r
+//a<for 6 beats> <breath for 2>  (repeat 3 times, for total of 4)
+1a 2a 2r  1a 2a 2r  1a 2a 2r  1a 2a 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// Single grace notes G...A
+1dG 2dG 2r   1dG 2dG 2r   1dG 2dG 2r  2dG 4dG .   8dG . . . 2r
+1eG 2eG 2r   1eG 2eG 2r   1eG 2eG 2r  2eG 4eG .   8eG . . . 2r
+1gG 2gG 2r   1gG 2gG 2r   1gG 2gG 2r  2gG 4gG .   8gG . . . 2r
+1aG 2aG 2r   1aG 2aG 2r   1aG 2aG 2r  2aG 4aG .   8aG . . . 2r
+
+1GA 2GA 2r   1GA 2GA 2r   1GA 2GA 2r  2GA 4GA .   8GA . . . 2r
+1dA 2dA 2r   1dA 2dA 2r   1dA 2dA 2r  2dA 4dA .   8dA . . . 2r
+1eA 2eA 2r   1eA 2eA 2r   1eA 2eA 2r  2eA 4eA .   8eA . . . 2r
+1gA 2gA 2r   1gA 2gA 2r   1gA 2gA 2r  2gA 4gA .   8gA . . . 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// Single grace notes b...c
+1Gb 2Gb 2r   1Gb 2Gb 2r   1Gb 2Gb 2r  2Gb 4Gb .   8Gb . . . 2r
+1db 2db 2r   1db 2db 2r   1db 2db 2r  2db 4db .   8db . . . 2r
+1eb 2eb 2r   1eb 2eb 2r   1eb 2eb 2r  2eb 4eb .   8eb . . . 2r
+1gb 2gb 2r   1gb 2gb 2r   1gb 2gb 2r  2gb 4gb .   8gb . . . 2r
+
+1Gc 2Gc 2r   1Gc 2Gc 2r   1Gc 2Gc 2r  2Gc 4Gc .   8Gc . . . 2r
+1ac 2ac 2r   1ac 2ac 2r   1ac 2ac 2r  2ac 4ac .   8ac . . . 2r
+1dc 2dc 2r   1dc 2dc 2r   1dc 2dc 2r  2dc 4dc .   8dc . . . 2r
+1ec 2ec 2r   1ec 2ec 2r   1ec 2ec 2r  2ec 4ec .   8ec . . . 2r
+1gc 2gc 2r   1gc 2gc 2r   1gc 2gc 2r  2gc 4gc .   8gc . . . 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// Single grace notes d...e
+1cd 2cd 2r   1cd 2cd 2r   1cd 2cd 2r  2cd 4cd .   8cd . . . 2r
+1ed 2ed 2r   1ed 2ed 2r   1ed 2ed 2r  2ed 4ed .   8ed . . . 2r
+1gd 2gd 2r   1gd 2gd 2r   1gd 2gd 2r  2gd 4gd .   8gd . . . 2r
+
+1Ae 2Ge 2r   1Ge 2Ae 2r   1Ge 2Ge 2r  2Ge 4Ge .   8Ge . . . 2r
+1Ae 2Ae 2r   1Ae 2Ae 2r   1Ae 2Ae 2r  2Ae 4Ae .   8Ae . . . 2r
+1ge 2ge 2r   1ge 2ge 2r   1ge 2ge 2r  2ge 4ge .   8ge . . . 2r
+1ae 2ae 2r   1ae 2ae 2r   1ae 2ae 2r  2ae 4ae .   8ae . . . 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// Single grace notes f...a
+1ef 2ef 2r   1ef 2ef 2r   1ef 2ef 2r  2ef 4ef .   8ef . . . 2r
+1gf 2gf 2r   1gf 2gf 2r   1gf 2gf 2r  2gf 4gf .   8gf . . . 2r
+1af 2af 2r   1af 2af 2r   1af 2af 2r  2af 4af .   8af . . . 2r
+
+1eg 2eg 2r   1eg 2eg 2r   1eg 2eg 2r  2eg 4eg .   8eg . . . 2r
+1fg 2fg 2r   1fg 2fg 2r   1fg 2fg 2r  2fg 4fg .   8fg . . . 2r
+1ag 2ag 2r   1ag 2ag 2r   1ag 2ag 2r  2ag 4ag .   8ag . . . 2r
+
+1ea 2ea 2r   1ea 2ea 2r   1ea 2ea 2r  2ea 4ea .   8ea . . . 2r
+1ga 2ga 2r   1ga 2ga 2r   1ga 2ga 2r  2ga 4ga .   8ga . . . 2r
+
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+
+// double grace notes c...a
+1cdc 2cdc 2r   1cdc 2cdc 2r   1cdc 2cdc 2r  2cdc 4cdc .   8cdc . . . 2r
+1dcd 2dcd 2r   1dcd 2dcd 2r   1dcd 2dcd 2r  2dcd 4dcd .   8dcd . . . 2r
+1efe 2efe 2r   1efe 2efe 2r   1efe 2efe 2r  2efe 4efe .   8efe . . . 2r
+1fgf 2fgf 2r   1fgf 2fgf 2r   1fgf 2fgf 2r  2fgf 4fgf .   8fgf . . . 2r
+1gfg 2gfg 2r   1gfg 2gfg 2r   1gfg 2gfg 2r  2gfg 4gfg .   8gfg . . . 2r
+1aga 2aga 2r   1aga 2aga 2r   1aga 2aga 2r  2aga 4aga .   8aga . . . 2r
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// triple grace notes G...b
+1gGdG 2gGdG 2r   1gGdG 2gGdG 2r   1gGdG 2gGdG 2r  2gGdG 4gGdG .   8gGdG . . . 2r
+
+1GbGA 2GbGA 2r   1GbGA 2GbGA 2r   1GbGA 2GbGA 2r  2GbGA 4GbGA .   8GbGA . . . 2r
+1gAdA 2gAdA 2r   1gAdA 2gAdA 2r   1gAdA 2gAdA 2r  2gAdA 4gAdA .   8gAdA . . . 2r
+1GAGA 2GAGA 2r   1GAGA 2GAGA 2r   1GAGA 2GAGA 2r  2GAGA 4GAGA .   8GAGA . . . 2r
+
+1GdGb 2GdGb 2r   1GdGb 2GdGb 2r   1GdGb 2GdGb 2r  2GdGb 4GdGb .   8GdGb . . . 2r
+1gbGb 2gbGb 2r   1gbGb 2gbGb 2r   1gbGb 2gbGb 2r  2gbGb 4gbGb .   8gbGb . . . 2r
+1Gbdb 2Gbdb 2r   1Gbdb 2Gbdb 2r   1Gbdb 2Gbdb 2r  2Gbdb 4Gbdb .   8Gbdb . . . 2r
+1gbdb 2gbdb 2r   1gbdb 2gbdb 2r   1gbdb 2gbdb 2r  2gbdb 4gbdb .   8gbdb . . . 2r
+
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// triple grace notes c...d
+1GdGc 2GdGc 2r   1GdGc 2GdGc 2r   1GdGc 2GdGc 2r  2GdGc 4GdGc .   8GdGc . . . 2r
+1gcdc 2gcdc 2r   1gcdc 2gcdc 2r   1gcdc 2gcdc 2r  2gcdc 4gcdc .   8gcdc . . . 2r
+
+1gdGd 2gdGd 2r   1gdGd 2gdGd 2r   1gdGd 2gdGd 2r  2gdGd 4gdGd .   8gdGd . . . 2r
+1Gdcd 2Gdcd 2r   1Gdcd 2Gdcd 2r   1Gdcd 2Gdcd 2r  2Gdcd 4Gdcd .   8Gdcd . . . 2r
+1gdcd 2gdcd 2r   1gdcd 2gdcd 2r   1gdcd 2gdcd 2r  2gdcd 4gdcd .   8gdcd . . . 2r
+1gded 2gded 2r   1gded 2gded 2r   1gded 2gded 2r  2gded 4gded .   8gded . . . 2r
+
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+// triple grace notes e...a
+1GdGe 2GdGe 2r   1GdGe 2GdGe 2r   1GdGe 2GdGe 2r  2GdGe 4GdGe .   8GdGe . . . 2r
+
+1gdee 2gdee 2r   1gdee 2gdee 2r   1gdee 2gdee 2r  2gdee 4gdee .   8gdee . . . 2r
+1gefe 2gefe 2r   1gefe 2gefe 2r   1gefe 2gefe 2r  2gefe 4gefe .   8gefe . . . 2r
+
+1gfgf 2gfgf 2r   1gfgf 2gfgf 2r   1gfgf 2gfgf 2r  2gfgf 4gfgf .   8gfgf . . . 2r
+1afgf 2afgf 2r   1afgf 2afgf 2r   1afgf 2afgf 2r  2afgf 4afgf .   8afgf . . . 2r
+
+1agfg 2agfg 2r   1agfg 2agfg 2r   1agfg 2agfg 2r  2agfg 4agfg .   8agfg . . . 2r // new
+1GdGa 2GdGa 2r   1GdGa 2GdGa 2r   1GdGa 2GdGa 2r  2GdGa 4GdGa .   8GdGa . . . 2r
+
+
+// take a break
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 16a 16r 16a 16r 16a 16:3r
+16a 16:3r 16a 16:3r 2r
+
+
+// quadruple grace notes A...d
+1AGAGA 2AGAGA 2r   1AGAGA 2AGAGA 2r   1AGAGA 2AGAGA 2r  2AGAGA 4AGAGA .   8AGAGA . . . 2r
+1GdGeA 2GdGeA 2r   1GdGeA 2GdGeA 2r   1GdGeA 2GdGeA 2r  2GdGeA 4GdGeA .   8GdGeA . . . 2r
+
+1GdGcd 2GdGcd 2r   1GdGcd 2GdGcd 2r   1GdGcd 2GdGcd 2r  2GdGcd 4GdGcd .   8GdGcd . . . 2r
+
+
+// quintuple grace notes A
+1gAGAGA 2gAGAGA 2r   1gAGAGA 2gAGAGA 2r   1gAGAGA 2gAGAGA 2r  2gAGAGA 4gAGAGA .   8gAGAGA . . . 2r
+

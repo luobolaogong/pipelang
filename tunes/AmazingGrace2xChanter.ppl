@@ -2,19 +2,25 @@
 
 // Sounds to me like it should be 9/8 time
 // And the subdivisions should be 20th notes
+// The score shows this, if I interpret it correctly:
+// This rhythm: 8 24 12
+// I think the 24th note is too short, and so a 20th subdivision.
+
 /time 3/4
-/tempo 4=66
+/tempo 4=68
 
 /track chanter
-/channel 5
-/mp
+/channel 4
+/f
 // Count in and pickup
 
 4r . 20:3r 10r
+
+// First time through
+
 4r .
 // pickup:
 20:3gA 10d
-
 //marker B1-4
 2gdGd  10gf 20e 10d
 2gf 8gf 8e
@@ -40,7 +46,9 @@
 2Gdcd 4Gdcd // this is the fix
 2gdGd      20:3gA 10d
 
-// Repeat
+
+// Second time through
+
 //marker B1-4
 2gdGd  10gf 20e 10d
 2gf 8gf 8e
@@ -64,4 +72,7 @@
 2gf 4e
 // 4:3Gdcd // this is essentially right, but at slow tempo note doesn't sustain, as recorded, so fix:
 2Gdcd 4Gdcd // this is the fix
-2gdGd
+4gdGd      // ends correctly?
+
+
+

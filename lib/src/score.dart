@@ -24,6 +24,7 @@ class Score {
       log.info('Loading file $filePath');
       var inputFile = File(filePath);
       if (!inputFile.existsSync()) {
+        print('File does not exist at "${inputFile.path}", exiting...');
         log.severe('File does not exist at "${inputFile.path}", exiting...');
         exit(42);
         continue;
@@ -190,7 +191,7 @@ class Score {
     // FIRST DETERMINE SLOPE VALUE
     log.finest('gunna start looking for dynamic ramp markers and set their values');
     // Scan the elements list for dynamicRamp markers, and set their properties
-    print('');
+    //print('');
     log.finest(
         'Score.applyDynamics(), Starting search for dynamicRamps and setting their values.  THIS MAY BE WRONG NOW THAT I''M APPLYING DYNAMICS DURING SHORTHAND PHASE');
     DynamicRamp currentDynamicRamp;
@@ -410,6 +411,9 @@ class Score {
         var note = element as Note; // unnec cast, it says, but I want to
         // Bad logic, I'm sure:
         // Hey, the following is just here for a placeholder and a test.  I've not determined which embellishments need what kind of sliding, if any.
+
+        ///////////////////////////////// ADD HERE CHECK HERE 4/5 //////////////////////////
+        // SEEMS THERE ARE A LOT MISSING.  CHECK WITH OTHER LISTS, or alphabetize
         switch (note.noteType) {
           case NoteType.dA:
           case NoteType.dc:
@@ -418,12 +422,20 @@ class Score {
           case NoteType.GA:
           case NoteType.gA:
           case NoteType.ga:
+          case NoteType.Gb:
           case NoteType.gb:
           case NoteType.gc:
+          case NoteType.Gc:
           case NoteType.gd:
           case NoteType.ge:
+          case NoteType.Ae:
+          case NoteType.Ge: // new
+          case NoteType.fg: // new
+          case NoteType.ag: // new
           case NoteType.gf:
+          case NoteType.ae: // new
           case NoteType.af:
+          case NoteType.ac: // new
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             // graceNotesDuration = (180 / (100 / mostRecentTempo.bpm)).round(); // The 180 is based on a tempo of 100bpm.  What does this do for dotted quarter tempos?
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
@@ -443,15 +455,18 @@ class Score {
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
           case NoteType.gdGd: // new
-          case NoteType.gbdb:
+          case NoteType.gbdb: // new?
+          case NoteType.gdcd:
           case NoteType.gcdc:
           case NoteType.gefe:
           case NoteType.Gdcd:
           case NoteType.Gbdb:
           case NoteType.GdGb: // new
           case NoteType.GAGA:
+          case NoteType.gAdA: // new
           case NoteType.gfgf:
           case NoteType.afgf:
+          case NoteType.agfg: // new
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round();
             // graceNotesDuration = (250 / (100 / mostRecentTempo.bpm)).round(); // do this after we get recordings and also measure the gracenote durations
             previousNote.noteOffDeltaTimeShift -= graceNotesDuration;
@@ -459,6 +474,7 @@ class Score {
             previousNote = note; // probably wrong.  Just want to work with pointers
             break;
           case NoteType.GdGcd:
+          case NoteType.GdGeA: // new
           case NoteType.AGAGA:
             graceNotesDuration = (0 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something
             // graceNotesDuration = (1900 / (100 / mostRecentTempo.bpm)).round(); // duration is absolute, but have to work with tempo ticks or something

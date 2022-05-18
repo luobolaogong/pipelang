@@ -34,8 +34,6 @@ import 'package:pipelang/pipelang.dart';
 // final log = Logger('ppl');
 void main(List<String> arguments) {
 
-
-
   print('Staring ppl ...');
   Logger.root.level = Level.ALL; // get this from the command line, as a secret setting
   Logger.root.onRecord.listen((record) {
@@ -74,7 +72,7 @@ void main(List<String> arguments) {
 
   var midiFileOutFile = File(commandLine.outputMidiFile);
   midiWriterCopy.writeMidiToFile(midiFile, midiFileOutFile); // will crash here
-  print('Done writing midifile ${midiFileOutFile.path}');
+  print('Done writing midifile ${midiFileOutFile.absolute}');
 }
 
 

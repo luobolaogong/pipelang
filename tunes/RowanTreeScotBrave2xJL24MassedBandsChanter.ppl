@@ -1,0 +1,82 @@
+// Rowan Tree - chanter
+
+/track chanter
+/channel 4
+/f
+/time 4/4
+/tempo 84    // not sure
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll-off
+1r
+4r . 8r .
+
+24:5gA 24b
+
+8:3GdGc 8gc 4GdGc eb
+8gc 8:3e 4Ae a
+8:3fgf 8e 4gf a
+8:3fgf 8ge 4Ae 24:5gA 24b
+
+8:3GdGc 8gc 4GdGc eb
+8gc 8:3e 8:3gf 8e
+8gefe 8:3c 8:3gb 8dc
+2GA 8:3GAGA 8e
+
+4Ae a 8:3ga 8g
+4ag f gfgf a
+8:3e 8f 8gfgf e gded c
+2gcdc 4gbdb 24:5gA 24b
+
+8:3GdGc 8gc 4GdGc eb
+8gc 8:3e 8:3gf 8e
+8gefe 8:3c 8:3gb 8dc
+2GA 8:3GAGA
+
+
+// Scotland the Brave (2x)
+8e
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb gefe 24:5Ae 24f 12ge 24d 12gcdc 24b
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 4GA   8gcdc e
+
+4aga ga 8GdGa e gcdc eA
+4aga ga 8GdGa e gcdc e
+4aga 24:5ga 24g 4af 24:5aga 24g
+8af a fg f gefe d gcdc eb
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 8:3GA
+
+8e
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb gefe 24:5Ae 24f 12ge 24d 12gcdc 24b
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 4GA   8gcdc e
+
+4aga ga 8GdGa e gcdc eA
+4aga ga 8GdGa e gcdc e
+4aga 24:5ga 24g 4af 24:5aga 24g
+8af a fg f gefe d gcdc eb
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 8:3GA

@@ -1,0 +1,24 @@
+// Annette's Chatter -- chanter
+// 6/8 Jig
+
+/track pipes
+/channel 4
+
+// Need time to sync audio and video with 8 quarter notes (4 for nothing then 4 quarters)
+// Then 4 for nothing.
+// Then roll off for pipers to pump up.
+//
+///time 4/4
+///tempo 136
+//1r 1r   // sync audio and video, 4 + 4
+//1r   // 4 for nothing
+//1r 1r  // roll off   8 counts
+
+
+
+/time 12/8
+/tempo 136    // 136 recording
+
+/f
+
+

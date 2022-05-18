@@ -1,0 +1,121 @@
+// Diu Regnare, by Stuart Liddell
+// See https://soundcloud.com/stuart-liddell-865379812/diu-regnare
+// and https://www.youtube.com/watch?v=PSbXnWJm4M4
+// and https://youtu.be/RfSTimy8Azw
+//style: Swing 6/8
+/time 6/8
+//tempo 74
+/tempo 68
+
+/track pipes  // can't be chanter for some reason
+//ff   // not sure
+/mp
+
+/marker L1
+8:5r 8a   // pickup
+
+4f 8a 24:5e 24f 8g
+24:5f 24e 8d 4b 8d
+24:5A 24b 8A 24:5d 24e 8f
+24f 24:5a 8g  24:5e 24d 8e
+
+/marker L2
+4f 8a 24:5e 24f 8g
+24:5f 24e 8d 4b 8d
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8a
+
+/marker L1rpt
+4f 8a 24:5e 24f 8g
+24:5f 24e 8d 4b 8d
+24:5A 24b 8A 24:5d 24e 8f
+24f 24:5a 8g  24:5e 24d 8e
+
+/marker L2rpt
+4f 8a 24:5e 24f 8g
+24:5f 24e 8d 4b 8d
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8e
+
+/marker L3
+4f 8A 24:5A 24d 8e
+24:5f 24e 8d  24b 24:5G 8b
+24:5A 24b 8A  24:5d 24e 8f
+24f 24:5a 8g  24:5e 24d 8e
+
+/marker L4
+4f 8A 24:5A 24d 8e
+24:5f 24e 8d  24b 24:5G 8b
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d8e
+
+/marker L3rpt
+4f 8A 24:5A 24d 8e
+24:5f 24e 8d  24b 24:5G 8b
+24:5A 24b 8A  24:5d 24e 8f
+24f 24:5a 8g  24:5e 24d 8e
+
+/marker L2of2
+4f 8a 24:5e 24f 8g
+24:5f 24e 8d 4b 8d
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8f
+
+/marker L5
+24:5A 24b 8A  24d 24:5A 8b
+24:5A 24d 8A 24b 24:5G 8b
+24:5A 24b 8A 24:5d 24e 8f
+24f 24:5a 8g  4e 8f
+
+/marker L6
+24:5A 24b 8A  24d 24:5A 8b
+24:5A 24d 8A  24b 24:5G 8b
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8f
+
+/marker L5rpt
+24:5A 24b 8A  24d 24:5A 8b
+24:5A 24d 8A 24b 24:5G 8b
+24:5A 24b 8A 24:5d 24e 8f
+24f 24:5a 8g  4e 8f
+
+/marker L6rpt
+24:5A 24b 8A  24d 24:5A 8b
+24:5A 24d 8A  24b 24:5G 8b
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8g
+
+/marker L7
+24:5a 24g 8f  24e 24:5g 8e
+24:5f 24e 8d  24b 24:5g 8b
+24:5A 24b 8A  24:5d 24e 8f
+24f 24:5a 8g 4e 8g
+
+/marker L8
+24:5a 24g 8f  24e 24:5g 8e
+24f 24:5a 8d  24b 24:5d 8b
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8g
+
+/marker L7rpt
+24:5a 24g 8f  24e 24:5g 8e
+24:5f 24e 8d  24b 24:5g 8b
+24:5A 24b 8A  24:5d 24e 8f
+24f 24:5a 8g 4e 8f
+
+/marker L9
+24:5A 24b 8A  24b 24:5d 8e
+24f 24:5a 8d  4b 8d
+24:5A 24d 8f  24:5a 24g 8f
+8:3e 4d 8r
+
+
+//1r
+// typical dot/cut at faster tempos
+//4f 8a 16:3e 16f 8g
+//4f 8a 16:3e 16f 8g
+
+// maybe at slightly faster tempos
+//4f 8a 5e 20f 8g
+//4f 8a 5e 20f 8g
+

@@ -1,0 +1,197 @@
+// Lochanside - chanter
+// A 3/4 march, part of the 3/4 set, and some "Jazz" thing.
+
+/track chanter
+/channel 4
+/f
+/time 4/4
+/tempo 84
+
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+
+/time 3/4
+
+/marker L1
+24:5GdGcd 24e 4gf 8gfgf a
+8fg ae 4gfgf GdGcd
+24:5aga 24f 4GdGcd 24:5gdcd 24e
+8gfgf AGAGA 4gfgf 4gefe
+
+/marker L2
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+/marker L1Rpt
+24:5GdGcd 24e 4gf 8gfgf a
+8fg ae 4gfgf GdGcd
+24:5aga 24f 4GdGcd 24:5gdcd 24e
+8gfgf AGAGA 4gfgf 4gefe
+
+/marker L2Rpt
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+/marker L3
+24:5gdcd 24f 4aga 24:5ga 24g
+24:5af 24g 4aga fgf
+8Gdcd eA 4GdGb 24:5gfg 24f
+8gefe d 4gf gefe
+
+/marker L4
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+/marker L3Rpt
+24:5gdcd 24f 4aga 24:5ga 24g
+24:5af 24g 4aga fgf
+8Gdcd eA 4GdGb 24:5gfg 24f
+8gefe d 4gf gefe
+
+/marker L4Rpt
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+/marker L5
+4gcdc GbGA 8GAGA dc
+8ge gfg 4afgf GdGcd
+4gcdc GbGA 8GAGA dc
+24:5aga 24g 4af 8gefe AGAGA
+
+/marker L6
+8Gdcd gf 4aga 8fgf a
+12fg 24f 12ge 24d 4gcdc gbdb
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd 4gdcd
+
+/marker L5Rpt
+4gcdc GbGA 8GAGA dc
+8ge gfg 4afgf GdGcd
+4gcdc GbGA 8GAGA dc
+24:5aga 24g 4af 8gefe AGAGA
+
+/marker L6Rpt
+8Gdcd gf 4aga 8fgf a
+12fg 24f 12ge 24d 4gcdc gbdb
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd 4gdcd
+
+
+
+
+/////////////////////// HARMONY -- can MIDI handle it? ////////////////////////////////
+/track chanter
+/channel 6
+/mp
+//time 4/4
+/f
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A 48G    32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A 48G    32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+
+//time 3/4
+
+// Part 1 Harmony
+/p
+/marker L1
+24:5GdGcd 24e 4gf 8gfgf a
+8fg ae 4gfgf GdGcd
+24:5aga 24f 4GdGcd 24:5gdcd 24e
+8gfgf AGAGA 4gfgf 4gefe
+
+/marker L2
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+/marker L1Rpt
+24:5GdGcd 24e 4gf 8gfgf a
+8fg ae 4gfgf GdGcd
+24:5aga 24f 4GdGcd 24:5gdcd 24e
+8gfgf AGAGA 4gfgf 4gefe
+
+/marker L2Rpt
+24:5Ae 24d 4gc 8GdGc a
+8fg ae 4GdGcd eA
+24:5ge 24f 4gfg 8agfg b
+8gcdc eA 4GdGcd gdcd
+
+
+
+// Part 2 Harmony
+
+/marker L3
+24:5gefe 24d 4gcdc 8Gc e
+8aga e 4aga gfgf
+24:5gefe 24d 4gcdc 8ge gfg
+24:5gfgf 24e 4GdGcd 12gcdc 24b 8c
+
+/marker L4
+8gfgf GA 4GdGcd 8gd f
+12ge 24d 12gc 24b 4GA G
+24:5gcdc 24A 4gbdb 8Gb G
+8gA gfg 4gfgf gdcd
+
+/marker L3Rpt
+24:5gefe 24d 4gcdc 8Gc e
+8aga e 4aga gfgf
+24:5gefe 24d 4gcdc 8ge gfg
+24:5gfgf 24e 4GdGcd 12gcdc 24b 8c
+
+/marker L4Rpt
+8gfgf GA 4GdGcd 8gd f
+12ge 24d 12gc 24b 4GA G
+24:5gcdc 24A 4gbdb 8Gb G
+8gA gfg 4gfgf gdcd
+
+
+
+
+
+//Part 3, harmony
+
+/marker L5
+4:3gA
+4gA 2GdGcd
+4:3GAGA
+4gA 2GdGcd
+
+/marker L6
+4:3GdGcd
+4G 2A
+2GAGA 4G
+4gA GdGcd gdcd
+
+
+/marker L5Rpt
+4:3gA
+4gA 2GdGcd
+4:3GAGA
+4gA 2GdGcd
+
+/marker L6Rpt
+4:3GdGcd
+4G 2A
+2GAGA 4G
+4gA GdGcd gdcd
+

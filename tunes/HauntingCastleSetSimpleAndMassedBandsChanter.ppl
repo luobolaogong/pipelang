@@ -1,0 +1,109 @@
+// The Haunting, Chanter, for the simple and massed bands drum setting.  No differences, just in file name.
+
+
+/track chanter
+/channel 4
+/f
+/time 4/4
+/tempo 75
+
+// Count off, 2 bars of 3/4
+32a 32:3r 8r   32a 32:3r 32a 32:3r    32a 32:3r 8r      32a 32:3r 8r   32a 32:3r 32a 32:3r    32a 32:3r 8r
+
+// Roll off, 2 bars of 4/4
+//1r 1r
+
+/time 3/4
+/tempo 75
+
+// The Haunting, right?
+//marker B1-4
+2gb 8d 8f  2gefe  8d 8c
+8:3gb 8c 8gd 8e  2gcdc  4eA
+2gb 8d f  2gefe 8d c
+2Gdcd 8gc d  2gefe  8gd e
+
+//marker B5-8
+2gfgf 8d eb  2gefe 8c dA
+8:3Gdcd 8e gded b 2gcdc 8b A
+2gb 8f d 2gefe 8c dA
+2gbdb 4eA 2GdGb       8gd e
+
+//marker B9-12
+2gf 8g f 2gefe  8gf e
+8:3gd 8e gded b 2gcdc 8b A
+2gb 8c d 2gefe 8gd e
+8:3gf 8g af d 2gefe  8gd e
+
+//marker B13-16
+2gfgf 8d eb 2gefe 8c dA
+8:3Gdcd 8e gded b  2gcdc 8b A
+2gb 8f d 8:3gefe 8d c dA
+// 2gbdb 4eA 2GdGb
+/time 5/4
+2gbdb 4eA 2GdGb    // make this a 5/4 bar to go into next tune
+
+
+////////////////////////////////////////
+
+// Castle Dangerous, Chanter
+// The dotted eighth 16th's are quite pointed, I think, and therefore use 24ths
+// The bar lines are 1 beat too soon.  The pickups are shown at the first of the bars.
+// Oh well.
+
+/time 3/4
+/tempo 75
+
+//track chanter
+/channel 4
+/f
+
+// marker L1
+24:5Gdcd 24e 4gf aga
+8fgf d 4gG db
+4gd GbGA Gdcd
+8gf a 2efe
+
+// marker L2
+24:5Gdcd 24e 4gf aga
+8fgf d 4gG db
+4gd GbGA gf
+8gfg ac 2Gdcd
+
+// marker L1 repeat
+24:5Gdcd 24e 4gf aga
+8fgf d 4gG db
+4gd GbGA Gdcd
+8gf a 2efe
+
+// marker L2 repeat
+24:5Gdcd 24e 4gf aga
+8fgf d 4gG db
+4gd GbGA gf
+8gfg ac 2Gdcd
+
+// marker L3
+24:5gf 24g 4aga 8fgf a
+8fgf d 4gG db
+4gd GbGA Gdcd
+8gf a 2efe
+
+// marker L4 1st ending
+24:5gf 24g 4aga 8fgf a
+8fgf d 4gG db
+4gd GbGA gf
+8gfg ac 2Gdcd
+
+// marker L3 Repeat
+24:5gf 24g 4aga 8fgf a
+8fgf d 4gG db
+4gd GbGA Gdcd
+8gf a 2efe
+
+// marker L5 2st ending
+24:5Gdcd 24e 4gf aga
+8fgf d 4gG db
+4gd GbGA gf
+8gfg ac 4Gdcd     // shortened last note
+
+

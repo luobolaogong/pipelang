@@ -1,0 +1,43 @@
+// Badge of Scotland - chanter
+
+/track metronome
+/channel 4
+/mf
+/time 4/4 // yes both of these lines can be here and in snare score
+/tempo 80    // not sure
+/f
+// They think the following is funny, but without drums they wouldn't know when to start
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r
+
+/f  // this level for pipes comes out pretty well
+24:5gA 24b
+
+4Gdcd 8gd f 4Gdcd 8gd b
+4gA 8GdGeA db 4GA 24:5Gdcd 24e
+4gfgf 8ge d 4aga 8d f
+4ge 24:5GdGe 24f 4gefe 24:5gA 24b
+
+4Gdcd 8gd f 4Gdcd 8gd b
+4gA 8GdGeA db 4GA 24:5Gdcd 24e
+24gf 24:5a 8fgf a 4AGAGA 24:5gf 24e
+4Gdcd 24:5gdcd 24e 4Gdcd 24:5gd 24e
+
+4gfgf 8gf a 4fgf 8ge d
+4gbdb 8gb d 4GA 24:5Gdcd 24e
+4gfgf 8ge d 4aga 8d f
+4ge 24:5GdGe 24f 4gefe 24:5gA 24b
+
+24:5Gdcd 24e 8gf a 4fgf 8ge d
+8gb d 24gb 24:5d 4GA 24:5Gdcd 24e
+24gf 24:5a 8fgf a 4AGAGA 24:5gf 24e
+4Gdcd 24:5gdcd 24e 4Gdcd gded
+
+
+

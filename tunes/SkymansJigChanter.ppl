@@ -1,0 +1,149 @@
+// Skyman's Jig is part of the Jig set.  The second tune in the set, I think.
+
+/time 6/8
+//tempo 8:3=104
+/tempo 104
+/track chanter
+/channel 4
+
+
+//tempo 52
+//8e . . 8:3e  8e . . 8:3e
+
+
+
+
+// sync
+8:3r . . 4r
+
+// pickup:
+8e
+//marker L1
+8gA dA eA 4gefe 8d
+8ge f g 4efe 8d
+4gbdb 8eG gG dG eG
+8gd b dG  4gbdb 8e
+
+//marker L2
+8gA dA eA 4gefe 8d
+8ge f g 4efe 8d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+//marker L1Rpt
+8gA dA eA 4gefe 8d
+8ge f g 4efe 8d
+4gbdb 8eG gG dG eG
+8gd b dG  4gbdb 8e
+
+//marker L2Rpt
+8gA dA eA 4gefe 8d
+8ge f g 4efe 8d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+//marker L3
+//4a 8GdGa 4fg 8e
+4a 8a 4fg 8e
+8ge 8d 8g  4efe 8d
+4gbdb 8eG 8gG dG eG
+8gd b dG 4gbdb 8e
+
+
+//marker L4
+4a 8GdGa 4fg 8e
+8ge d g  4efe 8d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA  8e
+
+//marker L3Rpt
+//4a 8GdGa 4fg 8e
+4a 8a 4fg 8e
+8ge 8d 8g  4efe 8d
+4gbdb 8eG 8gG dG eG
+8gd b dG 4gbdb 8e
+
+//marker L2Rpt2
+8gA dA eA 4gefe 8d
+8ge f g 4efe 8d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+
+
+
+
+
+
+//marker L5
+8gA dA eA e gA e
+//8gA a aA e gA d// parser doesn't recognize "aA"
+8gA a A e gA d
+4gbdb 8eG gG dG eG
+8gb d eG gb e Ae
+
+//marker L6
+8gA dA eA e gA e
+//8gA g aA e gA d// parser doesn't recognize "aA"
+8gA g A e gA d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+//marker L5Rpt
+8gA dA eA e gA e
+//8gA a aA e gA d// parser doesn't recognize "aA"
+8gA a A e gA d
+4gbdb 8eG gG dG eG
+8gb d eG gb e Ae
+
+//marker L6Rpt
+8gA dA eA e gA e
+//8gA g aA e gA d// parser doesn't recognize "aA"
+8gA g A e gA d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+
+
+
+
+
+//marker L7
+//4A 8AGAGA 8ge g fg
+4a 8A 8ge g fg
+//8af d 8Gd 4gefe 8f // what can't handle a "Gd"?
+8af d d 4gefe 8f
+//4ag 8AGAGA 8ge g fg
+4ag 8A 8ge g fg
+4efe 8A gb dG eG
+
+//marker L8
+//4a 8AGAGA 8ge g fg
+4a 8A 8ge g fg
+//8af d Gd 4gefe 8d // can't handle a "Gd"?
+8af d d 4e 8d
+//4gefe 8d 4gfg 8G // another one
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8e
+
+
+
+//marker L7Rpt
+//4A 8AGAGA 8ge g fg
+4a 8A 8ge g fg
+//8af d 8Gd 4gefe 8f // what can't handle a "Gd"?
+8af d d 4gefe 8f
+//4ag 8AGAGA 8ge g fg
+4ag 8A 8ge g fg
+4efe 8A gb dG eG
+
+//marker L6Rpt2
+8gA dA eA e gA e
+//8gA g aA e gA d// parser doesn't recognize "aA"
+8gA g A e gA d
+4gefe 8d 4gfg 8G
+8gb dA eA 4GAGA 8r
+
+
+
+

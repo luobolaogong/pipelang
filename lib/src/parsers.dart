@@ -227,35 +227,46 @@ Parser markerParser = (
 
 // Of course the order is important here.  Want to parse the longest
 // string before a shorter one.
+
+///////////////////////////////// ADD HERE CHECK HERE 1/5 //////////////////////////
+
 Parser pipeNoteNameParser = (
     string('gAGAGA') |
     string('GdGcd') |
+    string('GdGeA') | // new
     string('AGAGA') |
     string('GdGa') |
-    string('GdGb') | // new
+    string('agfg') | // new
     string('afgf') |
     string('gfgf') |
     string('gefe') |
-    string('gdGd') |
-    string('gded') |
-    string('gdcd') |
-    string('gcdc') |
-    string('gbdb') |
-    string('gbGb') |
-    string('GdGb') | // new
-    string('GbGA') | // new
+    string('gdee') | // new/weird
     string('GdGe') |
+    string('gded') |
     string('Gded') |
+    string('gdcd') |
     string('Gdcd') |
+    string('gdGd') |
+    string('gcdc') |
+    string('GdGc') | // new
+    string('gbdb') |
     string('Gbdb') |
+    string('GdGb') | // new
+    string('gbGb') |
+    string('gAdA') | // new
     string('GAGA') |
+    string('GbGA') | // new
+    string('gGdG') | // new
     string('aga') |
     string('dcd') |
     string('cdc') |
     string('gfg') |
     string('fgf') |
     string('efe') |
+    string('ae') | // new
     string('ga') |
+    string('ag') | // new
+    string('fg') |
     string('ea') |
     string('eg') |
     string('af') |
@@ -263,16 +274,20 @@ Parser pipeNoteNameParser = (
     string('ef') |
     string('ge') |
     string('Ae') |
+    string('Ge') | // new?
+    string('Gc') | // new
     string('gd') |
     string('ed') |
     string('cd') |
     string('gc') |
     string('ec') |
     string('dc') |
+    string('ac') | // new
     string('gb') |
     string('eb') |
     string('db') |
-    string('gA') | // used?
+    string('Gb') | // new
+    string('gA') | // used? yes.
     string('eA') |
     string('dA') |
     string('GA') |
@@ -295,184 +310,229 @@ Parser pipeNoteNameParser = (
 ).trim().map((value) {
   log.finest('entering pipeNoteNameParser, with string value $value');
   NoteType noteType;
+
+  ///////////////////////////////// ADD HERE CHECK HERE 2/5 //////////////////////////
+
   switch (value) {
     case 'gAGAGA':
       noteType = NoteType.gAGAGA;
-      break;
+      break;//.
     case 'GdGcd':
       noteType = NoteType.GdGcd;
-      break;
+      break;//.
+    case 'GdGeA': // new
+      noteType = NoteType.GdGeA;
+      break;//.
     case 'AGAGA':
       noteType = NoteType.AGAGA;
-      break;
+      break;//.
     case 'GdGa':
       noteType = NoteType.GdGa;
-      break;
+      break;//.
+    case 'agfg': // new
+      noteType = NoteType.agfg;
+      break;//.
     case 'GdGb':
       noteType = NoteType.GdGb;
-      break;
+      break;//.
+    case 'GdGc':
+      noteType = NoteType.GdGc;
+      break;//.
     case 'GbGA':
       noteType = NoteType.GbGA;
-      break;
+      break;//.
+    case 'gGdG':
+      noteType = NoteType.gGdG;
+      break;//.
     case 'afgf':
       noteType = NoteType.afgf;
-      break;
+      break;//.
     case 'gfgf':
       noteType = NoteType.gfgf;
-      break;
+      break;//.
     case 'gefe':
       noteType = NoteType.gefe;
-      break;
+      break;//.
     case 'gded':
       noteType = NoteType.gded;
-      break;
+      break;//.
+    case 'gdee': // new/weird
+      noteType = NoteType.gdee;
+      break;//.
     case 'gdGd':    // new
       noteType = NoteType.gdGd;
-      break;
+      break;//.
     case 'gdcd':
       noteType = NoteType.gdcd;
-      break;
+      break;//.
     case 'gcdc':
       noteType = NoteType.gcdc;
-      break;
+      break;//.
     case 'gbdb':
       noteType = NoteType.gbdb;
-      break;
+      break;//.
     case 'Gbdb':
       noteType = NoteType.Gbdb;
-      break;
+      break;//.
     case 'gbGb':
       noteType = NoteType.gbGb;
-      break;
+      break;//.
     case 'GdGe':
       noteType = NoteType.GdGe;
-      break;
+      break;//.
     case 'Gdcd':
       noteType = NoteType.Gdcd;
-      break;
+      break;//.
     case 'GAGA':
       noteType = NoteType.GAGA;
-      break;
+      break;//.
+    case 'gAdA':
+      noteType = NoteType.gAdA;
+      break;//.
     case 'aga':
       noteType = NoteType.aga;
-      break;
+      break;//.
     case 'cdc':
       noteType = NoteType.cdc;
-      break;
+      break;//.
     case 'dcd':
       noteType = NoteType.dcd;
-      break;
+      break;//.
     case 'gfg':
       noteType = NoteType.gfg;
-      break;
+      break;//.
     case 'fgf':
       noteType = NoteType.fgf;
-      break;
+      break;//.
     case 'efe':
       noteType = NoteType.efe;
-      break;
+      break;//.
     case 'ga':
       noteType = NoteType.ga;
-      break;
+      break;//.
     case 'ea':
       noteType = NoteType.ea;
-      break;
+      break;//.
     case 'eg':
       noteType = NoteType.eg;
-      break;
+      break;//.
+    case 'fg':
+      noteType = NoteType.fg;
+      break;//.
+    case 'ag':
+      noteType = NoteType.ag;
+      break;//.
     case 'gf':
       noteType = NoteType.gf;
-      break;
+      break;//.
     case 'ef':
       noteType = NoteType.ef;
-      break;
+      break;//.
     case 'af':
       noteType = NoteType.af;
-      break;
+      break;//.
+    case 'ae': // new
+      noteType = NoteType.ae;
+      break;//.
     case 'ge':
       noteType = NoteType.ge;
-      break;
+      break;//.
     case 'Ae':
       noteType = NoteType.Ae;
-      break;
+      break;//.
+    case 'Ge': // new
+      noteType = NoteType.Ge;
+      break;//.
     case 'gd':
       noteType = NoteType.gd;
-      break;
+      break;//.
     case 'ed':
       noteType = NoteType.ed;
-      break;
+      break;//.
     case 'cd':
       noteType = NoteType.cd;
-      break;
+      break;//.
     case 'gc':
       noteType = NoteType.gc;
-      break;
+      break;//.
     case 'ec':
       noteType = NoteType.ec;
-      break;
+      break;//.
     case 'dc':
       noteType = NoteType.dc;
-      break;
+      break;//.
+    case 'ac': // new
+      noteType = NoteType.ac;
+      break;//.
+    case 'Gc': // new
+      noteType = NoteType.Gc; // new
+      break;//.
     case 'gb':
       noteType = NoteType.gb;
-      break;
+      break;//.
     case 'eb':
       noteType = NoteType.eb;
-      break;
+      break;//.
     case 'db':
       noteType = NoteType.db;
-      break;
+      break;//.
+    case 'Gb': // new
+      noteType = NoteType.Gb;
+      break;//.
     case 'gA':
       noteType = NoteType.gA;
-      break;
+      break;//.
     case 'eA':
       noteType = NoteType.eA;
-      break;
+      break;//.
     case 'dA':
       noteType = NoteType.dA;
-      break;
+      break;//.
+    case 'gA':
+      noteType = NoteType.gA;
+      break;//.
     case 'GA':
       noteType = NoteType.GA;
-      break;
+      break;//.
     case 'gG': // ??
       noteType = NoteType.gG;
-      break;
+      break;//.
     case 'eG':
       noteType = NoteType.eG;
-      break;
+      break;//.
     case 'dG':
       noteType = NoteType.dG;
-      break;
+      break;//.
     case 'aG':
       noteType = NoteType.aG;
-      break;
+      break;//.
     case 'a':
       noteType = NoteType.a;
-      break;
+      break; //.
     case 'g':
       noteType = NoteType.g;
-      break;
+      break;//.
     case 'f':
       noteType = NoteType.f;
-      break;
+      break;//.
     case 'e':
       noteType = NoteType.e;
-      break;
+      break;//.
     case 'd':
       noteType = NoteType.d;
-      break;
+      break;//.
     case 'c':
       noteType = NoteType.c;
-      break;
+      break;//.
     case 'b':
       noteType = NoteType.b;
-      break;
+      break;//.
     case 'A':
       noteType = NoteType.A;
-      break;
+      break;//.
     case 'G':
       noteType = NoteType.G;
-      break;
+      break;//.
     case 'M':
       noteType = NoteType.met;
       break;

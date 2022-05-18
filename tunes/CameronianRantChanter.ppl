@@ -1,0 +1,292 @@
+// The Cameronian Rant with more of a strathspey feel based on 20th notes
+// Arr: Jack Lee
+// "Setting played by Jack Lee"
+// Experiment in note durations to make it sound more strathspey-ie
+
+// Strathspey
+/time 4/4
+/tempo 120
+
+
+//track met
+//4M . . .
+//4r . 2r   4r . 2r
+
+///p
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+//4M . . .    . . . .    . . . .    . . . .
+//4M . . .    . . . .    . . . .    . . . .
+
+
+
+
+
+
+
+/track pipes  // can't be chanter for some reason
+/f
+// Drums Roll off
+//4r . . .
+//2r 2r  2r  4r
+1r 1r
+1r
+1r 2r 4r
+
+4e
+//marker Pt1
+//marker L1
+20Gdcd 5eG   20gG dG 20:3eG   20dcd 5eG    20gbdb   5g
+20Gdcd 5eG   20gG dG 20:3eG   4dcd            5gefe 20d
+20gcdc 5eA   20gA dA 20:3eA   20gcdc 5eA   20gbdb   5a
+20cdc  5eA   20gA dA 20:3eA   4Gdcd           20gbdb   5g
+
+//marker L2
+20Gdcd 5eG   20gG dG 20:3eG   20dcd 5eG    20gbdb   5g
+20Gdcd 5eG   20Gbdb 5eG 5dcd 20f     20gf e 20:3d
+20gcdc 5eA   20gA dA 20:3eA   20gcdc 5eA   20gbdb 5eA
+20gcdc 5eA   20gA dA 20:3eA   4Gdcd           20gcdc 5eb
+
+//marker P22
+//marker L3
+5gG 20db     5gfg 20a   20g f 20:3e        5Gdcd 20b
+5gG 20db     5gfg 20a   20g f 20:3e        5Gdcd 20b
+4gAGAGA         5aga 20g   5aga 20A     5gefe 20c
+4gAGAGA         5aga 20g   5aga 20A     5gefe 20d
+
+//marker L4
+5gG 20db     5gfg 20a   20g f 20:3e        5Gdcd 20b
+20gG A 20:3b       5gfg 20d   4gbdb           5eG 20g
+20af g 20:3a       5efe 20g   20af g 20:3a       5efe 20f
+5gfg 20e     5aga 20e   5gfg 20a     20g f 20:3e
+
+//marker L5
+20Gdcd 5eG   20gfg 5aG  20dcd 5eG    20gG dG 20:3eG
+20dcd 5eG    20gG dG 20:3eG   4dcd            20gf e 20:3d
+20gcdc 5eA   5aga 20e   20gcdc 5eA   20gA dA 20:3eA
+20gcdc 5eA   20gA dA 20:3eA   4Gdcd           20gbdb 5g
+
+//marker L6
+20Gdcd 5eG   20gfg 5aG  20dcd 5eG    20gG dG 20:3eG
+20dcd 5eG    20gbdb 5eG 5dcd 20f     20gf e 20:3d
+20gcdc 5eA   20Gdcd 5eb 20gcdc 5eA   20gA dA 20:3eA
+20gcdc 5eA   20gA dA 20:3eA   4Gdcd           20gcdc 5db
+
+//marker L7
+5gG 20db  5gfg 20a  20g f 20:3e  5gfg 20b
+5gG 20db  5gfg 20a  20g f 20:3e  5gfg 20b
+20gAGAGA 5a  5ga 20A  20a g 20:3f 5gefe 20c
+20gAGAGA 5a 5ga 20A 20a g 20:3f5gefe 20d
+
+//marker L8
+5gG 20db  5gfg 20a  20g f 20:3e  5gfg 20b
+5gefe 20g 20f e 20:3d 4gbdb 5eG 20g
+20af g 20:3a  5gefe 20g  20af g 20:3a5efe 20f
+5gfg 20e  5aga 20e5gfg 20a  20g f 20:3e
+
+//marker L9
+20Gdcd 5eG  20gG dG 20:3eG  20dcd 5eG   20gbdb 5eG
+20dcd  5eG  20gG dG 20:3eG  20dcd 5eG   20gbdb  5eG
+20gcdc 5eA  20gA dA 20:3eA  20gcdc 5eA  20gbdb 5eA
+20gcdc 5eA  20gA dA 20:3eA  20gcdc 5eA  20gbdb 5eA
+
+//marker L10
+20Gdcd 5eG  20gG dG 20:3eG  20dcd 5eG   20gbdb 5eG
+20dcd  5eG  20gG dG 20:3eG  20gG dG 20:3eG    20gbdb 5eG
+20gcdc 5eA  20gA dA 20:3eA  20gA dA 20:3eA    20gcdc 5eA
+20gA dA 20:3eA    20gcdc 5eA   5Gdcd 20c   5gbdb 20A
+
+//marker L11
+5gG 20b   5Gdcd 20b  5gfg 20b  5Gdcd 20b
+5gG 20b   5Gdcd 20b   5gfg 20b   5Gdcd 20b
+5gA 20dc   5gefe 20c  5aga 20A  5gefe  20c
+5gA 20dc   5gefe 20c   5aga 20A  5gefe  20d
+
+//marker L12
+5gG 20b   5Gdcd 20b   5gfg 20b   5Gdcd 20b
+5gG 20b   5Gdcd 20g   4afgf    5Gdcd 20g
+20af g 20:3a   5efe 20g   20af g 20:3a   5efe 20f
+5gfg 20e   5aga 20e   5gfg 20a   20g f 20:3e
+
+//marker L13
+20Gdcd 5eb   20gb db 20:3eb   5gfg 20b   20Gdcd 5eb
+20Gdcd 5eb   20gb db 20:3eb   5gfg 20b   20Gdcd 5eb
+20gcdc 5eA   20gA dA 20:3eA   5aga 20e   20gcdc 5eA
+20gcdc 5eA   20gA dA 20:3eA   5aga 20e   20gcdc 5eA
+
+//marker L14
+20Gdcd 5eb   20gb db 20:3eb   5gfg 20b   20Gdcd 5eb
+20Gdcd 5eb   20gb db 20:3eb   20gb db 20:3eb   20Gdcd 5eb
+20gcdc 5eA   20gA dA 20:3eA   20gA dA 20:3eA   20gcdc 5eA
+20gA dA 20:3eA     20gcdc 5eA 5Gdcd 20c  5gbdb 20A
+
+//marker L15
+20gG dG 20:3eG   5gfg 20a   20g f 20:3e   5gfg 20b
+20gG dG 20:3eG   5gfg 20a   20g f 20:3e   5gfg 20b
+20gA dA 20:3eA   5aga 20A   20a g 20:3f   5gefe 20d
+20gc 5GdGe   5aga 20A  20a g 20:3f   5gefe 20d
+
+//marker L20
+20gG dG 20:3eG   5gfg 20a   20g f 20:3e   5gfg 20d
+20ge f 20:3g   20af e 20:3d   4gbdb   5eG 20g
+20af g 20:3a   5efe 20g   20af g 20:3a   5efe 20f
+5gfg 20e   5aga 20e   5gfg 20a   20g f 20:3e
+
+4e
+
+
+
+// not finished.  Pipers don't need this, and I'm the only one playing snare, probably.
+
+
+
+
+// The Cameronian Rant
+// Arr: Jack Lee
+// "Setting played by Jack Lee"
+
+// Strathspey
+///time 4/4
+//tempo 120   // check on this
+///tempo 110
+//tempo 100 // just for easy computation in Midi Voyager
+
+
+
+
+//something is wrong.  produces steady note at count 1 and other strange things.
+//if remember, there's an issue of track or channel or combination with other files?????
+
+
+/track pipes  // can't be chanter for some reason
+//channel 4
+///f
+
+//1r 1r
+//1r
+////marker RollOff
+//1r   4:3r
+
+//4e
+
+
+////marker Pt1
+////marker L1
+//16Gdcd 16:3eG   16gG dG 8eG   16dcd 16:3eG    16gbdb   16:3g
+//16Gdcd 16:3eG   16gG dG 8eG   4dcd            16:3gefe 16d
+//16gcdc 16:3eA   16gA dA 8eA   16gcdc 16:3eA   16gbdb   16:3a
+//16cdc  16:3eA   16gA dA 8eA   4Gdcd           16gbdb   16:3g
+
+////marker L2
+//16Gdcd 16:3eG   16gG dG 8eG   16dcd 16:3eG    16gbdb   16:3g
+//16Gdcd 16:3eG   16Gbdb 16:3eG 16:3dcd 16f     16gf e 8d
+//16gcdc 16:3eA   16gA dA 8eA   16gcdc 16:3eA   16gbdb 16:3eA
+//16gcdc 16:3eA   16gA dA 8eA   4Gdcd           16gcdc 16:3eb
+
+////marker P22
+////marker L3
+//16:3gG 16db     16:3gfg 16a   16g f 8e        16:3Gdcd 16b
+//16:3gG 16db     16:3gfg 16a   16g f 8e        16:3Gdcd 16b
+//4gAGAGA         16:3aga 16g   16:3aga 16A     16:3gefe 16c
+//4gAGAGA         16:3aga 16g   16:3aga 16A     16:3gefe 16d
+
+////marker L4
+//16:3gG 16db     16:3gfg 16a   16g f 8e        16:3Gdcd 16b
+//16gG A 8b       16:3gfg 16d   4gbdb           16:3eG 16g
+//16af g 8a       16:3efe 16g   16af g 8a       16:3efe 16f
+//16:3gfg 16e     16:3aga 16e   16:3gfg 16a     16g f 8e
+
+////marker L5
+//16Gdcd 16:3eG   16gfg 16:3aG  16dcd 16:3eG    16gG dG 8eG
+//16dcd 16:3eG    16gG dG 8eG   4dcd            16gf e 8d
+//16gcdc 16:3eA   16:3aga 16e   16gcdc 16:3eA   16gA dA 8eA
+//16gcdc 16:3eA   16gA dA 8eA   4Gdcd           16gbdb 16:3g
+
+////marker L6
+//16Gdcd 16:3eG   16gfg 16:3aG  16dcd 16:3eG    16gG dG 8eG
+//16dcd 16:3eG    16gbdb 16:3eG 16:3dcd 16f     16gf e 8d
+//16gcdc 16:3eA   16Gdcd 16:3eb 16gcdc 16:3eA   16gA dA 8eA
+//16gcdc 16:3eA   16gA dA 8eA   4Gdcd           16gcdc 16:3db
+
+////marker L7
+//16:3gG 16db  16:3gfg 16a  16g f 8e  16:3gfg 16b
+//16:3gG 16db  16:3gfg 16a  16g f 8e  16:3gfg 16b
+//16gAGAGA 16:3a  16:3ga 16A  16a g 8f 16:3gefe 16c
+//16gAGAGA 16:3a 16:3ga 16A 16a g 8f16:3gefe 16d
+
+////marker L8
+//16:3gG 16db  16:3gfg 16a  16g f 8e  16:3gfg 16b
+//16:3gefe 16g 16f e 8d 4gbdb 16:3eG 16g
+//16af g 8a  16:3gefe 16g  16af g 8a16:3efe 16f
+//16:3gfg 16e  16:3aga 16e16:3gfg 16a  16g f 8e
+
+////marker L9
+//16Gdcd 16:3eG  16gG dG 8eG  16dcd 16:3eG   16gbdb 16:3eG
+//16dcd  16:3eG  16gG dG 8eG  16dcd 16:3eG   16gbdb  16:3eG
+//16gcdc 16:3eA  16gA dA 8eA  16gcdc 16:3eA  16gbdb 16:3eA
+//16gcdc 16:3eA  16gA dA 8eA  16gcdc 16:3eA  16gbdb 16:3eA
+
+////marker L10
+//16Gdcd 16:3eG  16gG dG 8eG  16dcd 16:3eG   16gbdb 16:3eG
+//16dcd  16:3eG  16gG dG 8eG  16gG dG 8eG    16gbdb 16:3eG
+//16gcdc 16:3eA  16gA dA 8eA  16gA dA 8eA    16gcdc 16:3eA
+//16gA dA 8eA    16gcdc 16:3eA   16:3Gdcd 16c   16:3gbdb 16A
+
+////marker L11
+//16:3gG 16b   16:3Gdcd 16b  16:3gfg 16b  16:3Gdcd 16b
+//16:3gG 16b   16:3Gdcd 16b   16:3gfg 16b   16:3Gdcd 16b
+//16:3gA 16dc   16:3gefe 16c  16:3aga 16A  16:3gefe  16c
+//16:3gA 16dc   16:3gefe 16c   16:3aga 16A  16:3gefe  16d
+
+////marker L12
+//16:3gG 16b   16:3Gdcd 16b   16:3gfg 16b   16:3Gdcd 16b
+//16:3gG 16b   16:3Gdcd 16g   4afgf    16:3Gdcd 16g
+//16af g 8a   16:3efe 16g   16af g 8a   16:3efe 16f
+//16:3gfg 16e   16:3aga 16e   16:3gfg 16a   16g f 8e
+
+////marker L13
+//16Gdcd 16:3eb   16gb db 8eb   16:3gfg 16b   16Gdcd 16:3eb
+//16Gdcd 16:3eb   16gb db 8eb   16:3gfg 16b   16Gdcd 16:3eb
+//16gcdc 16:3eA   16gA dA 8eA   16:3aga 16e   16gcdc 16:3eA
+//16gcdc 16:3eA   16gA dA 8eA   16:3aga 16e   16gcdc 16:3eA
+
+////marker L14
+//16Gdcd 16:3eb   16gb db 8eb   16:3gfg 16b   16Gdcd 16:3eb
+//16Gdcd 16:3eb   16gb db 8eb   16gb db 8eb   16Gdcd 16:3eb
+//16gcdc 16:3eA   16gA dA 8eA   16gA dA 8eA   16gcdc 16:3eA
+//16gA dA 8eA     16gcdc 16:3eA 16:3Gdcd 16c  16:3gbdb 16A
+
+////marker L15
+//16gG dG 8eG   16:3gfg 16a   16g f 8e   16:3gfg 16b
+//16gG dG 8eG   16:3gfg 16a   16g f 8e   16:3gfg 16b
+//16gA dA 8eA   16:3aga 16A   16a g 8f   16:3gefe 16d
+//16gc 16:3GdGe   16:3aga 16A  16a g 8f   16:3gefe 16d
+
+////marker L16
+//16gG dG 8eG   16:3gfg 16a   16g f 8e   16:3gfg 16d
+//16ge f 8g   16af e 8d   4gbdb   16:3eG 16g
+//16af g 8a   16:3efe 16g   16af g 8a   16:3efe 16f
+//16:3gfg 16e   16:3aga 16e   16:3gfg 16a   16g f 8e
+
+//4e
+
+

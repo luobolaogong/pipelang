@@ -3,10 +3,11 @@
 
 // "Slow Air in 4/4", but written "cut time"
 /time 4/4
-/tempo 2=72
+//tempo 2=72
+/tempo 140
 /track pipes  // can't be chanter for some reason
-/channel 1
-/mf
+/channel 4
+/f
 
 // Met count in
 1r

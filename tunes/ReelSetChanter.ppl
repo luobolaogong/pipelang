@@ -1,0 +1,123 @@
+// This "Reel Set" is composed of Malt on the Optics, Forest Lodge, and Primrose Girl
+// The pipe scores shows cut time.  The drum scores shows 2/2 time.
+// In both cases there are 4 quarter notes per bar.
+// For simplicity we'll make it 4/4
+
+/track chanter
+/channel 4
+// tune type: straight reel
+/mf
+/time 4/4
+/tempo 136
+
+// sync
+//1r
+32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 32A 32:3r  32A 32:3r 8r
+// Drum Intro, 8 bars
+//1r . . . . . . .
+/p
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+//32a 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r   32A 32:3r 8r
+
+//// sync
+//32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+//// "pipes and drums, One Two" or "By the right, quick march"
+///marker P&D 1,2
+//32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+//// Roll-off
+//48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+//48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+
+//
+// Malt on the Optics
+//
+/f
+//marker L1
+8gb Gb gf b  gb f ge c
+8gb Gb gf b  gb d gc A
+8gb Gb gf b  gb f ge c
+8gd c gb d  gcdc A gb dc
+
+//marker L1Rpt
+8gb Gb gf b  gb f ge c
+8gb Gb gf b  gb d gc A
+8gb Gb gf b  gb f ge c
+8gd c gb d  gcdc A gb dc
+
+//marker L2
+8gb f gf e  4gf 8ge f
+4gf 8ge f  gf e gd b
+8gb f gf e 4gf 8ge f
+8g G gb d  gcdc A gb dc
+
+//marker L2Rpt
+8gb f gf e  4gf 8ge f
+4gf 8ge f  gf e gd b
+8gb f gf e 4gf 8ge f
+8g G gb d  gcdc A gb dc
+
+//
+// Forest Lodge
+//
+
+//marker L1
+4a 8ga e  gf e a e
+8gf a e c  gb c gd b
+4a 8ga e  gf e a e
+8gf a e c  4gbdb GA
+
+//marker L1Rpt
+4a 8ga e  gf e a e
+8gf a e c  gb c gd b
+4a 8ga e  gf e a e
+8gf a e c  4gbdb GA
+
+//marker L2
+8gc A gA GAGA  gc A ge c
+8gd f ge c  gb c gd b
+8gc A gA GAGA  gc A ge c
+8gd f ge c  4gbdb 4GA
+
+//marker L3
+8gc A gA GAGA  gc A ge c
+8gd f ge c  gb c gd b
+8gc A ge A  gf A ge A
+8a A ge c  4gbdb 8GA
+
+//
+// Primrose Girl
+//
+
+
+// pickup:
+8g
+//marker L1
+8fgf a e f  4cd 8gd b
+8gA b d e  gf e Ae g
+8fgf a e f  4cd 8gd b
+8gA b gd e  gf d cd g
+
+//marker L1Rpt
+8fgf a e f  4cd 8gd b
+8gA b d e  gf e Ae g
+8fgf a e f  4cd 8gd b
+8gA b gd e  gf d cd g
+
+//marker L2
+8fgf d a d  gf d a d
+8gA b d e  gf e Ae 4f
+8d a d  gf d a d
+8gA b gd e  gf d cd g
+
+//marker L3
+8fgf d a d  gf d a d
+8gA b d e  gf e Ae g
+8fgf a e f  4cd 8gd b
+8gA b gd e  gf d 8cd 8r
+

@@ -1,0 +1,37 @@
+// Murdo's Wedding - chanter
+// Probably follows Cockney Jocks, but not sure
+// Part of "Competition 4/4 Set"
+// This is not Murdo's Wedding, which starts similarly
+// Played using 24th notes, not as written
+
+/time 4/4
+/tempo 4=84
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r 4r . .
+
+
+4e
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4gA 8GdGeA db 4GA 8gcdc e
+24:5gf 24e 8Gdcd c 4gbdb 24:5gefe 24c
+
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4aga 8fgf d 4gdee Gdcd
+2GbGA GAGA
+
+4aga 8fgf d 4gdee gAGAGA
+4aga 8fgf d 2gdee
+4gA 8GdGeA db 4GA 8gcdc e
+24:5gf 24e 8Gdcd c 4Gbdb 24:5gefe 24c
+
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4aga 8fgf d 4gdee Gdcd
+2GbGA GAGA

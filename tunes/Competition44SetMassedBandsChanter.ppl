@@ -1,0 +1,127 @@
+// Competition 4/4 Set (massed bands version, which is same, just different name)
+// Flett From Flotta, Battle of Waterloo, Cockney Jocks (parts 1,3), Murdo's Wedding
+//
+
+// Flett From Flotta -
+
+/time 4/4
+/tempo 4=82   // for Pearl Harbor
+
+// They think the following is funny, but without drums they wouldn't know when to start
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r
+ 24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4gefe 8gcdc e
+24:5gfgf 24e 8gf a 4fgf 8gefe c
+24:5gfgf 24e 8gcdc eA 4GdGb 24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4aga 24:5A 24b
+4GdGc 24:5aga 24e 4gcdc 24:5gb 24dc
+2GA 4GAGA
+8gA dc
+
+4gefe 8gA dc 4aga 8A dc
+24:5ge 24f  8gefe c  4gefe  8gA dc
+4aga 8A dc 4gefe 8gcdc e
+24:5gfgf 24e  8gcdc eA 4GdGb 24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4aga 24:5A 24b
+4GdGc 24:5aga 24e 4gcdc 24:5gb 24dc
+2GA 4GAGA
+
+4ge
+
+///////////////////////////////////////////
+//
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eA
+24:5gG 24dG 8eG dA 4gGdG 8gdee 24d 12b
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eG
+2gA 4GAGA gfg
+
+24:5aga 24g 8ae d 4gc 8GdGe f
+24:5gfg 24a 8fg ae 4gfg 8ae 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eA
+24:5gG 24dG 8eG dA 4gGdG 8gdee 24d 12b
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eG
+2gA 4GAGA
+
+////////////////////////
+// Cockney Jocks (parts 1 & 3 only)
+
+12gA b c
+// marker P1
+2Gdcd 4gdGd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA db
+2GA 24:5a 24g 8af e
+
+2Gdcd 4gdGd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA 24:5b 24c
+2Gdcd 8:3gdGd 8A
+
+// marker P2
+//4Gdcd 8gf a 4Gdcd 8gf a
+//2G 24:5ag 24f 8ge d
+//24:5gc 24d 8ge c 4gA db
+//2GA 24:5a 24g 8af e
+
+//4Gdcd 8gf a 4Gdcd 8gf a
+//2G 24:5ag 24f 8ge d
+//24:5gc 24d 8ge c 4gA 24:5b 24c
+//2Gdcd 8:3gdGd 8A
+
+// marker P3
+8Gdcd A gf d gA d gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA db
+2GA 24:5a 24g 8af e
+
+8Gdcd A gf d gA d gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA 24:5b 24c
+2Gdcd 4gdGd // 4r
+
+///////////////////////////////////////
+// Murdo's Wedding
+
+4e
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4gA 8GdGeA db 4GA 8gcdc e
+24:5gf 24e 8Gdcd c 4gbdb 24:5gefe 24c
+
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4aga 8fgf d 4gdee Gdcd
+2GbGA GAGA
+
+4aga 8fgf d 4gdee gAGAGA
+4aga 8fgf d 2gdee
+4gA 8GdGeA db 4GA 8gcdc e
+24:5gf 24e 8Gdcd c 4Gbdb 24:5gefe 24c
+
+4gA 8GdGeA db 4GA 8gcdc e
+4aga 8fgf d 2gdee
+4aga 8fgf d 4gdee Gdcd
+2GbGA GAGA
+

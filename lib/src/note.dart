@@ -16,26 +16,34 @@ class Note {
   // And sort is by pitch in this order: G A b c d e f g a, and shortest to longest.
   // And single notes, followed by single grace notes, followed by doubles, followed by, whatever
   // When fix the sound font and add in a bunch of notes, then update this list/table/map
-  var NoteTypeNoteNumber = {
+///////////////////////////////// ADD HERE CHECK HERE 5/5 //////////////////////////
+  var NoteTypeNoteNumber = { // sort these better
     NoteType.gAGAGA: 112,
     NoteType.GdGcd: 115,
+    NoteType.GdGeA: 112, // new
     NoteType.AGAGA: 112,
     NoteType.GdGa: 119,
+    NoteType.agfg: 118, // new
     NoteType.afgf: 117,
     NoteType.gfgf: 117,
     NoteType.gefe: 116,
     NoteType.GdGe: 116,
+    NoteType.gdee: 116, // new/weird
     NoteType.gded: 115,
     NoteType.gdGd: 115, // new
     NoteType.gdcd: 115,
     NoteType.Gdcd: 115,
     NoteType.gcdc: 114,
+    NoteType.GdGc: 114, // new
     NoteType.gbdb: 113,
+    NoteType.gbGb: 113, // kinda new?
     NoteType.Gbdb: 113,
     NoteType.GdGb: 113, // new
     //NoteType.gdGb: 113, // I may have screwed something up when editing.  Maybe missing a 4 note combination similar to this
+    NoteType.gAdA: 112, // new
     NoteType.GAGA: 112,
     NoteType.GbGA: 112, // new
+    NoteType.gGdG: 111, // new
     NoteType.aga: 119,
     NoteType.gfg: 118,
     NoteType.fgf: 117,
@@ -45,18 +53,25 @@ class Note {
     NoteType.ga: 119,
     NoteType.ea: 119,
     NoteType.eg: 118,
+    NoteType.fg: 118, // new
+    NoteType.ag: 118, // new
     NoteType.af: 117,
     NoteType.gf: 117,
     NoteType.ef: 117,
+    NoteType.ae: 116, // new
     NoteType.ge: 116,
-    NoteType.Ae: 116,
+    NoteType.Ae: 116, // never happens???????
+    NoteType.Ge: 116, // new
     NoteType.gd: 115,
     NoteType.ed: 115,
     NoteType.cd: 115,
     NoteType.gc: 114,
     NoteType.ec: 114,
     NoteType.dc: 114,
+    NoteType.ac: 114, // new
+    NoteType.Gc: 114, // new
     NoteType.gb: 113,
+    NoteType.Gb: 113,
     NoteType.eb: 113,
     NoteType.db: 113,
     NoteType.gA: 112,
@@ -177,26 +192,35 @@ class Note {
 // The order is important, because use indices to get the note number, which correspondes to the sound font numbers.
 // And the parsing in NoteParser ... the ordering is important.
 // Nope, no longer.  Not doing it that way.
+
+///////////////////////////////// ADD HERE CHECK HERE 3/5 //////////////////////////
+
 enum NoteType {
   gAGAGA,
   GdGcd,
+  GdGeA, // new
   AGAGA,
   GdGa,
+  agfg, // new
   afgf,
   gfgf,
   gefe,
   gded,
+  gdee, // new weird
   gdcd,
   gcdc,
   gbdb,
   gdGd, // new
   GdGb, // new
+  GdGc, // new
   GbGA, // new
+  gGdG, // new
   gbGb,
   GdGe,
   Gdcd,
   Gbdb,
   GAGA,
+  gAdA,
   aga,
   gfg,
   fgf,
@@ -205,21 +229,28 @@ enum NoteType {
   cdc,
   ga,
   ea,
+  ag, // new
+  fg, // new
   eg,
   af,
   gf,
   ef,
   ge,
+  ae, // new
   Ae,
+  Ge, // new
   gd,
   ed,
   cd,
   gc,
   ec,
   dc,
+  ac, // new
+  Gc, // new
   gb,
   eb,
   db,
+  Gb, // new
   gA,
   eA,
   dA,

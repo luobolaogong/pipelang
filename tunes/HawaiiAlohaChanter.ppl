@@ -1,0 +1,200 @@
+// Hawai'i Aloha - chanter melody and harmony
+// Lorenzo Lyons
+
+// "Slow Air in 4/4", but written "cut time"
+/time 4/4
+//tempo 2=68
+// why the fruit does this change to 84 on my Midi Voyager playback???  On everyone's?  Some Midi Voyager setting?
+/tempo 136
+
+/track pipes  // can't be chanter for some reason
+/channel 1
+/f
+
+// Met count in
+1r  2r
+
+4Gdcd e  // pickups
+
+/marker L1
+f gf g f
+gf d ed b
+1GA
+2A 4gc d
+
+/marker L2
+2gefe GAGA
+4gb c Gdcd e
+1fgf
+2f 4Gdcd e
+
+/marker L3
+4f gf g f
+4gf d ed b
+1GA
+2A 4gc d
+
+/marker L4B13
+2gefe GAGA
+2gf e
+1Gdcd
+2gdcd    4gd c
+
+
+/marker L5B17
+4b gb db eb
+4gb c gd b
+2GA Gdcd
+2gf 4gf g
+
+/marker L6B21
+1aga
+2GdGa 4Gdcd f
+1gefe
+2GdGe 4Gdcd e
+
+/marker L7B25
+4f gf g f
+4gf d ed b
+1GA
+2A 4gc d
+
+/marker L8B29
+2gefe GAGA
+2gf e
+1Gdcd
+2gdcd   4gd c
+
+/marker L5RptB17
+4b gb db eb
+4gb c gd b
+2GA Gdcd
+2gf 4gf g
+
+/marker L6RptB21
+1aga
+2GdGa 4Gdcd f
+1gefe
+2GdGe 4Gdcd e
+
+/marker L7RptB25
+4f gf g f
+4gf d ed b
+1GA
+2A 4gc d
+
+/marker L8RptB29
+2gefe GAGA
+2gf e
+1Gdcd
+2gdcd
+/tempo 120
+4gc d
+
+/tempo 115
+2gefe GAGA
+/tempo 110
+2gf /tempo 105 e
+/tempo 100
+2Gdcd d   // can't seem to make that note extend past 1 whole note.  Or maybe even reach one whole note.  Because of recording?
+2gdcd
+
+////////////////////////////////////////////////
+/track pipesharmony  // can't be chanter for some reason
+/channel 2
+/mf
+
+// Met count in
+1r 2r
+
+// Drums Roll off
+//2r . . .
+//2r . .
+
+/marker L1
+4gd e
+//4r 4r
+1gded
+1G
+1gA
+//1r
+2A 4gc d
+//2r 4r 4r
+
+
+/marker L2
+2gA GAGA
+4gb c d e
+1gded
+2d 4gd e
+
+/marker L3
+1gded
+2gb G
+1gA
+2A 4gc d
+
+/marker L4B13
+2gefe GAGA
+2gf e
+1Gdcd
+2gdcd    4gd c
+
+/marker L5B17
+4b gG dG eG
+4gG A gb G
+1gA
+1Gdcd
+
+
+/marker L6B21
+2gf 4d gd
+4ed cd gd f
+2ge 4A b
+4gc A gb c
+
+/marker L7B25
+1Gdcd
+2gb G
+1gA
+2A 4gc d
+
+/marker L8B29
+2gefe GAGA
+2gd c
+1GAGA
+1GAGA
+
+/marker L5B17Rpt
+4b gG dG eG
+4gG A gb G
+1gA
+1Gdcd
+
+
+/marker L6B21Rpt
+2gf 4d gd
+4ed cd gd f
+2ge 4A b
+4gc A gb c
+
+/marker L7B25Rpt
+1Gdcd
+2gb G
+1gA
+2A 4gc d
+
+/marker L8B29Rpt
+2gefe GAGA
+2gd c
+1GAGA
+1A
+
+
+/marker L8B29RptRpt
+2gefe GAGA
+2gd c
+2A .
+2A
+
+

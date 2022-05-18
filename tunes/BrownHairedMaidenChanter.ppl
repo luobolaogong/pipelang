@@ -1,0 +1,66 @@
+// Brown Haired Maiden - chanter
+
+/track chanter
+/channel 4
+/f
+/time 2/4
+/tempo 76
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r 4r . .
+
+8r 8A
+/marker L1
+24:5GdGcd 24c 8gb GA
+4GdGcd 8eA GdGcd
+8gf d gfg f
+8gf e Ge gfg
+
+/marker L2
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd A
+
+/marker L1Rpt
+24:5GdGcd 24c 8gb GA
+4GdGcd 8eA GdGcd
+8gf d gfg f
+8gf e Ge gfg
+
+/marker L2Rpt
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd gfg
+
+/marker L3
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+8gf d gfg f
+8gf e Ge gfg
+
+/marker L4
+24af 24:5a 8fgf a // first ending
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd gfg
+
+/marker L3Rpt
+24af 24:5a 8fgf a
+4A 24:5GdGcd 24e
+8gf d gfg f
+8gf e Ge gfg
+
+/marker L4Rpt
+24:5aga 24g 8afgf a // 2nd ending
+4A 24:5GdGcd 24e
+4gf 8gfg ae
+4GdGcd 8gdcd 8r
+
+
+

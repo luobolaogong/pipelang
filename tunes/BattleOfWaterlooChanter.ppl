@@ -1,0 +1,39 @@
+// The Battle of Waterloo - chanter
+// Probably follows Murdo's Wedding.
+// This is not Murdo's Wedding, which starts similarly
+// Played using 24th notes, not as written
+
+/time 4/4
+/tempo 4=84
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r 4r . .
+
+
+4ge
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eA
+24:5gG 24dG 8eG dA 4gGdG 8gdee 24d 12b
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eG
+2gA 4GAGA gfg
+
+24:5aga 24g 8ae d 4gc 8GdGe f
+24:5gfg 24a 8fg ae 4gfg 8ae 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eA
+24:5gG 24dG 8eG dA 4gGdG 8gdee 24d 12b
+
+4gA 8GdGeA db gAdA eG dG A
+24:5GdGc 24d 8gefe c 4Gdcd 8ge 12f 24g
+24:5aga 24g 8efe d gdee d gbdb eG
+2gA 2GAGA
+
+

@@ -1,0 +1,42 @@
+// Scotland the Brave - chanter, for use with the March 4/4 version of the snare score, for build purposes.
+
+/track metronome
+/channel 4
+/f
+/time 4/4 // yes both of these lines can be here and in snare score
+/tempo 80    // not sure
+
+// They think the following is funny, but without drums they wouldn't know when to start
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r
+
+8e
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb gefe 24:5Ae 24f 12ge 24d 12gcdc 24b
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 4GA   8gcdc e
+
+4aga ga 8GdGa e gcdc eA
+4aga ga 8GdGa e gcdc e
+4aga 24:5ga 24g 4af 24:5aga 24g
+8af a fg f gefe d gcdc eb
+
+4gA 24:5GdGeA 24b 8gcdc eA gcdc e
+4aga ga 8GdGa e gcdc eA
+4Gdcd 24:5gf 24d 8gcdc e gcdc eA
+4GdGb 24:5gA 24b 8:3GA
+
+
+

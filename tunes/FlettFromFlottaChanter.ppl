@@ -1,0 +1,65 @@
+// Flett From Flotta - chanter
+// Seems to me that this should be played as written, meaning
+// play real dotted 8ths/16ths.
+// But Maxwell wrote the snare score using 24th notes.
+
+/time 4/4
+/tempo 4=84
+
+// Sync:
+1r
+// Commands: "By the Right, quick march", or "Pipes & Drums, One, Two"
+1r
+// Roll off
+1r  4r . .
+
+24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4gefe 8gcdc e
+24:5gfgf 24e 8gf a 4fgf 8gefe c
+24:5gfgf 24e 8gcdc eA 4GdGb 24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4aga 24:5A 24b
+4GdGc 24:5aga 24e 4gcdc 24:5gb 24dc
+2GA 4GAGA
+8gA dc
+
+4gefe 8gA dc 4aga 8A dc
+24:5ge 24f  8gefe c  4gefe  8gA dc
+4aga 8A dc 4gefe 8gcdc e
+24:5gfgf 24e  8gcdc eA 4GdGb 24:5gf 24e
+
+24:5gcdc 24e  8gcdc eb 4gcdc 8eA dc
+24:5ge 24f  8gefe c 4aga 24:5A 24b
+4GdGc 24:5aga 24e 4gcdc 24:5gb 24dc
+2GA 2GAGA
+
+// Played straight as written
+///time 1/4
+//16:3gf 16e
+
+///time 4/4
+//16:3gcdc 16e  8gcdc eb 4gcdc 8eA dc
+//16:3ge 16f  8gefe c 4gefe 8gcdc e
+//16:3gfgf 16e 8gf a 4fgf 8gefe c
+//16:3gfgf 16e 8gcdc eA 4GdGb 16:3gf 16e
+
+//16:3gcdc 16e  8gcdc eb 4gcdc 8eA dc
+//16:3ge 16f  8gefe c 4aga 16:3A 16b
+//4GdGc 16:3aga 16e 4gcdc 16:3gb 16dc
+//2GA 4GAGA
+//8gA dc
+
+//4gefe 8gA dc 4aga 8A dc
+//16:3ge 16f  8gefe c  4gefe  8gA dc
+//4aga 8A dc 4gefe 8gcdc e
+//16:3gfgf 16e  8gcdc eA 4GdGb 16:3gf 16e
+
+//16:3gcdc 16e  8gcdc eb 4gcdc 8eA dc
+//16:3ge 16f  8gefe c 4aga 16:3A 16b
+//4GdGc 16:3aga 16e 4gcdc 16:3gb 16dc
+//2GA 2GAGA
+
+

@@ -1,0 +1,56 @@
+// Cockney Jocks -- chanter
+// 4/4 March
+// Part of the Competition Set, maybe following The Battle of Waterloo
+
+/time 4/4
+/tempo 4=84
+
+/track pipes  // can't be chanter for some reason
+/channel 4
+/f
+
+//4r . . .
+//4r . 8r . . .
+//4r . 8r .
+
+// sync
+32a 32:3r 8r   32a 32:3r 8r   32a 32:3r 32a 32:3r  32a 32:3r 8r
+// "pipes and drums, One Two" or "By the right, quick march"
+/marker P&D 1,2
+32g 16r 32f  64g 64f 64e 64d 16r   4r  64a 64g 32a 16:3r    64e 64d 64c 64b 16:3r
+// Roll-off
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  32a 32:3r  32a 32:3r  32a 32:3r
+48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   48G 48A 48G 48A 48G 48A   32a 32:3r  8r
+
+
+12gA b c
+
+2Gdcd 4gdGd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA db
+2GA 24:5a 24g 8af e
+
+2Gdcd 4gdGd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA 24:5b 24c
+2Gdcd 8:3gdGd 8A
+
+4Gdcd 8gf a 4Gdcd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA db
+2GA 24:5a 24g 8af e
+
+4Gdcd 8gf a 4Gdcd 8gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA 24:5b 24c
+2Gdcd 8:3gdGd 8A
+
+8Gdcd A gf d gA d gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA db
+2GA 24:5a 24g 8af e
+
+8Gdcd A gf d gA d gf a
+2G 24:5ag 24f 8ge d
+24:5gc 24d 8ge c 4gA 24:5b 24c
+2Gdcd 4gdGd 4r
