@@ -1,0 +1,114 @@
+// The Banjo Breakdown
+// Arr: Pipe Major Donald Macleod
+// Pg 130, #743 from some book
+
+// Jig
+/time 6/8
+//tempo 8:3=104
+/tempo 104
+/track chanter
+
+
+2r . .  // for drums
+
+
+/marker Pt1 L1
+    8gA dA eA 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    8gA dA eA 4Gdcd 8f
+    4aga 8f 4Gdcd 8f
+
+/marker L2 1stEnd
+    8gA dA eA 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    8gb db eb 4gcdc 8e
+    8gb db eb 4gcdc 8e
+
+/marker L1 Rpt
+    8gA dA eA 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    8gA dA eA 4Gdcd 8f
+    4aga 8f 4Gdcd 8f
+
+/marker L3 2nd end
+    8ge f g a g f
+    4gefe 8d 4gcdc 8b
+    8gA dc e a e c
+    4:3GA
+    //8:3GA 4GAGA 8e
+
+
+/marker Pt2 L4
+    4aga 8e 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    4aga 8f 4Gdcd 8f
+    4aga 8f 4Gdcd 8f
+
+/marker L5 End1
+    4aga 8e 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    8gb db eb 4gcdc 8e
+    8gb db eb 4gcdc 8e
+
+/marker L4 Rpt
+    4aga 8e 4gcdc 8e
+    4aga 8e 4gcdc 8e
+    4aga 8f 4Gdcd 8f
+    4aga 8f 4Gdcd 8f
+
+/marker L6 End2
+    8ge f g a g f
+    4gefe 8d 4gcdc 8b
+    8gA dc e a e c
+    8:3gA aga
+
+
+/marker P3 L7
+    8gA dA eA 4gcdc 8e
+    8gA dA eA 4gcdc 8e
+    8gb db eb 4Gdcd 8f
+    8gb db eb 4Gdcd 8f
+
+/marker L8 End1
+    8gA dA eA 4gcdc 8e
+    8gA dA eA 4gcdc 8e
+    4gbdb 8e gc dc ec // error?
+    8gb db eb 4gcdc 8e
+
+/marker L7 Rpt
+    8gA dA eA 4gcdc 8e
+    8gA dA eA 4gcdc 8e
+    8gb db eb 4Gdcd 8f
+    8gb db eb 4Gdcd 8f
+
+ /marker L9 End2
+    8ge f g a g f
+    4gefe 8d 4gcdc 8b
+    8gA dc e a e c
+    8:3GA 8gA dc e
+
+/marker P4 L10
+    4aga 8e gc e Ae
+    4aga 8e gc e Ae
+    4aga 8f gd f ef
+    4aga 8f gd f ef
+
+/marker L11
+    4aga 8e gc e Ae
+    4aga 8e gc e Ae
+    8gb e Ae gc e Ae
+    8gb e Ae gc e Ae
+
+/marker L12
+    8a e Ae gc e Ae
+    8a e Ae gc e Ae
+    8a f ef gd f ef
+    8a f ef gd f ef
+
+/marker L13
+    8ge f g a g f
+    8ge f e gd c b
+    8gA dc e a e c
+    //8:3GA aga
+    //8:3GA gc
+    8:3GA 8:3r

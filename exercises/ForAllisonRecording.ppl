@@ -1,0 +1,130 @@
+// Set metronome to 60, and play each note as quarter note.
+// Nothing advanced here.  Very incomplete, but covers most tunes.
+// Purpose is to get a recording to fill in the soundfont file.
+//
+// Key:
+// G == Low G, g == high g
+// A == Low A, a == high a
+
+/time 4/4
+/tempo 60
+
+// 4 8th notes metronome
+8r . . .
+
+
+
+// Start here:
+// Single non-grace notes.
+4G A G A G A G A
+b c b c b c b c
+d e d e d e d e
+f g f g f g f g
+a G a G a G a G
+
+// Single Gracenotes - g
+gG gG gG gG    //(not used?)
+gA gA gA gA
+gb gb gb gb
+gc gc gc gc
+gd gd gd gd
+ge ge ge ge
+gf gf gf gf
+ga ga ga ga
+
+// Single Gracenotes - e
+eG eG eG eG
+eA eA eA eA
+eb eb eb eb
+ec ec ec ec
+ed ed ed ed // (?)
+ef ef ef ef
+eg eg eg eg // (?)
+ea ea ea ea
+
+// Single Gracenotes -d
+dG dG dG dG //(?)
+dA dA dA dA
+db db db db
+dc dc dc dc
+
+// More single gracenotes
+GA GA GA GA
+Ae Ae Ae Ae
+
+// Strange "high" doublings or throws?
+fgf fgf fgf fgf
+gfg gfg gfg gfg
+aga aga aga aga
+
+// Doubings, and some GDE combos, c&B doublings in strath, I guess
+GAGA GAGA GAGA GAGA
+gbGb gbGb gbGb gbGb
+gbdb gbdb gbdb gbdb
+gcdc gcdc gcdc gcdc // #73
+Gdcd Gdcd Gdcd Gdcd
+gdcd gdcd gdcd gdcd
+gded gded gded gded // #73
+GdGe GdGe GdGe GdGe // p51, Grip
+gefe gefe gefe gefe // #73
+gfgf gfgf gfgf gfgf
+afgf afgf afgf afgf
+
+// Something else
+GdGcd GdGcd GdGcd GdGcd
+AGAGA AGAGA AGAGA AGAGA
+
+// Ignore the following.  It's the metronome track
+/track met
+/f
+8M 8M 8M 8M
+/mp
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M
+/f 8M /p 8M /f 8M /p 8M /f 8M /p 8M /f 8M /p 8M

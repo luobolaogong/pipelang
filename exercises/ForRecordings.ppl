@@ -1,0 +1,101 @@
+/track chanter
+/tempo 60
+// single notes:
+4G A G b G c G d G e G f G g G a
+ A b A c A d A e A f A g A a A G
+ b c b d b e b f b g b a b G b A
+ c d c e c f c g c a c G c A c b
+ d e d f d g d a d G d A d b d c
+ e f e g e a e G e A e b e c e d
+ f g f a f G f A f b f c f d f e
+ g a g G g A g b g c g d g e g f
+ a G a A a b a c a d a e a f a g
+
+// single grace notes:
+gA . . .  gb . . .  gc . . .  gd . . .  ge . . .  gf . . .
+dA . . .  eA . . .
+
+// doublings:
+gefe . . .  gcdc . . .  gefe . . .
+
+// throws:
+// a D throw, however you do it
+GdGcd
+
+
+
+
+
+
+
+
+
+// Set metronome to 60, and play each note as quarter note.
+/time 4/4
+/tempo 60
+
+
+// G == Low G, g == high g
+// A == Low A, a == high a
+
+// The following may need to be modified.
+
+
+// Start here:
+// Single non-grace notes.
+G A G A G A G A
+b c b c b c b c
+d e d e d e d e
+f g f g f g f g
+a G a G a G a G
+
+// Single Gracenotes - g
+gG gG gG gG    //(not used?)
+gA gA gA gA
+gb gb gb gb
+gc gc gc gc
+gd gd gd gd
+ge ge ge ge
+gf gf gf gf
+ga ga ga ga
+
+// Single Gracenotes - e
+eG eG eG eG
+eA eA eA eA
+eb eb eb eb
+ec ec ec ec
+ed ed ed ed // (?)
+ef ef ef ef
+eg eg eg eg // (?)
+ea ea ea ea
+
+// Single Gracenotes -d
+dG dG dG dG //(?)
+dA dA dA dA
+db db db db
+dc dc dc dc
+
+// More single gracenotes
+GA GA GA GA
+Ae Ae Ae Ae
+
+// What are these?
+fgf fgf fgf fgf
+gfg gfg gfg gfg
+aga aga aga aga
+
+// Doubles, I guess
+GAGA GAGA GAGA GAGA
+gbGb gbGb gbGb gbGb
+gbdb gbdb gbdb gbdb
+gcdc gcdc gcdc gcdc
+Gdcd Gdcd Gdcd Gdcd
+gdcd gdcd gdcd gdcd
+GdGe GdGe GdGe GdGe
+gefe gefe gefe gefe
+gfgf gfgf gfgf gfgf
+afgf afgf afgf afgf
+
+// Something else
+GdGcd GdGcd GdGcd GdGcd
+AGAGA AGAGA AGAGA AGAGA
